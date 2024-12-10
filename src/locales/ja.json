@@ -1,0 +1,364 @@
+{
+  "common": {
+    "user": {
+      "email": "郵便",
+      "password": "パスワード",
+      "passwordNew": "新しいパスワード",
+      "passwordConfirm": "パスワードを再度入力してください。",
+      "name": "名前",
+      "avatar": "アバターリンク",
+      "account": "アカウント"
+    },
+    "role": {
+      "admin": "管理者",
+      "user": "ユーザー"
+    },
+    "action": {
+      "login": "ログイン",
+      "next": "次のステップ",
+      "logout": "ログアウト",
+      "newData": "新しいデータを追加する",
+      "new": "新しい",
+      "create": "作成する",
+      "delete": "消去",
+      "edit": "編集",
+      "search": "探す",
+      "ok": "もちろん",
+      "cancel": "キャンセル",
+      "copy": "コピー",
+      "clone": "データのクローンを作成する",
+      "clear": "クリア",
+      "refresh": "リフレッシュする",
+      "enable": "有効にする",
+      "save": "保存",
+      "reset": "リセット",
+      "open": "開ける",
+      "close": "閉鎖",
+      "loadMore": "もっと見る",
+      "restore": "回復する",
+      "createRecord": "データの作成",
+      "createTable": "データテーブルの作成",
+      "editTable": "データテーブルの編集",
+      "deleteTable": "データテーブルの削除",
+      "truncateData": "データのクリア",
+      "uploadFile": "ファイルをアップロードする",
+      "uploadImage": "写真をアップロードする",
+      "verified": "検証に合格しました",
+      "changePassword": "パスワードを変更する",
+      "deleteSelected": "選択したものを削除",
+      "saveAndContinue": "保存して続行",
+      "sendTestEmail": "テストメールを送信する",
+      "sendVerificationEmail": "アカウント確認メールを送信する",
+      "sendLoginEmail": "ログインステータスを電子メールでユーザーに通知する",
+      "sendResetEmail": "パスワードリセットメールを送信する",
+      "learnMore": "もっと詳しく知る",
+      "review": "テスト",
+      "checkLocale": "言語を切り替える",
+      "checkTheme": "テーマを切り替える",
+      "export": "輸出",
+      "import": "輸入",
+      "copyJson": "JSONデータをコピーする",
+      "exportJson": "JSONファイルにエクスポート",
+      "importJson": "JSONファイルからインポート"
+    },
+    "tip": {
+      "enabled": "有効にする",
+      "disabled": "無効にする",
+      "public": "公共",
+      "private": "プライベート"
+    },
+    "database": {
+      "baseTable": "ベース",
+      "viewTable": "ビュー",
+      "authTable": "認証",
+      "table": "データシート",
+      "tableName": "データテーブル名",
+      "query": "クエリ",
+      "field": "分野",
+      "createPresetField": "フィールドの追加 (デフォルト)",
+      "data": "テーブルデータ",
+      "unique": "一意の制約、フィールドインデックス",
+      "fieldPreset": {
+        "text": "通常のテキスト",
+        "editor": "リッチテキスト",
+        "number": "番号",
+        "bool": "ブール値",
+        "email": "郵便",
+        "url": "URL",
+        "datetime": "日付",
+        "autoDate": "自動日付",
+        "select": "オプション",
+        "file": "書類",
+        "relation": "協会",
+        "json": "JSON"
+      }
+    },
+    "menu": {
+      "collection": "データパネル",
+      "log": "ログ",
+      "setting": "設定",
+      "appConfig": "応用",
+      "smtpConfig": "メールサービス",
+      "storageConfig": "オブジェクトストレージ",
+      "backupConfig": "データのバックアップ",
+      "oauth2": "OAuth2.0認証"
+    },
+    "placeholder": {
+      "type": "タイプ",
+      "option": "オプション",
+      "preset": "デフォルト",
+      "style": "スタイル",
+      "apiRule": "インターフェースリクエスト権限",
+      "authMethod": "認証方式",
+      "amountOfData": "データ量:",
+      "accountPasswordLogin": "カスタムフィールド + パスワード",
+      "amountOfRequest": "リクエスト量:",
+      "thirdPartyAuthorization": "サードパーティのログイン認証",
+      "searchTerm": "検索語またはフィルター、例 > '2022-01-01'...",
+      "autoGenerate": "自動的に生成するには空白のままにします",
+      "checkPublic": "電子メールを公開または非公開にする",
+      "displayedField": "表示するフィールド",
+      "searchTable": "データシートの検索",
+      "searchDataPrompt": "データを検索し、作成された > \"2022-01-01\" などの一致ルールをサポートしました",
+      "searchLogPrompt": "ログの検索、レベル > 0 && data.auth = “guest” などの一致ルールをサポート"
+    },
+    "popup": {
+      "mockNewToken": {
+        "name": "検証トークンを手動で生成する",
+        "content": {
+          "1": "ユーザー { email } の固定認証トークンを生成します"
+        }
+      },
+      "logSetting": {
+        "name": "ログ設定",
+        "maxDaysRetention": "ログの保存日数",
+        "minLogLevel": "ログレベル",
+        "enableIpLog": "IPアクセスログを有効にする",
+        "enableAuthLog": "認証 ID のログを有効にする",
+        "content": {
+          "1": "0 に設定すると、現在のログ データがクリアされ、ログ機能がオフになります。",
+          "2": "ログレベルを超えるデータも含まれます"
+        }
+      },
+      "accountSetting": {
+        "name": "アカウント設定",
+        "content": {
+          "1": "ここで、現在の構成情報を表示およびエクスポートしたり、エクスポートして別の PocketBase 環境にインポートしたりできます。",
+          "2": "アカウント確認メールを { email } に送信します",
+          "3": "パスワードリセットメールを { email } に送信します"
+        }
+      },
+      "oauth2Setting": {
+        "name": "サードパーティの認証設定",
+        "content": {}
+      }
+    },
+    "message": {
+      "loading": "読み込み中...",
+      "notAnyData": "データがありません",
+      "createSuccess": "正常に作成されました",
+      "updateSuccess": "更新に成功しました",
+      "deleteSuccess": "正常に削除されました",
+      "createError": "作成に失敗しました",
+      "updateError": "アップデートに失敗しました",
+      "deleteError": "削除に失敗しました",
+      "notFountData": "まだデータがありません",
+      "applyNewSetting": "新しい設定が適用されました",
+      "selectedPrompt": "{ selected } 個のデータが選択されています",
+      "deletePrompt": "選択したデータを削除してもよろしいですか?",
+      "notAnyTables": "まだデータテーブルがありません",
+      "createFirstTable": "データを保存する最初のデータ テーブルを作成します。",
+      "oauth2AuthFailed": "OAuth2認証に失敗しました",
+      "plaseTryAgain": "このウィンドウを閉じて、もう一度試してください",
+      "sendEmailSussess": "メールを次のアドレスに送信しようとしました: { email }",
+      "recovery": "最後に自動保存されたデータを復元しますか?",
+      "unsave": "データは保存されていません。本当に終了しますか?",
+      "noOa2Provider": "OAuth2 アプリケーションはまだ構成されていません",
+      "insufficientAuthority": "権限が不十分です",
+      "noAccess": "アクセス不可",
+      "networkError": "ネットワークエラー。後でもう一度お試しください",
+      "copySuccess": "クリップボードに正常にコピーされました。",
+      "followRules": "権限のリクエストは次のルールに従います: { url }"
+    },
+    "subfield": {
+      "pin": "修理済み",
+      "unPin": "固定を解除する",
+      "otherTable": "他の",
+      "systemTable": "システム",
+      "basicSetting": "基本設定",
+      "syncSetting": "構成情報"
+    }
+  },
+  "page": {
+    "login": {
+      "title": "管理者ログイン",
+      "action": {
+        "forgetPsw": "パスワードを忘れる"
+      }
+    },
+    "forget": {
+      "title": "パスワードを取得する",
+      "content": {
+        "1": "メールアドレスを入力してください。「パスワードをリセットするためのリンク」が送信されます。",
+        "2": "電子メールが「{email}」に送信されようとしましたが、受信されなかった場合は、次のことを意味します。 1. ユーザーのメールボックスが存在しません。 2. 電子メールがごみ箱に収集されました。"
+      },
+      "action": {
+        "goToLogin": "戻ってログインしてください"
+      }
+    },
+    "init": {
+      "title": "最初の管理者ユーザーを作成する",
+      "action": {
+        "createUser": "作成してログインする"
+      },
+      "content": {
+        "1": "ポケットベースへようこそ",
+        "2": "少なくとも 10 文字を入力してください"
+      }
+    },
+    "collection": {
+      "content": {
+        "action": {
+          "apiPreviewme": "インターフェースのドキュメント"
+        }
+      },
+      "sideBar": {},
+      "dialog": {}
+    },
+    "log": {
+      "logLevel": "ログの分類:",
+      "adminLog": "管理者ログを表示",
+      "table": {
+        "field": {
+          "level": "リクエスト結果",
+          "message": "リクエストの詳細",
+          "createAt": "作成年"
+        }
+      }
+    },
+    "setting": {
+      "content": {
+        "application": {
+          "serverName": "カスタム識別名",
+          "serverUrl": "バックエンドアドレス",
+          "proxy": {
+            "title": "IPプロキシ",
+            "curIp": "現在のサービスIP",
+            "curProxyHeader": "現在のプロキシヘッダー",
+            "trustedHeaders": "信頼できるプロキシヘッダー",
+            "priorityIp": "IP優先度",
+            "content": {
+              "1": "PocketBase が Fly などのプラットフォームにデプロイされている場合、または NGINX などのプロキシ経由でアクセスできる場合、異なるユーザーからのリクエストは同じ IP アドレス (PocketBase アプリケーションに接続されているプロキシの IP) から発信されます。",
+              "2": "この場合、実際のユーザー IP (レート制限、ログ データなど) を取得するには、プロキシを正しく設定し、PocketBase がユーザー IP を抽出するために使用できる信頼できるヘッダーを以下にリストする必要があります。",
+              "3": "このようなプロキシを使用する場合、欺瞞を避けるために次のことをお勧めします。",
+              "4": "プロキシによってのみ制御され、ユーザーが手動で設定できないヘッダーを使用します。",
+              "5": "PocketBase サーバーにはプロキシ経由でのみアクセスできることを確認してください",
+              "6": "PocketBase がプロキシの背後にデプロイされていない場合は、ヘッダー フィールドをクリアできます。",
+              "7": "ヘッダーのカンマ区切りリスト。例:"
+            },
+            "tip": {
+              "1": "構成されたプロキシ ヘッダーが検出されたものと一致しません",
+              "2": "これは、プロキシがヘッダー値として複数の IP を返す場合に備えてです。一般に右端の IP がより信頼できると考えられますが、これはプロキシによって異なる場合があります。"
+            }
+          },
+          "rate": {
+            "title": "リクエスト頻度制限",
+            "table": {
+              "field": {
+                "route": "ルーティング",
+                "maximum": "最大値 (IP あたり)",
+                "intervalTime": "リクエスト間隔（単位：秒）",
+                "roleToLimit": "制限されたオブジェクト"
+              }
+            },
+            "action": {
+              "addRule": "制限ルールを追加する"
+            },
+            "content": {
+              "1": "レート制限ラベルの形式",
+              "2": "レート制限ルールは次の順序で解析されます (最初の一致で停止します)。",
+              "3": "複数のルールが同じラベルを持つが、異なるユーザー オーディエンスをターゲットにしている場合 (例: 「ゲスト」対「認証」)、一致するオーディエンス ルールのみが考慮されます。",
+              "4": "レート制限ラベルは次のいずれかの形式になります。"
+            }
+          },
+          "batch": {
+            "title": "リクエストの同時実行制限",
+            "maxConcurrentRequest": "同時に処理できるリクエストの数",
+            "requestTimeoutSecond": "リクエストのタイムアウト (秒単位)",
+            "requestBodySizeLimitByte": "リクエストボディサイズ制限（単位：バイト）"
+          },
+          "action": {
+            "hideEditControl": "データ作成および編集コントロールを非表示にする"
+          }
+        },
+        "smtp": {
+          "title": "SMTP設定",
+          "senderNickname": "送信者のニックネーム",
+          "senderEmail": "送信者の電子メール",
+          "action": {
+            "smtpEnable": "メールサービスを有効にする",
+            "expandDetail": "さらにオプションを拡張する",
+            "hideDetail": "その他のオプションを非表示にする"
+          },
+          "content": {
+            "1": "オフにすると、PocketBase は UNIX の「sendmail」コマンドを使用して電子メールを送信します (この機能は使用できなくなりました)。メールが確実に送信されるように、SMTP メール サーバーも自分で設定してください。",
+            "2": "Gmail SMTP リレーなどの一部の SMTP サーバーでは、電子メールを送信するサーバーを識別するために、最初の EHLO/HELO 交換で適切なドメイン名が必要です。 「localhost」または無効なドメイン名を使用すると、SMTP サーバーが接続を拒否する可能性があります。これは、SMTP サーバーでは通常、悪用やスパムを防ぐためにメールを送信するサーバーの検証が必要となるためです。"
+          },
+          "smtpHost": "SMTPサービスアドレス",
+          "smtpPort": "SMTPポート",
+          "smtpUsername": "SMTPユーザー名",
+          "smtpPassword": "SMTPキー",
+          "tlsEncryption": "TLS暗号化",
+          "authMethod": "認証方式",
+          "ehloOrHeloDomain": "検証のためにメールサーバーに提供されるドメイン名 (EHLO/HELO)"
+        },
+        "fileStorage": {
+          "content": {
+            "1": "アップロードされたファイルを保存するには、デフォルトでローカル ファイル システムを使用します",
+            "2": "ディスク容量が限られている場合は、S3 Object Storage を有効にしてファイルをクラウド ストレージに保存することを選択できます。",
+            "3": "ユーザーがアップロードしたファイルがローカルに存在する場合は、新しいオブジェクト ストレージに手動で転送してください。",
+            "4": "次のような、役立つコマンド ライン ツールが多数あります。"
+          },
+          "action": {
+            "s3Enable": "S3 オブジェクト ストレージを有効にして構成する",
+            "usePathStyleUrl": "パススタイルの S3 URL の使用"
+          },
+          "endpoint": "終点",
+          "bucket": "バケツ",
+          "region": "地域",
+          "accessKey": "アクセスキー",
+          "secret": "セキュリティキー（シークレット）"
+        },
+        "backup": {
+          "content": {
+            "1": "データのバックアップと復元",
+            "2": "バックアップファイルはまだありません",
+            "3": "バックアップ中は、データベースが一時的に「ロック」されるため (通常は ZIP 生成中に発生します)、他の同時書き込みリクエストが失敗する可能性があることに注意してください。",
+            "4": "S3 ストレージを使用してコレクション ファイルをアップロードする場合、コレクション ファイルはローカルに保存されず、最終的なバックアップには含まれないため、個別にバックアップする必要があります。",
+            "5": "ファイル名の形式は [a-z0-9_-]zip である必要があります。",
+            "6": "バックアップ/復元操作が進行中です"
+          },
+          "action": {
+            "createBackup": "バックアップファイル(.zip)を作成する",
+            "restoreBackup": "バックアップ (.zip) からデータを復元する",
+            "moreBackupOption": "その他のオプション (自動バックアップ / S3 ストレージ)",
+            "enableAutoBackup": "スケジュールされた自動バックアップを有効にする",
+            "backupToS3": "バックアップファイルをS3ストレージにアップロードする",
+            "usePathStyleUrl": "パススタイルの S3 URL の使用",
+            "backupName": "バックアップ名",
+            "cancel": "キャンセル",
+            "startBackup": "バックアップの開始"
+          }
+        },
+        "sync": {
+          "export": {
+            "title": "ここで、現在の構成情報をエクスポートして、後で新しい PocketBase 環境に復元することができます。"
+          },
+          "import": {
+            "title": "JSON 構成を直接貼り付けることも、次のようにすることもできます。"
+          }
+        }
+      }
+    }
+  }
+}

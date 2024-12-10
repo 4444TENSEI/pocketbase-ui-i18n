@@ -1,0 +1,364 @@
+{
+    "common": {
+      "user": {
+        "email": "Post",
+        "password": "Passwort",
+        "passwordNew": "neues Passwort",
+        "passwordConfirm": "Passwort wiederholen",
+        "name": "Name",
+        "avatar": "Avatar-Link",
+        "account": "Konto"
+      },
+      "role": {
+        "admin": "Administrator",
+        "user": "Benutzer"
+      },
+      "action": {
+        "login": "Einloggen",
+        "next": "Nächster Schritt",
+        "logout": "Abmelden",
+        "newData": "Neue Daten hinzufügen",
+        "new": "Neu",
+        "create": "erstellen",
+        "delete": "löschen",
+        "edit": "bearbeiten",
+        "search": "Finden",
+        "ok": "Sicher",
+        "cancel": "Stornieren",
+        "copy": "Kopie",
+        "clone": "Daten klonen",
+        "clear": "Klar",
+        "refresh": "auffrischen",
+        "enable": "aktivieren",
+        "save": "speichern",
+        "reset": "zurücksetzen",
+        "open": "Offen",
+        "close": "Schließung",
+        "loadMore": "Mehr anzeigen",
+        "restore": "genesen",
+        "createRecord": "Daten erstellen",
+        "createTable": "Datentabelle erstellen",
+        "editTable": "Datentabelle bearbeiten",
+        "deleteTable": "Datentabelle löschen",
+        "truncateData": "Klare Daten",
+        "uploadFile": "Dateien hochladen",
+        "uploadImage": "Bilder hochladen",
+        "verified": "Verifizierung bestanden",
+        "changePassword": "Kennwort ändern",
+        "deleteSelected": "Ausgewählte löschen",
+        "saveAndContinue": "Speichern und fortfahren",
+        "sendTestEmail": "Test-E-Mail senden",
+        "sendVerificationEmail": "Senden Sie eine E-Mail zur Kontobestätigung",
+        "sendLoginEmail": "Erinnern Sie Benutzer per E-Mail an den Anmeldestatus",
+        "sendResetEmail": "Senden Sie eine E-Mail zum Zurücksetzen des Passworts",
+        "learnMore": "Erfahren Sie mehr",
+        "review": "prüfen",
+        "checkLocale": "Sprache wechseln",
+        "checkTheme": "Thema wechseln",
+        "export": "Export",
+        "import": "Import",
+        "copyJson": "JSON-Daten kopieren",
+        "exportJson": "In eine JSON-Datei exportieren",
+        "importJson": "Aus JSON-Datei importieren"
+      },
+      "tip": {
+        "enabled": "aktivieren",
+        "disabled": "Deaktivieren",
+        "public": "öffentlich",
+        "private": "Privat"
+      },
+      "database": {
+        "baseTable": "Base",
+        "viewTable": "Sicht",
+        "authTable": "Zertifizierung",
+        "table": "Datenblatt",
+        "tableName": "Name der Datentabelle",
+        "query": "Abfrage",
+        "field": "Feld",
+        "createPresetField": "Feld hinzufügen (Standard)",
+        "data": "Tabellendaten",
+        "unique": "Eindeutige Einschränkungen, Feldindizes",
+        "fieldPreset": {
+          "text": "normaler Text",
+          "editor": "Rich-Text",
+          "number": "Nummer",
+          "bool": "Boolescher Wert",
+          "email": "Post",
+          "url": "URL",
+          "datetime": "Datum",
+          "autoDate": "Automatisches Datum",
+          "select": "Optionen",
+          "file": "dokumentieren",
+          "relation": "Verein",
+          "json": "JSON"
+        }
+      },
+      "menu": {
+        "collection": "Datenfeld",
+        "log": "Protokoll",
+        "setting": "aufstellen",
+        "appConfig": "Anwendung",
+        "smtpConfig": "Postdienst",
+        "storageConfig": "Objektspeicher",
+        "backupConfig": "Datensicherung",
+        "oauth2": "OAuth2.0-Authentifizierung"
+      },
+      "placeholder": {
+        "type": "Typ",
+        "option": "Optionen",
+        "preset": "Standard",
+        "style": "Stil",
+        "apiRule": "Berechtigung zur Schnittstellenanforderung",
+        "authMethod": "Authentifizierungsmethode",
+        "amountOfData": "Datenvolumen:",
+        "accountPasswordLogin": "Benutzerdefinierte Felder + Passwort",
+        "amountOfRequest": "Anfragevolumen:",
+        "thirdPartyAuthorization": "Anmeldeberechtigung für Dritte",
+        "searchTerm": "Suchbegriff oder Filter, Beispiel > „01.01.2022“...",
+        "autoGenerate": "Lassen Sie das Feld leer, um es automatisch zu generieren",
+        "checkPublic": "Machen Sie E-Mails öffentlich oder privat",
+        "displayedField": "anzuzeigende Felder",
+        "searchTable": "Datenblatt durchsuchen",
+        "searchDataPrompt": "Suchdaten, unterstützte Abgleichsregeln wie erstellt > „01.01.2022“",
+        "searchLogPrompt": "Suchprotokolle, unterstützte Abgleichsregeln wie Level > 0 && data.auth = „guest“"
+      },
+      "popup": {
+        "mockNewToken": {
+          "name": "Generieren Sie manuell ein Verifizierungstoken",
+          "content": {
+            "1": "Generieren Sie ein festes Authentifizierungstoken für Benutzer {E-Mail}"
+          }
+        },
+        "logSetting": {
+          "name": "Protokolleinstellungen",
+          "maxDaysRetention": "Protokollaufbewahrungstage",
+          "minLogLevel": "Protokollebene",
+          "enableIpLog": "Aktivieren Sie IP-Zugriffsprotokolle",
+          "enableAuthLog": "Aktivieren Sie die Protokollierung der Autorisierungs-ID",
+          "content": {
+            "1": "Durch die Einstellung 0 werden die aktuellen Protokolldaten gelöscht und die Protokollierungsfunktion ausgeschaltet",
+            "2": "Daten, die größer als die Protokollebene sind, werden einbezogen"
+          }
+        },
+        "accountSetting": {
+          "name": "Kontoeinstellungen",
+          "content": {
+            "1": "Hier können Sie die aktuellen Konfigurationsinformationen anzeigen und exportieren oder sie in eine andere PocketBase-Umgebung exportieren und importieren.",
+            "2": "Senden Sie eine E-Mail zur Kontobestätigung an { email }",
+            "3": "Senden Sie eine E-Mail zum Zurücksetzen des Passworts an { email }"
+          }
+        },
+        "oauth2Setting": {
+          "name": "Autorisierungseinstellungen von Drittanbietern",
+          "content": {}
+        }
+      },
+      "message": {
+        "loading": "Laden...",
+        "notAnyData": "keine Daten",
+        "createSuccess": "Erfolgreich erstellt",
+        "updateSuccess": "Update erfolgreich",
+        "deleteSuccess": "Erfolgreich löschen",
+        "createError": "Die Erstellung ist fehlgeschlagen",
+        "updateError": "Update fehlgeschlagen",
+        "deleteError": "Das Löschen ist fehlgeschlagen",
+        "notFountData": "Noch keine Daten",
+        "applyNewSetting": "Neue Einstellungen übernommen",
+        "selectedPrompt": "{ selected } Datenelemente werden ausgewählt",
+        "deletePrompt": "Sind Sie sicher, dass Sie die ausgewählten Daten löschen möchten?",
+        "notAnyTables": "Sie haben noch keine Datentabellen",
+        "createFirstTable": "Erstellen Sie Ihre erste Datentabelle zum Speichern von Daten!",
+        "oauth2AuthFailed": "Die OAuth2-Authentifizierung ist fehlgeschlagen",
+        "plaseTryAgain": "Sie können dieses Fenster schließen und es erneut versuchen",
+        "sendEmailSussess": "Habe versucht, eine E-Mail an folgende Adresse zu senden: { email }",
+        "recovery": "Möchten Sie die zuletzt automatisch gespeicherten Daten wiederherstellen?",
+        "unsave": "Die Daten wurden nicht gespeichert. Möchten Sie wirklich gehen?",
+        "noOa2Provider": "Die OAuth2-Anwendung wurde noch nicht konfiguriert",
+        "insufficientAuthority": "Unzureichende Berechtigungen",
+        "noAccess": "Kein Zugang",
+        "networkError": "Netzwerkfehler, bitte versuchen Sie es später noch einmal",
+        "copySuccess": "Erfolgreich in die Zwischenablage kopiert!",
+        "followRules": "Das Anfordern von Berechtigungen folgt den Regeln: { url }"
+      },
+      "subfield": {
+        "pin": "behoben",
+        "unPin": "Lösen",
+        "otherTable": "andere",
+        "systemTable": "System",
+        "basicSetting": "Grundeinstellungen",
+        "syncSetting": "Konfigurationsinformationen"
+      }
+    },
+    "page": {
+      "login": {
+        "title": "Administrator-Login",
+        "action": {
+          "forgetPsw": "vergessen Sie das Passwort"
+        }
+      },
+      "forget": {
+        "title": "Passwort abrufen",
+        "content": {
+          "1": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.",
+          "2": "Es wurde versucht, die E-Mail an „{email}“ zu senden. Wenn sie nicht empfangen wird, bedeutet dies: 1. Das Postfach des Benutzers ist nicht vorhanden. 2. Sie wurde im E-Mail-Papierkorb gesammelt."
+        },
+        "action": {
+          "goToLogin": "Gehen Sie zurück und melden Sie sich an"
+        }
+      },
+      "init": {
+        "title": "Erstellen Sie den ersten Admin-Benutzer",
+        "action": {
+          "createUser": "Erstellen und anmelden"
+        },
+        "content": {
+          "1": "Willkommen bei PocketBase",
+          "2": "Geben Sie mindestens 10 Zeichen ein"
+        }
+      },
+      "collection": {
+        "content": {
+          "action": {
+            "apiPreviewme": "Schnittstellendokumentation"
+          }
+        },
+        "sideBar": {},
+        "dialog": {}
+      },
+      "log": {
+        "logLevel": "Protokollklassifizierung:",
+        "adminLog": "Administratorprotokoll anzeigen",
+        "table": {
+          "field": {
+            "level": "Ergebnisse anfordern",
+            "message": "Details anfordern",
+            "createAt": "Erstellt in"
+          }
+        }
+      },
+      "setting": {
+        "content": {
+          "application": {
+            "serverName": "Benutzerdefinierter Identifikationsname",
+            "serverUrl": "Backend-Adresse",
+            "proxy": {
+              "title": "IP-Proxy",
+              "curIp": "Aktuelle Dienst-IP",
+              "curProxyHeader": "Aktueller Proxy-Header",
+              "trustedHeaders": "Vertrauenswürdiger Proxy-Header",
+              "priorityIp": "IP-Priorität",
+              "content": {
+                "1": "Wenn PocketBase auf einer Plattform wie Fly bereitgestellt wird oder über einen Proxy wie NGINX zugänglich ist, stammen Anfragen von verschiedenen Benutzern von derselben IP-Adresse (der IP des Proxys, der mit der PocketBase-Anwendung verbunden ist).",
+                "2": "In diesem Fall müssen Sie zum Abrufen der tatsächlichen Benutzer-IP (für Ratenbegrenzung, Protokolldaten usw.) den Proxy korrekt konfigurieren und unten die vertrauenswürdigen Header auflisten, die PocketBase zum Extrahieren der Benutzer-IP verwenden kann",
+                "3": "Um Täuschungen zu vermeiden, wird bei der Verwendung solcher Proxys Folgendes empfohlen:",
+                "4": "Verwenden Sie Header, die nur vom Proxy gesteuert werden und nicht manuell vom Benutzer festgelegt werden können",
+                "5": "Stellen Sie sicher, dass der PocketBase-Server nur über einen Proxy erreichbar ist",
+                "6": "Wenn PocketBase nicht hinter einem Proxy bereitgestellt wird, können Sie das Header-Feld löschen",
+                "7": "Durch Kommas getrennte Liste von Überschriften, zum Beispiel:"
+              },
+              "tip": {
+                "1": "Konfigurierte Proxy-Header stimmen nicht mit den erkannten überein",
+                "2": "Dies ist der Fall, wenn der Proxy mehr als eine IP als Header-Wert zurückgibt. Die IP-Adresse ganz rechts gilt im Allgemeinen als vertrauenswürdiger, dies kann jedoch von Proxy zu Proxy unterschiedlich sein"
+              }
+            },
+            "rate": {
+              "title": "Frequenzbegrenzung anfordern",
+              "table": {
+                "field": {
+                  "route": "Routenführung",
+                  "maximum": "Maximal (pro IP)",
+                  "intervalTime": "Anforderungsintervall (Einheit: Sekunden)",
+                  "roleToLimit": "Eingeschränkte Objekte"
+                }
+              },
+              "action": {
+                "addRule": "Fügen Sie Einschränkungsregeln hinzu"
+              },
+              "content": {
+                "1": "Etikettenformat für Ratenbegrenzung",
+                "2": "Ratenbegrenzungsregeln werden in der folgenden Reihenfolge analysiert (Stopp beim ersten Treffer):",
+                "3": "Wenn mehrere Regeln dieselbe Bezeichnung haben, aber auf unterschiedliche Benutzergruppen abzielen (z. B. „Gast“ vs. „Auth“), wird nur die entsprechende Zielgruppenregel berücksichtigt",
+                "4": "Ratenbegrenzungsbezeichnungen können in einem der folgenden Formate vorliegen:"
+              }
+            },
+            "batch": {
+              "title": "Fordern Sie ein Parallelitätslimit an",
+              "maxConcurrentRequest": "Anzahl der Anfragen, die gleichzeitig verarbeitet werden dürfen",
+              "requestTimeoutSecond": "Anforderungszeitüberschreitung (in Sekunden)",
+              "requestBodySizeLimitByte": "Größenbeschränkung für Anforderungstext (Einheit: Bytes)"
+            },
+            "action": {
+              "hideEditControl": "Steuerelemente zur Datenerstellung und -bearbeitung ausblenden"
+            }
+          },
+          "smtp": {
+            "title": "SMTP-Konfiguration",
+            "senderNickname": "Spitzname des Absenders",
+            "senderEmail": "E-Mail des Absenders",
+            "action": {
+              "smtpEnable": "E-Mail-Dienst aktivieren",
+              "expandDetail": "Erweitern Sie weitere Optionen",
+              "hideDetail": "Weitere Optionen ausblenden"
+            },
+            "content": {
+              "1": "Wenn die Funktion deaktiviert ist, verwendet PocketBase den Unix-Befehl „sendmail“ zum Senden von E-Mails (diese Funktion ist nicht mehr verfügbar). Um sicherzustellen, dass die E-Mails versendet werden, konfigurieren Sie bitte auch den SMTP-Mailserver selbst",
+              "2": "Einige SMTP-Server, wie z. B. Gmail SMTP-Relay, erfordern beim ersten EHLO/HELO-Austausch einen entsprechenden Domänennamen, um den Server zu identifizieren, der die E-Mail sendet. Die Verwendung von „localhost“ oder eines ungültigen Domänennamens kann dazu führen, dass der SMTP-Server die Verbindung ablehnt, da normalerweise eine Überprüfung des Servers erforderlich ist, der die E-Mail sendet, um Missbrauch und Spam zu verhindern."
+            },
+            "smtpHost": "SMTP-Dienstadresse",
+            "smtpPort": "SMTP-Port",
+            "smtpUsername": "SMTP-Benutzername",
+            "smtpPassword": "SMTP-Schlüssel",
+            "tlsEncryption": "TLS-Verschlüsselung",
+            "authMethod": "Authentifizierungsmethode",
+            "ehloOrHeloDomain": "Domänenname, der dem Mailserver zur Überprüfung bereitgestellt wird (EHLO/HELO)"
+          },
+          "fileStorage": {
+            "content": {
+              "1": "Verwenden Sie standardmäßig das lokale Dateisystem zum Speichern hochgeladener Dateien",
+              "2": "Wenn Sie nur über begrenzten Speicherplatz verfügen, können Sie S3 Object Storage aktivieren, um Ihre Dateien im Cloud-Speicher zu speichern",
+              "3": "Wenn von Benutzern hochgeladene Dateien lokal vorhanden sind, übertragen Sie sie bitte manuell in den neuen Objektspeicher",
+              "4": "Es gibt viele Befehlszeilentools, die Ihnen helfen können, wie zum Beispiel:"
+            },
+            "action": {
+              "s3Enable": "Aktivieren und konfigurieren Sie den S3-Objektspeicher",
+              "usePathStyleUrl": "Verwendung von S3-URLs im Pfadstil"
+            },
+            "endpoint": "Endpunkt",
+            "bucket": "Eimer",
+            "region": "Region",
+            "accessKey": "Zugriffsschlüssel",
+            "secret": "Sicherheitsschlüssel (geheim)"
+          },
+          "backup": {
+            "content": {
+              "1": "Sichern und wiederherstellen Sie Ihre Daten",
+              "2": "Noch keine Sicherungsdateien",
+              "3": "Bitte beachten Sie, dass während der Sicherung andere gleichzeitige Schreibanforderungen möglicherweise fehlschlagen, da die Datenbank vorübergehend „gesperrt“ wird (was normalerweise während der ZIP-Generierung geschieht).",
+              "4": "Wenn Sie S3-Speicher zum Hochladen von Sammlungsdateien verwenden, müssen Sie diese separat sichern, da sie nicht lokal gespeichert werden und nicht in die endgültige Sicherung einbezogen werden",
+              "5": "Das Dateinamenformat muss [a-z0-9_-]zip sein",
+              "6": "Sicherungs-/Wiederherstellungsvorgang läuft"
+            },
+            "action": {
+              "createBackup": "Erstellen Sie eine Sicherungsdatei (.zip)",
+              "restoreBackup": "Daten aus Backup wiederherstellen (.zip)",
+              "moreBackupOption": "Weitere Optionen (automatisches Backup / S3-Speicher)",
+              "enableAutoBackup": "Aktivieren Sie die geplante automatische Sicherung",
+              "backupToS3": "Laden Sie Sicherungsdateien in den S3-Speicher hoch",
+              "usePathStyleUrl": "Verwendung von S3-URLs im Pfadstil",
+              "backupName": "Sicherungsname",
+              "cancel": "Stornieren",
+              "startBackup": "Sicherung starten"
+            }
+          },
+          "sync": {
+            "export": {
+              "title": "Hier können Sie die aktuellen Konfigurationsinformationen zur späteren Wiederherstellung in der neuen PocketBase-Umgebung exportieren."
+            },
+            "import": {
+              "title": "Sie können die JSON-Konfiguration direkt einfügen oder:"
+            }
+          }
+        }
+      }
+    }
+  }

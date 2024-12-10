@@ -1,0 +1,364 @@
+{
+  "common": {
+    "user": {
+      "email": "邮箱",
+      "password": "密码",
+      "passwordNew": "新的密码",
+      "passwordConfirm": "重复密码",
+      "name": "姓名",
+      "avatar": "头像链接",
+      "account": "账户"
+    },
+    "role": {
+      "admin": "管理员",
+      "user": "用户"
+    },
+    "action": {
+      "login": "登录",
+      "next": "下一步",
+      "logout": "退出登录",
+      "newData": "新增数据",
+      "new": "新增",
+      "create": "创建",
+      "delete": "删除",
+      "edit": "编辑",
+      "search": "查找",
+      "ok": "确定",
+      "cancel": "取消",
+      "copy": "复制",
+      "clone": "克隆数据",
+      "clear": "清除",
+      "refresh": "刷新",
+      "enable": "启用",
+      "save": "保存",
+      "reset": "重置",
+      "open": "打开",
+      "close": "关闭",
+      "loadMore": "查看更多",
+      "restore": "恢复",
+      "createRecord": "创建数据",
+      "createTable": "创建数据表",
+      "editTable": "编辑数据表",
+      "deleteTable": "删除数据表",
+      "truncateData": "清空数据",
+      "uploadFile": "上传文件",
+      "uploadImage": "上传图片",
+      "verified": "通过验证",
+      "changePassword": "修改密码",
+      "deleteSelected": "删除所选",
+      "saveAndContinue": "保存并继续",
+      "sendTestEmail": "发送测试邮件",
+      "sendVerificationEmail": "发送账户验证邮件",
+      "sendLoginEmail": "通过邮件提醒用户登录情况",
+      "sendResetEmail": "发送重置密码邮件",
+      "learnMore": "了解更多",
+      "review": "检验",
+      "checkLocale": "切换语言",
+      "checkTheme": "切换主题",
+      "export": "导出",
+      "import": "导入",
+      "copyJson": "复制JSON数据",
+      "exportJson": "导出到JSON文件",
+      "importJson": "从JSON文件导入"
+    },
+    "tip": {
+      "enabled": "启用",
+      "disabled": "禁用",
+      "public": "公开",
+      "private": "私密"
+    },
+    "database": {
+      "baseTable": "基础",
+      "viewTable": "视图",
+      "authTable": "认证",
+      "table": "数据表",
+      "tableName": "数据表名称",
+      "query": "查询",
+      "field": "字段",
+      "createPresetField": "添加字段 (预设)",
+      "data": "表数据",
+      "unique": "唯一约束、字段索引",
+      "fieldPreset": {
+        "text": "普通文本",
+        "editor": "富文本",
+        "number": "数字",
+        "bool": "布尔",
+        "email": "邮件",
+        "url": "网址",
+        "datetime": "日期",
+        "autoDate": "自动日期",
+        "select": "选项",
+        "file": "文件",
+        "relation": "关联",
+        "json": "JSON"
+      }
+    },
+    "menu": {
+      "collection": "数据面板",
+      "log": "日志",
+      "setting": "设置",
+      "appConfig": "应用",
+      "smtpConfig": "邮件服务",
+      "storageConfig": "对象储存",
+      "backupConfig": "数据备份",
+      "oauth2": "OAuth2.0认证"
+    },
+    "placeholder": {
+      "type": "类型",
+      "option": "选项",
+      "preset": "预设",
+      "style": "风格",
+      "apiRule": "接口请求权限",
+      "authMethod": "认证方式",
+      "amountOfData": "数据量:",
+      "accountPasswordLogin": "自定义字段 + 密码",
+      "amountOfRequest": "请求量:",
+      "thirdPartyAuthorization": "第三方登录授权",
+      "searchTerm": "搜索词或过滤器，示例 > '2022-01-01'...",
+      "autoGenerate": "留空将自动生成",
+      "checkPublic": "将电子邮件公开展示或设为私密",
+      "displayedField": "要展示的字段",
+      "searchTable": "搜索数据表",
+      "searchDataPrompt": "搜索数据，支持的匹配规则如 created > “2022-01-01”",
+      "searchLogPrompt": "搜索日志，支持的匹配规则如 level > 0 && data.auth = “guest”"
+    },
+    "popup": {
+      "mockNewToken": {
+        "name": "手动生成验证令牌",
+        "content": {
+          "1": "为用户 { email } 生成固定的验证令牌"
+        }
+      },
+      "logSetting": {
+        "name": "日志设置",
+        "maxDaysRetention": "日志保留天数",
+        "minLogLevel": "日志级别",
+        "enableIpLog": "启用 IP访问 日志",
+        "enableAuthLog": "启用 授权ID 日志",
+        "content": {
+          "1": "设置为 0 将清除目前的日志数据，并关闭日志功能",
+          "2": "将会收录大于日志级别的数据"
+        }
+      },
+      "accountSetting": {
+        "name": "账户设置",
+        "content": {
+          "1": "这里可以查看和导出当前的配置信息, 也可以导出和导入到另一个 PocketBase 环境中",
+          "2": "发送账户验证邮件给 { email }",
+          "3": "发送重置密码邮件给 { email }"
+        }
+      },
+      "oauth2Setting": {
+        "name": "第三方授权设置",
+        "content": {}
+      }
+    },
+    "message": {
+      "loading": "正在加载...",
+      "notAnyData": "没有任何数据",
+      "createSuccess": "创建成功",
+      "updateSuccess": "更新成功",
+      "deleteSuccess": "删除成功",
+      "createError": "创建失败",
+      "updateError": "更新失败",
+      "deleteError": "删除失败",
+      "notFountData": "暂无数据",
+      "applyNewSetting": "已应用新的设置",
+      "selectedPrompt": "选中了 { selected } 条数据",
+      "deletePrompt": "确定要删除所选择的数据吗？",
+      "notAnyTables": "你还没有任何数据表",
+      "createFirstTable": "创建您的第一个数据表以储存数据！",
+      "oauth2AuthFailed": "OAuth2身份验证失败",
+      "plaseTryAgain": "您可以关闭此窗口, 并重新尝试",
+      "sendEmailSussess": "已尝试发送邮件至: { email }",
+      "recovery": "要恢复上次自动保存的数据吗？",
+      "unsave": "数据未保存，确认要离开吗？",
+      "noOa2Provider": "还未配置OAuth2应用程序",
+      "insufficientAuthority": "权限不足",
+      "noAccess": "无权访问",
+      "networkError": "网络出错，请稍后重试",
+      "copySuccess": "成功复制到剪贴板！",
+      "followRules": "请求权限遵循规则: { url }"
+    },
+    "subfield": {
+      "pin": "固定",
+      "unPin": "取消固定",
+      "otherTable": "其他",
+      "systemTable": "系统",
+      "basicSetting": "基础设置",
+      "syncSetting": "配置信息"
+    }
+  },
+  "page": {
+    "login": {
+      "title": "管理员登录",
+      "action": {
+        "forgetPsw": "忘记密码"
+      }
+    },
+    "forget": {
+      "title": "找回密码",
+      "content": {
+        "1": "输入您的邮件地址，我们将发送您'用于重置密码的链接'",
+        "2": "邮件已尝试发送至 ' {email} ', 如未收到则表示: 1. 用户邮箱不存在 2. 收入了邮件回收站"
+      },
+      "action": {
+        "goToLogin": "回去登录"
+      }
+    },
+    "init": {
+      "title": "创建第一个管理员用户",
+      "action": {
+        "createUser": "创建并登录"
+      },
+      "content": {
+        "1": "欢迎使用PocketBase",
+        "2": "至少输入10个字符"
+      }
+    },
+    "collection": {
+      "content": {
+        "action": {
+          "apiPreviewme": "接口文档"
+        }
+      },
+      "sideBar": {},
+      "dialog": {}
+    },
+    "log": {
+      "logLevel": "日志分级: ",
+      "adminLog": "显示管理员日志",
+      "table": {
+        "field": {
+          "level": "请求结果",
+          "message": "请求详情信息",
+          "createAt": "创建于"
+        }
+      }
+    },
+    "setting": {
+      "content": {
+        "application": {
+          "serverName": "自定义标识名称",
+          "serverUrl": "后端地址",
+          "proxy": {
+            "title": "IP 代理",
+            "curIp": "当前服务 IP",
+            "curProxyHeader": "当前代理标头",
+            "trustedHeaders": "可信代理标头",
+            "priorityIp": "IP 优先级",
+            "content": {
+              "1": "当 PocketBase 部署在 Fly 等平台上或可通过 NGINX 等代理访问时，来自不同用户的请求将源自相同的 IP 地址 (连接到 PocketBase 应用程序的代理的 IP)",
+              "2": "在这种情况下，要检索实际用户 IP (用于速率限制、日志数据等)，您需要正确配置代理并在下方列出 PocketBase 可用于提取用户 IP 的受信任标头",
+              "3": "使用此类代理时，为避免欺骗，建议: ",
+              "4": "使用仅由代理控制且无法由用户手动设置的标头",
+              "5": "确保PocketBase服务器只能通过代理访问",
+              "6": "如果 PocketBase 未部署在代理后面，您可以清除标头字段",
+              "7": "逗号分隔的标头列表，例如: "
+            },
+            "tip": {
+              "1": "配置的代理报头与检测到的不匹配",
+              "2": "这是在代理返回超过1个IP作为报头值的情况下。最右边的IP通常被认为是更值得信赖的，但这可能因代理而异"
+            }
+          },
+          "rate": {
+            "title": "请求频率限制",
+            "table": {
+              "field": {
+                "route": "路由",
+                "maximum": "最大值 (每个IP)",
+                "intervalTime": "请求间隔 (单位: 秒)",
+                "roleToLimit": "限制对象"
+              }
+            },
+            "action": {
+              "addRule": "新增限制规则"
+            },
+            "content": {
+              "1": "速率限制标签格式",
+              "2": "速率限制规则按以下顺序解析 (在第一次匹配时停止)",
+              "3": "如果多个规则具有相同标签但目标用户受众不同 (例如'guest'与'auth')，则仅考虑匹配的受众规则",
+              "4": "速率限制标签可以采用以下格式之一:"
+            }
+          },
+          "batch": {
+            "title": "请求并发限制",
+            "maxConcurrentRequest": "允许同时处理的请求数",
+            "requestTimeoutSecond": "请求超时器 (以秒为单位)",
+            "requestBodySizeLimitByte": "请求体大小限制 (单位: 字节)"
+          },
+          "action": {
+            "hideEditControl": "隐藏数据创建和编辑控件"
+          }
+        },
+        "smtp": {
+          "title": "SMTP配置",
+          "senderNickname": "发件人昵称",
+          "senderEmail": "发件人邮箱",
+          "action": {
+            "smtpEnable": "启用邮件服务",
+            "expandDetail": "展开更多选项",
+            "hideDetail": "隐藏更多选项"
+          },
+          "content": {
+            "1": "关闭的情况下PocketBase将使用unix“sendmail”命令来发送电子邮件（现在此功能已无法使用）。为了确保邮件发送，还请自己配置 SMTP 邮件服务器",
+            "2": "一些SMTP服务器例如Gmail SMTP-relay，在初始EHLO/HELO交换中需要一个适当的域名，用于标识发送邮件的服务器。使用'localhost'或无效的域名可能会导致SMTP服务器拒绝连接，因为它们通常需要验证发送邮件的服务器以防止滥用和垃圾邮件。"
+          },
+          "smtpHost": "SMTP服务地址",
+          "smtpPort": "SMTP端口",
+          "smtpUsername": "SMTP用户名",
+          "smtpPassword": "SMTP密钥",
+          "tlsEncryption": "TLS 加密",
+          "authMethod": "认证方式",
+          "ehloOrHeloDomain": "提供给邮件服务器验证的域名 (EHLO/HELO)"
+        },
+        "fileStorage": {
+          "content": {
+            "1": "默认使用本地文件系统来存储上传的文件",
+            "2": "如果您的磁盘空间有限，您可以选择启用 S3 对象存储，以便将文件存储在云存储中",
+            "3": "如果您的本地存在用户已上传的文件，请手动转移到新的对象存储中",
+            "4": "有许多命令行工具可以帮助您，例如:"
+          },
+          "action": {
+            "s3Enable": "启用并配置 S3 对象存储",
+            "usePathStyleUrl": "使用路径风格的S3 URL"
+          },
+          "endpoint": "端点 (Endpoint)",
+          "bucket": "桶 (Bucket)",
+          "region": "地区 (Region)",
+          "accessKey": "访问键 (Access Key)",
+          "secret": "安全密钥 (Secret)"
+        },
+        "backup": {
+          "content": {
+            "1": "备份和恢复您的数据",
+            "2": "暂无备份文件",
+            "3": "请注意，在备份期间，其他并发写入请求可能会失败，因为数据库将被临时'锁定' (通常在 ZIP 生成期间发生)",
+            "4": "如果您使用 S3 存储来上传集合文件，则必须单独备份它们，因为它们不是本地存储的，也不会包含在最终备份中",
+            "5": "文件名格式必须为 [a-z0-9_-]zip",
+            "6": "备份 / 恢复操作正在进行中"
+          },
+          "action": {
+            "createBackup": "创建备份文件 (.zip)",
+            "restoreBackup": "从备份 (.zip)还原数据",
+            "moreBackupOption": "更多选项 (自动备份 / S3存储)",
+            "enableAutoBackup": "启用定时自动备份",
+            "backupToS3": "将备份文件上传到 S3 存储",
+            "usePathStyleUrl": "使用路径风格的S3 URL",
+            "backupName": "备份名称",
+            "cancel": "取消",
+            "startBackup": "开始备份"
+          }
+        },
+        "sync": {
+          "export": {
+            "title": "这里可以导出当前配置信息, 以便后续恢复到新的 PocketBase 环境中"
+          },
+          "import": {
+            "title": "可以直接粘贴JSON配置，或者是:"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "common": {
+    "user": {
+      "email": "Mail",
+      "password": "password",
+      "passwordNew": "new password",
+      "passwordConfirm": "Repeat password",
+      "name": "Name",
+      "avatar": "Avatar link",
+      "account": "Account"
+    },
+    "role": {
+      "admin": "administrator",
+      "user": "user"
+    },
+    "action": {
+      "login": "Log in",
+      "next": "Next step",
+      "logout": "Log out",
+      "newData": "Add new data",
+      "new": "New",
+      "create": "create",
+      "delete": "delete",
+      "edit": "edit",
+      "search": "Find",
+      "ok": "Sure",
+      "cancel": "Cancel",
+      "copy": "copy",
+      "clone": "Clone data",
+      "clear": "Clear",
+      "refresh": "refresh",
+      "enable": "enable",
+      "save": "save",
+      "reset": "reset",
+      "open": "Open",
+      "close": "closure",
+      "loadMore": "View more",
+      "restore": "recover",
+      "createRecord": "Create data",
+      "createTable": "Create data table",
+      "editTable": "Edit data table",
+      "deleteTable": "Delete data table",
+      "truncateData": "Clear data",
+      "uploadFile": "Upload files",
+      "uploadImage": "Upload pictures",
+      "verified": "Passed verification",
+      "changePassword": "Change password",
+      "deleteSelected": "Delete selected",
+      "saveAndContinue": "Save and continue",
+      "sendTestEmail": "Send test email",
+      "sendVerificationEmail": "Send account verification email",
+      "sendLoginEmail": "Remind users of login status via email",
+      "sendResetEmail": "Send password reset email",
+      "learnMore": "learn more",
+      "review": "test",
+      "checkLocale": "switch language",
+      "checkTheme": "switch theme",
+      "export": "Export",
+      "import": "import",
+      "copyJson": "Copy JSON data",
+      "exportJson": "Export to JSON file",
+      "importJson": "Import from JSON file"
+    },
+    "tip": {
+      "enabled": "enable",
+      "disabled": "Disable",
+      "public": "public",
+      "private": "private"
+    },
+    "database": {
+      "baseTable": "Base",
+      "viewTable": "view",
+      "authTable": "Certification",
+      "table": "data sheet",
+      "tableName": "Data table name",
+      "query": "Query",
+      "field": "Field",
+      "createPresetField": "Add field (default)",
+      "data": "table data",
+      "unique": "Unique constraints, field indexes",
+      "fieldPreset": {
+        "text": "normal text",
+        "editor": "rich text",
+        "number": "number",
+        "bool": "Boolean",
+        "email": "mail",
+        "url": "URL",
+        "datetime": "date",
+        "autoDate": "automatic date",
+        "select": "Options",
+        "file": "document",
+        "relation": "association",
+        "json": "JSON"
+      }
+    },
+    "menu": {
+      "collection": "Data panel",
+      "log": "log",
+      "setting": "set up",
+      "appConfig": "application",
+      "smtpConfig": "Mail service",
+      "storageConfig": "object storage",
+      "backupConfig": "Data backup",
+      "oauth2": "OAuth2.0 authentication"
+    },
+    "placeholder": {
+      "type": "type",
+      "option": "Options",
+      "preset": "Default",
+      "style": "style",
+      "apiRule": "Interface request permission",
+      "authMethod": "Authentication method",
+      "amountOfData": "Data volume:",
+      "accountPasswordLogin": "Custom fields + password",
+      "amountOfRequest": "Request volume:",
+      "thirdPartyAuthorization": "Third-party login authorization",
+      "searchTerm": "Search term or filter, example > '2022-01-01'...",
+      "autoGenerate": "Leave blank to automatically generate",
+      "checkPublic": "Make emails public or private",
+      "displayedField": "fields to display",
+      "searchTable": "Search datasheet",
+      "searchDataPrompt": "Search data, supported matching rules such as created > \"2022-01-01\"",
+      "searchLogPrompt": "Search logs, supported matching rules such as level > 0 && data.auth = “guest”"
+    },
+    "popup": {
+      "mockNewToken": {
+        "name": "Manually generate verification token",
+        "content": {
+          "1": "Generate a fixed authentication token for user { email }"
+        }
+      },
+      "logSetting": {
+        "name": "Log settings",
+        "maxDaysRetention": "Log retention days",
+        "minLogLevel": "Log level",
+        "enableIpLog": "Enable IP access logs",
+        "enableAuthLog": "Enable authorization ID logging",
+        "content": {
+          "1": "Setting to 0 will clear the current log data and turn off the logging function",
+          "2": "Data larger than the log level will be included"
+        }
+      },
+      "accountSetting": {
+        "name": "Account settings",
+        "content": {
+          "1": "Here you can view and export the current configuration information, or export and import it to another PocketBase environment.",
+          "2": "Send account verification email to { email }",
+          "3": "Send password reset email to { email }"
+        }
+      },
+      "oauth2Setting": {
+        "name": "Third-party authorization settings",
+        "content": {}
+      }
+    },
+    "message": {
+      "loading": "Loading...",
+      "notAnyData": "no data",
+      "createSuccess": "Created successfully",
+      "updateSuccess": "Update successful",
+      "deleteSuccess": "Delete successfully",
+      "createError": "Creation failed",
+      "updateError": "Update failed",
+      "deleteError": "Delete failed",
+      "notFountData": "No data yet",
+      "applyNewSetting": "New settings applied",
+      "selectedPrompt": "{ selected } pieces of data are selected",
+      "deletePrompt": "Are you sure you want to delete the selected data?",
+      "notAnyTables": "You don't have any data tables yet",
+      "createFirstTable": "Create your first data table to store data!",
+      "oauth2AuthFailed": "OAuth2 authentication failed",
+      "plaseTryAgain": "You can close this window and try again",
+      "sendEmailSussess": "Tried sending email to: { email }",
+      "recovery": "Do you want to restore the last automatically saved data?",
+      "unsave": "The data has not been saved. Are you sure you want to leave?",
+      "noOa2Provider": "The OAuth2 application has not been configured yet",
+      "insufficientAuthority": "Insufficient permissions",
+      "noAccess": "No access",
+      "networkError": "Network error, please try again later",
+      "copySuccess": "Successfully copied to clipboard!",
+      "followRules": "Requesting permissions follows the rules: { url }"
+    },
+    "subfield": {
+      "pin": "fixed",
+      "unPin": "Unpin",
+      "otherTable": "other",
+      "systemTable": "system",
+      "basicSetting": "Basic settings",
+      "syncSetting": "Configuration information"
+    }
+  },
+  "page": {
+    "login": {
+      "title": "Administrator login",
+      "action": {
+        "forgetPsw": "forget the password"
+      }
+    },
+    "forget": {
+      "title": "Retrieve password",
+      "content": {
+        "1": "Enter your email address and we'll send you a 'link to reset your password'",
+        "2": "The email has been tried to be sent to '{email}'. If it is not received, it means: 1. The user's mailbox does not exist. 2. It has been collected in the email recycle bin."
+      },
+      "action": {
+        "goToLogin": "Go back and log in"
+      }
+    },
+    "init": {
+      "title": "Create the first admin user",
+      "action": {
+        "createUser": "Create and log in"
+      },
+      "content": {
+        "1": "Welcome to PocketBase",
+        "2": "Enter at least 10 characters"
+      }
+    },
+    "collection": {
+      "content": {
+        "action": {
+          "apiPreviewme": "Interface documentation"
+        }
+      },
+      "sideBar": {},
+      "dialog": {}
+    },
+    "log": {
+      "logLevel": "Log classification:",
+      "adminLog": "show administrator log",
+      "table": {
+        "field": {
+          "level": "Request results",
+          "message": "Request details",
+          "createAt": "Created in"
+        }
+      }
+    },
+    "setting": {
+      "content": {
+        "application": {
+          "serverName": "Custom identification name",
+          "serverUrl": "Backend address",
+          "proxy": {
+            "title": "IP proxy",
+            "curIp": "Current service IP",
+            "curProxyHeader": "Current proxy header",
+            "trustedHeaders": "Trusted proxy header",
+            "priorityIp": "IP priority",
+            "content": {
+              "1": "When PocketBase is deployed on a platform such as Fly or accessible through a proxy such as NGINX, requests from different users will originate from the same IP address (the IP of the proxy connected to the PocketBase application)",
+              "2": "In this case, to retrieve the actual user IP (for rate limiting, log data, etc.) you need to configure the proxy correctly and list below the trusted headers PocketBase can use to extract the user IP",
+              "3": "When using such proxies, to avoid deception it is recommended to:",
+              "4": "Use headers that are only controlled by the proxy and cannot be set manually by the user",
+              "5": "Make sure the PocketBase server is only accessible through a proxy",
+              "6": "If PocketBase is not deployed behind a proxy, you can clear the header field",
+              "7": "Comma separated list of headers, for example:"
+            },
+            "tip": {
+              "1": "Configured proxy headers do not match detected ones",
+              "2": "This is in case the proxy returns more than 1 IP as header value. The rightmost IP is generally considered more trustworthy, but this may vary from proxy to proxy"
+            }
+          },
+          "rate": {
+            "title": "Request frequency limit",
+            "table": {
+              "field": {
+                "route": "routing",
+                "maximum": "Maximum (per IP)",
+                "intervalTime": "Request interval (unit: seconds)",
+                "roleToLimit": "Restricted objects"
+              }
+            },
+            "action": {
+              "addRule": "Add restriction rules"
+            },
+            "content": {
+              "1": "Rate limit label format",
+              "2": "Rate limiting rules are parsed in the following order (stopping on first match)",
+              "3": "If multiple rules have the same label but target different user audiences (e.g. 'guest' vs. 'auth'), only the matching audience rule will be considered",
+              "4": "Rate limit labels can be in one of the following formats:"
+            }
+          },
+          "batch": {
+            "title": "Request concurrency limit",
+            "maxConcurrentRequest": "Number of requests allowed to be processed simultaneously",
+            "requestTimeoutSecond": "Request timeout (in seconds)",
+            "requestBodySizeLimitByte": "Request body size limit (unit: bytes)"
+          },
+          "action": {
+            "hideEditControl": "Hide data creation and editing controls"
+          }
+        },
+        "smtp": {
+          "title": "SMTP configuration",
+          "senderNickname": "Sender's nickname",
+          "senderEmail": "Sender's email",
+          "action": {
+            "smtpEnable": "Enable mail service",
+            "expandDetail": "Expand more options",
+            "hideDetail": "Hide more options"
+          },
+          "content": {
+            "1": "When turned off, PocketBase will use the unix \"sendmail\" command to send email (this feature is no longer available). In order to ensure that the mail is sent, please also configure the SMTP mail server yourself",
+            "2": "Some SMTP servers, such as Gmail SMTP-relay, require an appropriate domain name in the initial EHLO/HELO exchange to identify the server sending the email. Using 'localhost' or an invalid domain name may cause the SMTP server to refuse the connection, as they usually require verification of the server sending the mail to prevent abuse and spam."
+          },
+          "smtpHost": "SMTP service address",
+          "smtpPort": "SMTP port",
+          "smtpUsername": "SMTP username",
+          "smtpPassword": "SMTP key",
+          "tlsEncryption": "TLS encryption",
+          "authMethod": "Authentication method",
+          "ehloOrHeloDomain": "Domain name provided to the mail server for verification (EHLO/HELO)"
+        },
+        "fileStorage": {
+          "content": {
+            "1": "Use local file system by default to store uploaded files",
+            "2": "If you have limited disk space, you can choose to enable S3 Object Storage to store your files in cloud storage",
+            "3": "If files uploaded by users exist locally, please manually transfer them to the new object storage",
+            "4": "There are many command line tools that can help you, such as:"
+          },
+          "action": {
+            "s3Enable": "Enable and configure S3 object storage",
+            "usePathStyleUrl": "Using path style S3 URLs"
+          },
+          "endpoint": "Endpoint",
+          "bucket": "Bucket",
+          "region": "Region",
+          "accessKey": "Access Key",
+          "secret": "Security Key (Secret)"
+        },
+        "backup": {
+          "content": {
+            "1": "Back up and restore your data",
+            "2": "No backup files yet",
+            "3": "Please note that during the backup, other concurrent write requests may fail because the database will be temporarily 'locked' (usually happens during ZIP generation)",
+            "4": "If you use S3 storage to upload collection files, you must back them up separately as they are not stored locally and will not be included in the final backup",
+            "5": "The file name format must be [a-z0-9_-]zip",
+            "6": "Backup/restore operation in progress"
+          },
+          "action": {
+            "createBackup": "Create a backup file (.zip)",
+            "restoreBackup": "Restore data from backup (.zip)",
+            "moreBackupOption": "More options (automatic backup / S3 storage)",
+            "enableAutoBackup": "Enable scheduled automatic backup",
+            "backupToS3": "Upload backup files to S3 storage",
+            "usePathStyleUrl": "Using path style S3 URLs",
+            "backupName": "Backup name",
+            "cancel": "Cancel",
+            "startBackup": "Start backup"
+          }
+        },
+        "sync": {
+          "export": {
+            "title": "Here you can export the current configuration information for subsequent restoration to the new PocketBase environment."
+          },
+          "import": {
+            "title": "You can paste the JSON configuration directly, or:"
+          }
+        }
+      }
+    }
+  }
+}
