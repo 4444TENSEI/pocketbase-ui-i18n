@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { onMount } from "svelte";
     import { slide } from "svelte/transition";
     import ApiClient from "@/utils/ApiClient";
@@ -144,8 +144,8 @@
                             class="btn btn-sm btn-circle btn-hint btn-transparent"
                             class:btn-loading={isDownloading[backup.key]}
                             disabled={isDeleting[backup.key] || isDownloading[backup.key]}
-                            aria-label="Download"
-                            use:tooltip={"Download"}
+                            aria-label={$_("common.action.download")}
+                            use:tooltip={$_("common.action.download")}
                             on:click|preventDefault={() => download(backup.key)}
                         >
                             <i class="ri-download-line" />
@@ -155,7 +155,7 @@
                             class="btn btn-sm btn-circle btn-hint btn-transparent"
                             disabled={isDeleting[backup.key]}
                             aria-label="Restore"
-                            use:tooltip={"Restore"}
+                            use:tooltip={$_("common.action.restore")}
                             on:click|preventDefault={() => restorePanel.show(backup.key)}
                         >
                             <i class="ri-restart-line" />
@@ -165,8 +165,8 @@
                             class="btn btn-sm btn-circle btn-hint btn-transparent"
                             class:btn-loading={isDeleting[backup.key]}
                             disabled={isDeleting[backup.key]}
-                            aria-label="Delete"
-                            use:tooltip={"Delete"}
+                            aria-label={$_("common.action.delete")}
+                            use:tooltip={$_("common.action.delete")}
                             on:click|preventDefault={() => deleteConfirm(backup.key)}
                         >
                             <i class="ri-delete-bin-7-line" />

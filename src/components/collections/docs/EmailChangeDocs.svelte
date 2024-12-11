@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import EmailChangeApiConfirmDocs from "@/components/collections/docs/EmailChangeApiConfirmDocs.svelte";
     import EmailChangeApiRequestDocs from "@/components/collections/docs/EmailChangeApiRequestDocs.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
@@ -8,8 +9,8 @@
     export let collection;
 
     const apiTabs = [
-        { title: "Request email change", component: EmailChangeApiRequestDocs },
-        { title: "Confirm email change", component: EmailChangeApiConfirmDocs },
+        { title: $_("common.placeholder.requestVerification"), component: EmailChangeApiRequestDocs },
+        { title: $_("common.placeholder.confirmVerification"), component: EmailChangeApiConfirmDocs },
     ];
 
     let activeApiTab = 0;
@@ -17,9 +18,11 @@
     $: backendAbsUrl = CommonHelper.getApiExampleUrl(ApiClient.baseURL);
 </script>
 
-<h3 class="m-b-sm">Email change ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.changeEmail.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Sends <strong>{collection.name}</strong> email change request.</p>
+    <p>{$_("common.popup.apiDocs.changeEmail.content.1", { values: { tableName: collection.name } })}</p>
     <p>
         On successful email change all previously issued auth tokens for the specific record will be
         automatically invalidated.
@@ -73,7 +76,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="tabs">
     <div class="tabs-header compact">
         {#each apiTabs as tab, i}

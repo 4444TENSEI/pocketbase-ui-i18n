@@ -11,7 +11,7 @@
 
     const types = [
         {
-            label: $json("common.database.fieldPreset.text"),
+            label: $json("common.database.fieldPreset.string"),
             value: "text",
             icon: CommonHelper.getFieldTypeIcon("text"),
         },

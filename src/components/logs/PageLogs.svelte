@@ -69,9 +69,9 @@
             <!-- 🐱 -->
             <button
                 type="button"
-                aria-label="Logs settings"
+                aria-label={$_("common.popup.logSetting.name")}
                 class="btn btn-transparent btn-circle"
-                use:tooltip={{ text: "Logs settings", position: "right" }}
+                use:tooltip={{ text: $_("common.popup.logSetting.name"), position: "right" }}
                 on:click={() => logsSettingsPanel?.show()}
             >
                 <i class="ri-settings-4-line" />

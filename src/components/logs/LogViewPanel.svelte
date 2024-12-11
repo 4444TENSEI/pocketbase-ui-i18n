@@ -124,7 +124,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <OverlayPanel bind:this={logPanel} class="overlay-panel-lg log-panel" on:hide={onHide}>
     <svelte:fragment slot="header">
-        <h4>Request log</h4>
+        <h4>{$_("common.popup.logSetting.logDetail")}</h4>
     </svelte:fragment>
 
     {#if isLoading}

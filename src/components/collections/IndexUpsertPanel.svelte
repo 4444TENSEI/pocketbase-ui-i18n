@@ -1,5 +1,5 @@
 <script>
-    import { _ } from "svelte-i18n";
+    import { _, json } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
@@ -90,7 +90,7 @@
 
 <OverlayPanel bind:this={panel} popup on:hide on:show {...$$restProps}>
     <svelte:fragment slot="header">
-        <h4>{original ? "Update" : "Create"} index</h4>
+        <h4>{original ? $json("common.action.update") : $json("common.action.create")} {$_("common.database.index")}</h4>
     </svelte:fragment>
 
     <Field class="form-field form-field-toggle m-b-sm" let:uniqueId>
@@ -124,7 +124,7 @@
 
     {#if presetColumns.length > 0}
         <div class="inline-flex gap-10">
-            <span class="txt txt-hint">Presets</span>
+            <span class="txt txt-hint">{$_("common.placeholder.preset")}</span>
             {#each presetColumns as column}
                 <button
                     type="button"
@@ -143,7 +143,7 @@
             <button
                 type="button"
                 class="btn btn-sm btn-circle btn-hint btn-transparent m-r-auto"
-                use:tooltip={{ text: "Delete", position: "top" }}
+                use:tooltip={{ text: $json("common.action.delete"), position: "top" }}
                 on:click={() => remove()}
             >
                 <i class="ri-delete-bin-7-line" />
@@ -158,7 +158,7 @@
             class:btn-disabled={indexColumns.length <= 0}
             on:click={() => submit()}
         >
-            <span class="txt">Set index</span>
+            <span class="txt">{$_("common.database.setIndex")}</span>
         </button>
     </svelte:fragment>
 </OverlayPanel>

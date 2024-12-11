@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import CodeBlock from "@/components/base/CodeBlock.svelte";
 
     export let collection;
@@ -16,7 +17,7 @@
             body: `
                 {
                   "code": 400,
-                  "message": "An error occurred while validating the submitted data.",
+                  "message": "${$_("common.message.updateError")}",
                   "data": {
                     "token": {
                       "code": "validation_required",
@@ -38,13 +39,13 @@
     </div>
 </div>
 
-<div class="section-title">Body Parameters</div>
+<div class="section-title">{$_("common.placeholder.apiParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="50%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="50%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -63,7 +64,7 @@
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

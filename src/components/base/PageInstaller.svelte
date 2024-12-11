@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import { tick } from "svelte";
     import { replace } from "svelte-spa-router";
     import { getTokenPayload } from "pocketbase";
@@ -94,8 +94,7 @@
         }
 
         confirm(
-            `Note that we don't perform validations for the uploaded backup files. Proceed with caution and only if you trust the file source.\n\n` +
-                `Do you really want to upload and initialize "${file.name}"?`,
+            $_("common.message.uploadReminder", { values: { fileName: file.name } }),
             () => {
                 uploadBackup(file);
             },
@@ -207,7 +206,7 @@
         class:btn-loading={isUploading}
     >
         <i class="ri-upload-cloud-line" />
-        <span class="txt">{$_("common.action.restoreBackupFile")}</span>
+        <span class="txt">{$_("page.setting.content.backup.action.restoreBackup")}</span>
     </label>
     <input
         bind:this={backupFileInput}

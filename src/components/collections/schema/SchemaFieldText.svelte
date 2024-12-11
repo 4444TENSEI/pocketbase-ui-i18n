@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import SchemaField from "@/components/collections/schema/SchemaField.svelte";
@@ -44,7 +45,7 @@
                         type="number"
                         id={uniqueId}
                         step="1"
-                        placeholder="Default to max 5000 characters"
+                        placeholder={$_("common.message.defaultValue",{values:{default:"max 5000 characters"}})}
                         min={field.min || 0}
                         value={field.max || ""}
                         on:input={(e) => (field.max = e.target.value << 0)}

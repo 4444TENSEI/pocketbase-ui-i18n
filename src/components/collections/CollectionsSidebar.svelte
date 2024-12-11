@@ -123,7 +123,7 @@
                 type="button"
                 class="sidebar-title m-b-xs"
                 class:link-hint={!normalizedSearch.length}
-                aria-label={showSystemSection ? "Expand system collections" : "Collapse system collections"}
+                aria-label={showSystemSection ? $json("common.placeholder.unfoldTable") : $json("common.placeholder.collapseTable")}
                 aria-expanded={showSystemSection || normalizedSearch.length}
                 disabled={normalizedSearch.length}
                 on:click={() => {

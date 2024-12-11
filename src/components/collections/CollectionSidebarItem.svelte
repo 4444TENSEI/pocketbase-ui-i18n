@@ -44,11 +44,11 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <span
         class="btn btn-xs btn-circle btn-hint btn-transparent btn-pin-collection m-l-auto"
-        aria-label={"Pin collection"}
+        aria-label={$json("common.subfield.pin")+$json("common.database.table")}
         aria-hidden="true"
         use:tooltip={{
             position: "right",
-            text: (isPinned ? $json("common.subfield.pin") : $json("common.subfield.unPin")) + $json("common.database.table"),
+            text: (isPinned ? $json("common.subfield.unPin") : $json("common.subfield.pin")) + $json("common.database.table"),
         }}
         on:click|preventDefault|stopPropagation={() => toggleCollectionPin(collection)}
     >

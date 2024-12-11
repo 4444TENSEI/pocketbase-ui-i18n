@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
     import VerificationApiConfirmDocs from "@/components/collections/docs/VerificationApiConfirmDocs.svelte";
     import VerificationApiRequestDocs from "@/components/collections/docs/VerificationApiRequestDocs.svelte";
@@ -8,8 +9,8 @@
     export let collection;
 
     const apiTabs = [
-        { title: "Request verification", component: VerificationApiRequestDocs },
-        { title: "Confirm verification", component: VerificationApiConfirmDocs },
+        { title: $_("common.placeholder.requestVerification"), component: VerificationApiRequestDocs },
+        { title: $_("common.placeholder.confirmVerification"), component: VerificationApiConfirmDocs },
     ];
 
     let activeApiTab = 0;
@@ -17,9 +18,11 @@
     $: backendAbsUrl = CommonHelper.getApiExampleUrl(ApiClient.baseURL);
 </script>
 
-<h3 class="m-b-sm">Account verification ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.verification.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Sends <strong>{collection.name}</strong> account verification request.</p>
+    <p>{$_("common.popup.apiDocs.verification.content.1", { values: { tableName: collection.name } })}</p>
 </div>
 
 <SdkTabs
@@ -55,7 +58,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="tabs">
     <div class="tabs-header compact">
         {#each apiTabs as tab, i}

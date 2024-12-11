@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import CodeBlock from "@/components/base/CodeBlock.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
     import ApiClient from "@/utils/ApiClient";
@@ -9,14 +10,17 @@
     $: backendAbsUrl = CommonHelper.getApiExampleUrl(ApiClient.baseURL);
 </script>
 
-<h3 class="m-b-sm">Realtime ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.sseApi.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Subscribe to realtime changes via Server-Sent Events (SSE).</p>
+    <p>{$_("common.popup.apiDocs.sseApi.content.1", { values: { tableName: collection.name } })}</p>
     <p>
         Events are sent for <strong>create</strong>, <strong>update</strong>
         and <strong>delete</strong> record operations (see "Event data format" section below).
     </p>
 </div>
+
 <div class="alert alert-info m-t-10 m-b-sm">
     <div class="icon">
         <i class="ri-information-line" />
@@ -95,7 +99,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="alert">
     <strong class="label label-primary">SSE</strong>
     <div class="content">
@@ -103,7 +107,7 @@
     </div>
 </div>
 
-<div class="section-title">Event data format</div>
+<div class="section-title">{$_("common.placeholder.eventDataFormat")}</div>
 <CodeBlock
     content={JSON.stringify(
         {

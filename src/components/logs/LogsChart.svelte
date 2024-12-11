@@ -199,8 +199,7 @@
 
 <div class="chart-wrapper" class:loading={isLoading}>
     <div class="total-logs entrance-right" class:hidden={isLoading}>
-        {$_("common.placeholder.amountOfData")}
-        {totalLogs}
+        {$_("common.database.amountOfData")}:{totalLogs}
     </div>
 
     {#if isLoading}

@@ -1,70 +1,70 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _, json } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
 
     const baseTabs = {
         list: {
-            label: "List/Search",
+            label: $_("common.popup.apiDocs.getListApi.name"),
             component: import("@/components/collections/docs/ListApiDocs.svelte"),
         },
         view: {
-            label: "View",
+            label: $_("common.popup.apiDocs.getViewApi.name"),
             component: import("@/components/collections/docs/ViewApiDocs.svelte"),
         },
         create: {
-            label: "Create",
+            label: $_("common.popup.apiDocs.createDataApi.name"),
             component: import("@/components/collections/docs/CreateApiDocs.svelte"),
         },
         update: {
-            label: "Update",
+            label: $_("common.popup.apiDocs.updateDataApi.name"),
             component: import("@/components/collections/docs/UpdateApiDocs.svelte"),
         },
         delete: {
-            label: "Delete",
+            label: $_("common.popup.apiDocs.deleteDataApi.name"),
             component: import("@/components/collections/docs/DeleteApiDocs.svelte"),
         },
         realtime: {
-            label: "Realtime",
+            label: $_("common.popup.apiDocs.sseApi.name"),
             component: import("@/components/collections/docs/RealtimeApiDocs.svelte"),
         },
         batch: {
-            label: "Batch",
+            label: $_("common.popup.apiDocs.batchApi.name"),
             component: import("@/components/collections/docs/BatchApiDocs.svelte"),
         },
     };
 
     const authTabs = {
         "list-auth-methods": {
-            label: "List auth methods",
+            label: $_("common.popup.apiDocs.getAuthMethods.name"),
             component: import("@/components/collections/docs/AuthMethodsDocs.svelte"),
         },
         "auth-with-password": {
-            label: "Auth with password",
+            label: $_("common.popup.apiDocs.authWithPassword.name"),
             component: import("@/components/collections/docs/AuthWithPasswordDocs.svelte"),
         },
         "auth-with-oauth2": {
-            label: "Auth with OAuth2",
+            label: $_("common.popup.apiDocs.authWithOAuth2.name"),
             component: import("@/components/collections/docs/AuthWithOAuth2Docs.svelte"),
         },
         "auth-with-otp": {
-            label: "Auth with OTP",
+            label: $_("common.popup.apiDocs.authWithOTP.name"),
             component: import("@/components/collections/docs/AuthWithOtpDocs.svelte"),
         },
         refresh: {
-            label: "Auth refresh",
+            label: $_("common.popup.apiDocs.authRefresh.name"),
             component: import("@/components/collections/docs/AuthRefreshDocs.svelte"),
         },
         verification: {
-            label: "Verification",
+            label: $_("common.popup.apiDocs.verification.name"),
             component: import("@/components/collections/docs/VerificationDocs.svelte"),
         },
         "password-reset": {
-            label: "Password reset",
+            label: $_("common.popup.apiDocs.passwordReset.name"),
             component: import("@/components/collections/docs/PasswordResetDocs.svelte"),
         },
         "email-change": {
-            label: "Email change",
+            label: $_("common.popup.apiDocs.changeEmail.name"),
             component: import("@/components/collections/docs/EmailChangeDocs.svelte"),
         },
     };
@@ -125,7 +125,7 @@
                     {#if tab.disabled}
                         <div
                             class="sidebar-item disabled"
-                            use:tooltip={{ position: "left", text: "Not enabled for the collection" }}
+                            use:tooltip={{ position: "left", text: $json("common.tip.serviceNotEnabled")}}
                         >
                             {tab.label}
                         </div>

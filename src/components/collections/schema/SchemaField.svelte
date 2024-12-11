@@ -3,7 +3,7 @@
 </script>
 
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _, json } from 'svelte-i18n';
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import Toggler from "@/components/base/Toggler.svelte";
@@ -197,8 +197,8 @@
             <button
                 type="button"
                 class="btn btn-sm btn-circle btn-success btn-transparent options-trigger"
-                aria-label="Restore"
-                use:tooltip={"Restore"}
+                aria-label={$_("common.action.restore")}
+                use:tooltip={$_("common.action.restore")}
                 on:click={restore}
             >
                 <i class="ri-restart-line" />
@@ -282,7 +282,7 @@
                             <i
                                 class="ri-information-line {field.hidden ? 'txt-disabled' : 'link-hint'}"
                                 use:tooltip={{
-                                    text: `Whether the field should be preferred in the Superuser UI relation listings (default to auto).`,
+                                    text: $json("common.tip.administratorPreference"),
                                 }}
                             />
                         </label>

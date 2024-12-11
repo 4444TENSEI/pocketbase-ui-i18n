@@ -39,8 +39,8 @@
     }
 
     const ipOptions = [
-        { label: "Use leftmost IP", value: true },
-        { label: "Use rightmost IP", value: false },
+        { label: $_("page.setting.content.application.proxy.tip.3"), value: true },
+        { label: $_("page.setting.content.application.proxy.tip.4"), value: false },
     ];
 </script>
 
@@ -99,21 +99,17 @@
 
     <div class="content m-b-sm">
         <p>
-            When PocketBase is deployed on platforms like Fly or it is accessible through proxies such as
-            NGINX, requests from different users will originate from the same IP address (the IP of the proxy
-            connecting to your PocketBase app).
+            {$_("page.setting.content.application.proxy.content.1")}
         </p>
         <p>
-            In this case to retrieve the actual user IP (used for rate limiting, logging, etc.) you need to
-            properly configure your proxy and list below the trusted headers that PocketBase could use to
-            extract the user IP.
+            {$_("page.setting.content.application.proxy.content.2")}
         </p>
-        <p class="txt-bold">When using such proxy, to avoid spoofing it is recommended to:</p>
+        <p class="txt-bold">{$_("page.setting.content.application.proxy.content.3")}：</p>
         <ul class="m-t-0 txt-bold">
-            <li>use headers that are controlled only by the proxy and cannot be manually set by the users</li>
-            <li>make sure that the PocketBase server can be accessed only through the proxy</li>
+            <li>{$_("page.setting.content.application.proxy.content.4")}</li>
+            <li>{$_("page.setting.content.application.proxy.content.5")}</li>
         </ul>
-        <p>You can clear the headers field if PocketBase is not deployed behind a proxy.</p>
+        <p>{$_("page.setting.content.application.proxy.content.6")}</p>
     </div>
 
     <div class="grid grid-sm">
@@ -122,7 +118,7 @@
                 <label for={uniqueId}>{$_("page.setting.content.application.proxy.trustedHeaders")}</label>
                 <MultipleValueInput
                     id={uniqueId}
-                    placeholder="Leave empty to disable"
+                    placeholder={$_("common.placeholder.autoDisable")}
                     bind:value={formSettings.trustedProxy.headers}
                 />
                 <div class="form-field-addon">
@@ -137,7 +133,7 @@
                 </div>
                 <div class="help-block">
                     <p>
-                        Comma separated list of headers such as:
+                        {$_("page.setting.content.application.proxy.content.7")}
                         {#each suggestedProxyHeaders as header}
                             <button
                                 type="button"
@@ -158,7 +154,7 @@
                     <i
                         class="ri-information-line link-hint"
                         use:tooltip={{
-                            text: $json("page.setting.content.application.proxy.content.2"),
+                            text: $json("page.setting.content.application.proxy.tip.2"),
                             position: "right",
                         }}
                     />

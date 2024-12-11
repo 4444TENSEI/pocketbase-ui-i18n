@@ -97,20 +97,17 @@
             <i class="ri-information-line" />
         </div>
         <div class="content">
-            <p>
-                Please note that during the backup other concurrent write requests may fail since the database
-                will be temporary "locked" (this usually happens only during the ZIP generation).
+            <p>{$_("page.setting.content.backup.content.3")}
             </p>
             <p class="txt-bold">
-                If you are using S3 storage for the collections file upload, you'll have to backup them
-                separately since they are not locally stored and will not be included in the final backup!
+                {$_("page.setting.content.backup.content.4")}
             </p>
         </div>
     </div>
 
     <form id={formId} autocomplete="off" on:submit|preventDefault={submit}>
         <Field class="form-field m-0" name="name" let:uniqueId>
-            <label for={uniqueId}>Backup name</label>
+            <label for={uniqueId}>{$_("common.placeholder.fileName")}</label>
             <input
                 type="text"
                 id={uniqueId}
@@ -118,7 +115,7 @@
                 pattern="^[a-z0-9_-]+\.zip$"
                 bind:value={name}
             />
-            <em class="help-block">Must be in the format [a-z0-9_-].zip</em>
+            <em class="help-block">{$_("page.setting.content.backup.content.5")}</em>
         </Field>
     </form>
 
@@ -133,7 +130,7 @@
             class:btn-loading={isSubmitting}
             disabled={isSubmitting}
         >
-            <span class="txt">{$_("page.setting.content.backup.action.startBackup")}</span>
+            <span class="txt">{$_("common.action.start")}</span>
         </button>
     </svelte:fragment>
 </OverlayPanel>

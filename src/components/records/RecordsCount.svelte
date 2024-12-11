@@ -49,6 +49,6 @@
 </script>
 
 <div class="inline-flex flex-gap-5 records-counter {classes}">
-    <span class="txt">{$_("common.placeholder.amountOfData")}</span>
+    <span class="txt">{$_("common.database.amountOfData")}:</span>
     <span class="txt">{!isLoading ? totalCount : "..."}</span>
 </div>

@@ -118,7 +118,9 @@
                 <input
                     type="number"
                     id={uniqueId}
-                    placeholder="Default to the collection setting ({collection?.authToken?.duration || 0}s)"
+                    placeholder={$_("common.message.defaultValue", {
+                        values: { default: collection?.authToken?.duration || 0 + "s" },
+                    })}
                     min="0"
                     step="1"
                     value={duration || ""}

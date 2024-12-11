@@ -416,12 +416,14 @@
         if (!collection?.id || !original?.email) {
             return;
         }
-
+        // 🐱复杂传参
         confirm($_("common.popup.accountSetting.content.2", { values: { email: original.email } }), () => {
             return ApiClient.collection(collection.id)
                 .requestVerification(original.email)
                 .then(() => {
-                    addSuccessToast(`Successfully sent verification email to ${original.email}.`);
+                    addSuccessToast(
+                        $_("common.message.sendEmailSussess", { values: { email: original.email } }),
+                    );
                 })
                 .catch((err) => {
                     ApiClient.error(err);
@@ -617,7 +619,7 @@
                     class:active={activeTab === tabFormKey}
                     on:click={() => (activeTab = tabFormKey)}
                 >
-                {$_("common.user.account")}
+                    {$_("common.user.account")}
                 </button>
                 <button
                     type="button"
@@ -625,7 +627,7 @@
                     class:active={activeTab === tabProviderKey}
                     on:click={() => (activeTab = tabProviderKey)}
                 >
-                {$_("common.placeholder.thirdPartyAuthorization")}
+                    {$_("common.placeholder.thirdPartyAuthorization")}
                 </button>
             </div>
         {/if}

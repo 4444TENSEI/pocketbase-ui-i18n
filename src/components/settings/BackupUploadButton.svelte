@@ -27,8 +27,7 @@
         }
 
         confirm(
-            `Note that we don't perform validations for the uploaded backup files. Proceed with caution and only if you trust the source.\n\n` +
-                `Do you really want to upload "${file.name}"?`,
+            $_("common.message.uploadReminder", { values: { fileName: file.name } }),
             () => {
                 upload(file);
             },
@@ -78,7 +77,7 @@
     class:btn-loading={isUploading}
     class:btn-disabled={isUploading}
     aria-label="Upload backup"
-    use:tooltip={$json("common.action.restoreBackupFile")}
+    use:tooltip={$json("page.setting.content.backup.action.restoreBackup")}
     on:click={() => fileInput?.click()}
 >
     <i class="ri-upload-cloud-line" />

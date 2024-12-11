@@ -40,13 +40,13 @@
 
     <Field class="form-field form-field-toggle m-b-sm" name="batch.enabled" let:uniqueId>
         <input type="checkbox" id={uniqueId} bind:checked={formSettings.batch.enabled} />
-        <label for={uniqueId}>Enable <small class="txt-hint">(experimental)</small></label>
+        <label for={uniqueId}>{$_("common.action.enable")} <small class="txt-hint">(experimental)</small></label>
     </Field>
 
     <div class="grid">
         <div class="col-lg-4">
             <Field class="form-field {isEnabled ? 'required' : ''}" name="batch.maxRequests" let:uniqueId>
-                <label for={uniqueId}>Max allowed batch requests</label>
+                <label for={uniqueId}>{$_("page.setting.content.application.batch.maxConcurrentRequest")}</label>
                 <input
                     type="number"
                     id={uniqueId}
@@ -61,7 +61,7 @@
         <div class="col-lg-4">
             <Field class="form-field {isEnabled ? 'required' : ''}" name="batch.timeout" let:uniqueId>
                 <label for={uniqueId}>
-                    <span class="txt">Max processing time (in seconds)</span>
+                    <span class="txt">{$_("page.setting.content.application.batch.requestTimeout")}</span>
                 </label>
                 <input
                     type="number"
@@ -76,13 +76,13 @@
 
         <div class="col-lg-4">
             <Field class="form-field" name="batch.maxBodySize" let:uniqueId>
-                <label for={uniqueId}>Max body size (in bytes)</label>
+                <label for={uniqueId}>{$_("page.setting.content.application.batch.requestBodySize")}</label>
                 <input
                     type="number"
                     id={uniqueId}
                     min="0"
                     step="1"
-                    placeholder="Default to 128MB"
+                    placeholder={$_("common.message.defaultValue",{values:{default:"128 MB"}})}
                     value={formSettings.batch.maxBodySize || ""}
                     on:input={(e) => (formSettings.batch.maxBodySize = e.target.value << 0)}
                 />

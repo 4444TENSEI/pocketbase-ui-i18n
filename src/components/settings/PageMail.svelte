@@ -180,7 +180,9 @@
                             </div>
                             <div class="col-lg-3">
                                 <Field class="form-field" name="smtp.username" let:uniqueId>
-                                    <label for={uniqueId}>{$_("page.setting.content.smtp.smtpUsername")}</label>
+                                    <label for={uniqueId}
+                                        >{$_("page.setting.content.smtp.smtpUsername")}</label
+                                    >
                                     <input
                                         type="text"
                                         id={uniqueId}
@@ -190,7 +192,9 @@
                             </div>
                             <div class="col-lg-3">
                                 <Field class="form-field" name="smtp.password" let:uniqueId>
-                                    <label for={uniqueId}>{$_("page.setting.content.smtp.smtpPassword")}</label>
+                                    <label for={uniqueId}
+                                        >{$_("page.setting.content.smtp.smtpPassword")}</label
+                                    >
                                     <RedactedPasswordInput
                                         id={uniqueId}
                                         bind:mask={maskPassword}
@@ -220,7 +224,9 @@
                             <div class="grid" transition:slide={{ duration: 150 }}>
                                 <div class="col-lg-3">
                                     <Field class="form-field" name="smtp.tls" let:uniqueId>
-                                        <label for={uniqueId}>{$_("page.setting.content.smtp.tlsEncryption")}</label>
+                                        <label for={uniqueId}
+                                            >{$_("page.setting.content.smtp.tlsEncryption")}</label
+                                        >
                                         <ObjectSelect
                                             id={uniqueId}
                                             items={tlsOptions}
@@ -230,7 +236,9 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <Field class="form-field" name="smtp.authMethod" let:uniqueId>
-                                        <label for={uniqueId}>{$_("page.setting.content.smtp.authMethod")}</label>
+                                        <label for={uniqueId}
+                                            >{$_("page.setting.content.smtp.authMethod")}</label
+                                        >
                                         <ObjectSelect
                                             id={uniqueId}
                                             items={authMethods}
@@ -241,7 +249,9 @@
                                 <div class="col-lg-6">
                                     <Field class="form-field" name="smtp.localName" let:uniqueId>
                                         <label for={uniqueId}>
-                                            <span class="txt">{$_("page.setting.content.smtp.ehloOrHeloDomain")}</span>
+                                            <span class="txt"
+                                                >{$_("page.setting.content.smtp.ehloOrHeloDomain")}</span
+                                            >
                                             <i
                                                 class="ri-information-line link-hint"
                                                 use:tooltip={{
@@ -253,7 +263,9 @@
                                         <input
                                             type="text"
                                             id={uniqueId}
-                                            placeholder="Default to localhost"
+                                            placeholder={$_("common.message.defaultValue", {
+                                                values: { default: "localhost" },
+                                            })}
                                             bind:value={formSettings.smtp.localName}
                                         />
                                     </Field>

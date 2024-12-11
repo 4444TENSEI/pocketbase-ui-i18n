@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import MultipleValueInput from "@/components/base/MultipleValueInput.svelte";
@@ -86,7 +87,7 @@
                     step="1"
                     min="2"
                     max={field.values.length}
-                    placeholder="Default to single"
+                    placeholder={$_("common.message.defaultValue",{values:{default:"single"}})}
                     bind:value={field.maxSelect}
                 />
             </Field>

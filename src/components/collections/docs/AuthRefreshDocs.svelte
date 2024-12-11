@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import CodeBlock from "@/components/base/CodeBlock.svelte";
     import FieldsQueryParam from "@/components/collections/docs/FieldsQueryParam.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
@@ -58,12 +58,11 @@
     ];
 </script>
 
-<h3 class="m-b-sm">Auth refresh ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.authRefresh.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>
-        Returns a new auth response (token and record data) for an
-        <strong>already authenticated record</strong>.
-    </p>
+    <p>{$_("common.popup.apiDocs.authRefresh.content.1", { values: { tableName: collection.name } })}</p>
     <p>
         This method is usually called by users on page/screen reload to ensure that the previously stored data
         in <code>pb.authStore</code> is still valid and up-to-date.
@@ -101,7 +100,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="alert alert-success">
     <strong class="label label-primary">POST</strong>
     <div class="content">
@@ -112,13 +111,13 @@
     <p class="txt-hint txt-sm txt-right">Requires <code>Authorization:TOKEN</code> header</p>
 </div>
 
-<div class="section-title">Query parameters</div>
+<div class="section-title">{$_("common.placeholder.apiQueryParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="60%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="60%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -141,7 +140,7 @@
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

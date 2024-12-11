@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import AuthWithOtpApiAuthDocs from "@/components/collections/docs/AuthWithOtpApiAuthDocs.svelte";
     import AuthWithOtpApiRequestDocs from "@/components/collections/docs/AuthWithOtpApiRequestDocs.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
@@ -17,9 +18,11 @@
     $: backendAbsUrl = CommonHelper.getApiExampleUrl(ApiClient.baseURL);
 </script>
 
-<h3 class="m-b-sm">Auth with OTP ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.authWithOTP.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Authenticate with an one-time password (OTP).</p>
+    <p>{$_("common.popup.apiDocs.authWithOTP.content.1", { values: { tableName: collection.name } })}</p>
     <p>
         Note that when requesting an OTP we return an <code>otpId</code> even if a user with the provided email
         doesn't exist as a very basic enumeration protection.
@@ -81,7 +84,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="tabs">
     <div class="tabs-header compact">
         {#each apiTabs as tab, i}

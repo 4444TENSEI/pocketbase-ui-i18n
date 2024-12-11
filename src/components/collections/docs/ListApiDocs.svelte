@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
     import CodeBlock from "@/components/base/CodeBlock.svelte";
@@ -62,11 +62,11 @@
     }
 </script>
 
-<h3 class="m-b-sm">List/Search ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.getListApi.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>
-        Fetch a paginated <strong>{collection.name}</strong> records list, supporting sorting and filtering.
-    </p>
+    <p>{$_("common.popup.apiDocs.getListApi.content.1", { values: { tableName: collection.name } })}</p>
 </div>
 
 <SdkTabs
@@ -119,7 +119,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="alert alert-info">
     <strong class="label label-primary">GET</strong>
     <div class="content">
@@ -132,13 +132,13 @@
     {/if}
 </div>
 
-<div class="section-title">Query parameters</div>
+<div class="section-title">{$_("common.placeholder.apiQueryParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="60%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="60%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -147,14 +147,14 @@
             <td>
                 <span class="label">Number</span>
             </td>
-            <td>The page (aka. offset) of the paginated list (default to 1).</td>
+            <td>{$_("common.message.defaultPageNumber")}</td>
         </tr>
         <tr>
             <td>perPage</td>
             <td>
                 <span class="label">Number</span>
             </td>
-            <td>Specify the max returned records per page (default to 30).</td>
+            <td>{$_("common.message.defaultLimitNumber")}</td>
         </tr>
         <tr>
             <td>sort</td>
@@ -162,7 +162,7 @@
                 <span class="label">String</span>
             </td>
             <td>
-                Specify the records order attribute(s). <br />
+                {$_("common.database.SortingRules")}<br />
                 Add <code>-</code> / <code>+</code> (default) in front of the attribute for DESC / ASC order.
                 Ex.:
                 <CodeBlock
@@ -233,7 +233,7 @@
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

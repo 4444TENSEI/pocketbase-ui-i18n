@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import PasswordResetApiConfirmDocs from "@/components/collections/docs/PasswordResetApiConfirmDocs.svelte";
     import PasswordResetApiRequestDocs from "@/components/collections/docs/PasswordResetApiRequestDocs.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
@@ -8,8 +9,8 @@
     export let collection;
 
     const apiTabs = [
-        { title: "Request password reset", component: PasswordResetApiRequestDocs },
-        { title: "Confirm password reset", component: PasswordResetApiConfirmDocs },
+        { title: $_("common.placeholder.requestVerification"), component: PasswordResetApiRequestDocs },
+        { title: $_("common.placeholder.confirmVerification"), component: PasswordResetApiConfirmDocs },
     ];
 
     let activeApiTab = 0;
@@ -17,9 +18,11 @@
     $: backendAbsUrl = CommonHelper.getApiExampleUrl(ApiClient.baseURL);
 </script>
 
-<h3 class="m-b-sm">Password reset ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.passwordReset.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Sends <strong>{collection.name}</strong> password reset email request.</p>
+    <p>{$_("common.popup.apiDocs.passwordReset.content.1", { values: { tableName: collection.name } })}</p>
     <p>
         On successful password reset all previously issued auth tokens for the specific record will be
         automatically invalidated.
@@ -69,7 +72,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="tabs">
     <div class="tabs-header compact">
         {#each apiTabs as tab, i}

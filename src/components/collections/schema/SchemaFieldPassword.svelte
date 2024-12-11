@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import Field from "@/components/base/Field.svelte";
     import SchemaField from "@/components/collections/schema/SchemaField.svelte";
     import CommonHelper from "@/utils/CommonHelper";
@@ -55,7 +56,7 @@
                     <input
                         type="number"
                         id={uniqueId}
-                        placeholder="Default to 10"
+                        placeholder={$_("common.message.defaultValue",{values:{default:"10"}})}
                         step="1"
                         min="6"
                         max="31"

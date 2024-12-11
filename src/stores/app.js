@@ -10,4 +10,4 @@ export const hideControls = writable(false);
 
 const envAppUrl = writable(import.meta.env.PB_BACKEND_URL);
 // 🐱
-const backendUrl = getCookie('appUrl') || envAppUrl;
+// const backendUrl = getCookie('appUrl') || envAppUrl;

@@ -1,4 +1,5 @@
 <script>
+    import { _, json } from "svelte-i18n";
     import PreviewPopup from "@/components/base/PreviewPopup.svelte";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -51,7 +52,7 @@
         href={originalUrl}
         target="_blank"
         rel="noreferrer"
-        title={(hasPreview ? "Preview" : "Download") + " " + filename}
+        title={(hasPreview ? $_("common.action.preview") : $_("common.action.download")) + " " + filename}
         on:click|stopPropagation={(e) => {
             if (hasPreview) {
                 e.preventDefault();

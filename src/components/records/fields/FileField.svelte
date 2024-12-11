@@ -148,7 +148,7 @@
                                 class="txt-ellipsis {isDeleted
                                     ? 'txt-strikethrough txt-hint'
                                     : 'link-primary'}"
-                                title="Download"
+                                title={$_("common.action.download")}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -163,7 +163,7 @@
                                     class="btn btn-sm btn-danger btn-transparent"
                                     on:click={() => restoreExistingFile(filename)}
                                 >
-                                    <span class="txt">Restore</span>
+                                    <span class="txt">{$_("common.action.restore")}</span>
                                 </button>
                             {:else}
                                 <button

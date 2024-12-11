@@ -88,7 +88,7 @@
 
 <OverlayPanel bind:this={panel} popup class="superuser-panel" beforeHide={() => !isSaving} on:hide on:show>
     <svelte:fragment slot="header">
-        <h4>{$_("common.popup.logSetting.title")}</h4>
+        <h4>{$_("common.popup.logSetting.name")}</h4>
     </svelte:fragment>
 
     {#if isLoading}

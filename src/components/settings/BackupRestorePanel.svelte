@@ -73,7 +73,7 @@
     on:hide
 >
     <svelte:fragment slot="header">
-        <h4 class="popup-title txt-ellipsis">Restore <strong>{name}</strong></h4>
+        <h4 class="popup-title txt-ellipsis">{$_("common.action.restore")} <strong>{name}</strong></h4>
     </svelte:fragment>
 
     <div class="alert alert-danger">
@@ -126,7 +126,7 @@
             class:btn-loading={isSubmitting}
             disabled={!canSubmit || isSubmitting}
         >
-            <span class="txt">Restore backup</span>
+            <span class="txt">{$_("page.setting.content.backup.action.restoreBackup")}</span>
         </button>
     </svelte:fragment>
 </OverlayPanel>

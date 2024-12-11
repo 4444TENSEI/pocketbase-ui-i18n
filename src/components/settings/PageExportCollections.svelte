@@ -59,7 +59,7 @@
 
     function copy() {
         CommonHelper.copyToClipboard(schema);
-        addInfoToast("The configuration was copied to your clipboard!", 3000);
+        addInfoToast($json("common.message.copySuccess"), 3000);
     }
 
     function toggleSelectAll() {

@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import CodeBlock from "@/components/base/CodeBlock.svelte";
     import FieldsQueryParam from "@/components/collections/docs/FieldsQueryParam.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
@@ -52,15 +53,11 @@
     ];
 </script>
 
-<h3 class="m-b-sm">Auth with OAuth2 ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.authWithOAuth2.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Authenticate with an OAuth2 provider and returns a new auth token and record data.</p>
-    <p>
-        For more details please check the
-        <a href="https://pocketbase.io/docs/authentication/#authenticate-with-oauth2" target="_blank" rel="noopener noreferrer">
-            OAuth2 integration documentation
-        </a>.
-    </p>
+    <p>{$_("common.popup.apiDocs.authWithOAuth2.content.1", { values: { tableName: collection.name } })}</p>
 </div>
 
 <SdkTabs
@@ -115,7 +112,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="alert alert-success">
     <strong class="label label-primary">POST</strong>
     <div class="content">
@@ -125,13 +122,13 @@
     </div>
 </div>
 
-<div class="section-title">Body Parameters</div>
+<div class="section-title">{$_("common.placeholder.apiParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="50%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="50%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -209,13 +206,13 @@
     </tbody>
 </table>
 
-<div class="section-title">Query parameters</div>
+<div class="section-title">{$_("common.placeholder.apiQueryParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="60%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="60%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -238,7 +235,7 @@
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

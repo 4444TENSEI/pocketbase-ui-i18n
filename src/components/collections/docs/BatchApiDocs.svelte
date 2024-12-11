@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import { link } from "svelte-spa-router";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -67,9 +67,11 @@
     }
 </script>
 
-<h3 class="m-b-sm">Batch create/update/upsert/delete ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.batchApi.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Batch and transactional create/update/upsert/delete of multiple records in a single request.</p>
+    <p>{$_("common.popup.apiDocs.batchApi.content.1", { values: { tableName: collection.name } })}</p>
 </div>
 
 <div class="alert alert-warning">
@@ -124,13 +126,13 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="api-route alert alert-success">
     <strong class="label label-primary">POST</strong>
     <div class="content">/api/batch</div>
 </div>
 
-<div class="section-title">Body Parameters</div>
+<div class="section-title">{$_("common.placeholder.apiParameters")}</div>
 <p>
     Body parameters could be sent as <em>application/json</em> or <em>multipart/form-data</em>.
     <br />
@@ -140,7 +142,7 @@
     <thead>
         <tr>
             <th>Param</th>
-            <th width="80%">Description</th>
+            <th width="80%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -233,7 +235,7 @@
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

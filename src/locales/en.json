@@ -20,20 +20,24 @@
       "newData": "Add new data",
       "new": "New",
       "create": "create",
+      "update": "renew",
       "delete": "delete",
       "edit": "edit",
       "search": "Find",
       "ok": "Sure",
       "cancel": "Cancel",
+      "start": "start",
       "copy": "copy",
       "clone": "Clone data",
       "clear": "Clear",
       "refresh": "refresh",
       "enable": "enable",
       "save": "save",
+      "download": "download",
       "reset": "reset",
       "open": "Open",
       "close": "closure",
+      "preview": "Preview",
       "loadMore": "View more",
       "restore": "recover",
       "createRecord": "Create data",
@@ -51,7 +55,7 @@
       "sendVerificationEmail": "Send account verification email",
       "sendLoginEmail": "Remind users of login status via email",
       "sendResetEmail": "Send password reset email",
-      "learnMore": "learn more",
+      "learnMore": "Know the specific rules",
       "review": "test",
       "checkLocale": "switch language",
       "checkTheme": "switch theme",
@@ -65,7 +69,10 @@
       "enabled": "enable",
       "disabled": "Disable",
       "public": "public",
-      "private": "private"
+      "private": "private",
+      "serviceNotEnabled": "The service has not been enabled yet",
+      "envPrevention": "Prevent data loss from triggering unexpected actions in production environments",
+      "administratorPreference": "Whether to prefer this field in the relationship list in the administrator UI (default is auto)"
     },
     "database": {
       "baseTable": "Base",
@@ -77,20 +84,23 @@
       "field": "Field",
       "createPresetField": "Add field (default)",
       "data": "table data",
+      "index": "index",
       "unique": "Unique constraints, field indexes",
+      "setIndex": "Set index",
+      "pageNumber": "Number of pages",
+      "amountOfData": "Data volume",
+      "sort": "sort",
+      "SortingRules": "Sorting rules",
       "fieldPreset": {
-        "text": "normal text",
+        "string": "string",
         "editor": "rich text",
         "number": "number",
         "bool": "Boolean",
         "email": "mail",
         "url": "URL",
         "datetime": "date",
-        "autoDate": "automatic date",
-        "select": "Options",
-        "file": "document",
-        "relation": "association",
-        "json": "JSON"
+        "json": "JSON",
+        "text": "normal text"
       }
     },
     "menu": {
@@ -105,20 +115,34 @@
     },
     "placeholder": {
       "type": "type",
+      "description": "describe",
+      "params": "parameter",
       "option": "Options",
       "preset": "Default",
       "style": "style",
+      "requestVerification": "issue verification",
+      "confirmVerification": "Accept verification",
+      "fileName": "file name",
+      "apiUrl": "API / interface address",
+      "apiQueryParameters": "URL required parameters",
+      "apiPathParameters": "Interface URL path composition parameters",
+      "apiParameters": "Key-value pairs required in request body JSON",
+      "apiResponses": "Response content example",
       "apiRule": "Interface request permission",
       "authMethod": "Authentication method",
-      "amountOfData": "Data volume:",
+      "amountOfRequest": "Request volume",
+      "hoverToSee": "View with mouse hover",
       "accountPasswordLogin": "Custom fields + password",
-      "amountOfRequest": "Request volume:",
       "thirdPartyAuthorization": "Third-party login authorization",
       "searchTerm": "Search term or filter, example > '2022-01-01'...",
       "autoGenerate": "Leave blank to automatically generate",
+      "autoDisable": "Leave blank to disable",
       "checkPublic": "Make emails public or private",
       "displayedField": "fields to display",
       "searchTable": "Search datasheet",
+      "unfoldTable": "Expand system data table",
+      "collapseTable": "Gather system data sheet",
+      "eventDataFormat": "SSE event data format",
       "searchDataPrompt": "Search data, supported matching rules such as created > \"2022-01-01\"",
       "searchLogPrompt": "Search logs, supported matching rules such as level > 0 && data.auth = “guest”"
     },
@@ -131,13 +155,14 @@
       },
       "logSetting": {
         "name": "Log settings",
+        "logDetail": "Log details",
         "maxDaysRetention": "Log retention days",
         "minLogLevel": "Log level",
-        "enableIpLog": "Enable IP access logs",
-        "enableAuthLog": "Enable authorization ID logging",
+        "enableIpLog": "Record visitor IP",
+        "enableAuthLog": "Record the authorizer ID",
         "content": {
           "1": "Setting to 0 will clear the current log data and turn off the logging function",
-          "2": "Data larger than the log level will be included"
+          "2": "Log data that is greater than the level corresponding to the “number” above will be included."
         }
       },
       "accountSetting": {
@@ -148,9 +173,97 @@
           "3": "Send password reset email to { email }"
         }
       },
-      "oauth2Setting": {
-        "name": "Third-party authorization settings",
-        "content": {}
+      "apiDocs": {
+        "getListApi": {
+          "name": "Paginated query / GET",
+          "content": {
+            "1": "Returns all data in the \"{ tableName }\" table, and supports paging query, sorting and filtering"
+          }
+        },
+        "getViewApi": {
+          "name": "Single query / GET",
+          "content": {
+            "1": "Query a \"{ tableName }\" table data based on ID"
+          }
+        },
+        "createDataApi": {
+          "name": "Create data/POST",
+          "content": {
+            "1": "Add a new \"{ tableName }\" table data"
+          }
+        },
+        "updateDataApi": {
+          "name": "Single update/PATCH",
+          "content": {
+            "1": "Update a \"{ tableName }\" table data based on ID"
+          }
+        },
+        "deleteDataApi": {
+          "name": "Single delete / DELETE",
+          "content": {
+            "1": "Delete a piece of \"{ tableName }\" table data based on ID"
+          }
+        },
+        "sseApi": {
+          "name": "Bulk Subscription/SSE",
+          "content": {
+            "1": "Subscribe to real-time changes to the \"{ tableName }\" table via Server Sent Events (SSE)"
+          }
+        },
+        "batchApi": {
+          "name": "Unified addition, deletion, modification and query/POST",
+          "content": {
+            "1": "Implemented in a single request: create/update/modify/delete multiple \"{ tableName }\" table records, and support batch processing and transactions"
+          }
+        },
+        "getAuthMethods": {
+          "name": "Query user authorization method / GET",
+          "content": {
+            "1": "Query the list of \"identity authorization methods\" supported by the server"
+          }
+        },
+        "authWithPassword": {
+          "name": "Password authorization / POST",
+          "content": {
+            "1": "Use email or other fields to combine the password and finally initiate a verification authorization request"
+          }
+        },
+        "authWithOAuth2": {
+          "name": "OAuth2 Authorization/POST",
+          "content": {
+            "1": "Authenticates using an OAuth2 provider and returns a new authentication token and record data"
+          }
+        },
+        "authWithOTP": {
+          "name": "OTP authorization / POST",
+          "content": {
+            "1": "Authenticate using one-time password (OTP)"
+          }
+        },
+        "authRefresh": {
+          "name": "Refresh authorization status / POST",
+          "content": {
+            "1": "Create a new authorization token for an already authorized data request"
+          }
+        },
+        "verification": {
+          "name": "Send authentication request/POST",
+          "content": {
+            "1": "Verify that the user account is valid, for example by sending an email"
+          }
+        },
+        "passwordReset": {
+          "name": "Send reset password verification / POST",
+          "content": {
+            "1": "Send a user password reset request, for example by sending an email"
+          }
+        },
+        "changeEmail": {
+          "name": "Change email/POST",
+          "content": {
+            "1": "If the user changes the account email address by himself, he needs to verify it through this interface, for example, by sending an email."
+          }
+        }
       }
     },
     "message": {
@@ -163,12 +276,16 @@
       "updateError": "Update failed",
       "deleteError": "Delete failed",
       "notFountData": "No data yet",
-      "applyNewSetting": "New settings applied",
+      "applyNewSetting": "Successfully updated configuration information",
+      "defaultValue": "Default is \"{ default }\"",
+      "defaultPageNumber": "By default, the data on page 1 is returned",
+      "defaultLimitNumber": "By default, 30 pieces of data are returned per page",
       "selectedPrompt": "{ selected } pieces of data are selected",
       "deletePrompt": "Are you sure you want to delete the selected data?",
       "notAnyTables": "You don't have any data tables yet",
       "createFirstTable": "Create your first data table to store data!",
       "oauth2AuthFailed": "OAuth2 authentication failed",
+      "dataVerificationFailed": "Unable to verify submission data",
       "plaseTryAgain": "You can close this window and try again",
       "sendEmailSussess": "Tried sending email to: { email }",
       "recovery": "Do you want to restore the last automatically saved data?",
@@ -178,7 +295,9 @@
       "noAccess": "No access",
       "networkError": "Network error, please try again later",
       "copySuccess": "Successfully copied to clipboard!",
-      "followRules": "Requesting permissions follows the rules: { url }"
+      "followRules": "Requesting permissions follows the rules: { url }",
+      "missingContext": "Data context content has been lost!",
+      "uploadReminder": "Please make sure the files you upload are safe!\nAre you sure you want to upload the file \"{ fileName }\"?"
     },
     "subfield": {
       "pin": "fixed",
@@ -246,31 +365,29 @@
             "curIp": "Current service IP",
             "curProxyHeader": "Current proxy header",
             "trustedHeaders": "Trusted proxy header",
-            "priorityIp": "IP priority",
+            "priorityIp": "IP adoption priority",
             "content": {
-              "1": "When PocketBase is deployed on a platform such as Fly or accessible through a proxy such as NGINX, requests from different users will originate from the same IP address (the IP of the proxy connected to the PocketBase application)",
-              "2": "In this case, to retrieve the actual user IP (for rate limiting, log data, etc.) you need to configure the proxy correctly and list below the trusted headers PocketBase can use to extract the user IP",
-              "3": "When using such proxies, to avoid deception it is recommended to:",
-              "4": "Use headers that are only controlled by the proxy and cannot be set manually by the user",
+              "1": "When PocketBase is deployed on a platform such as Fly, or accessed through a proxy such as NGINX, requests from different users will come from the same IP address (i.e. the IP of the proxy connected to your PocketBase application).",
+              "2": "In this case, to get the actual user IP (for rate limiting, logging, etc.), you need to configure your proxy correctly and list the following trusted headers that PocketBase can use to extract the user IP.",
+              "3": "When using such a proxy, to prevent spoofing, it is recommended",
+              "4": "Use headers that can only be controlled by the proxy and cannot be set manually by the user",
               "5": "Make sure the PocketBase server is only accessible through a proxy",
-              "6": "If PocketBase is not deployed behind a proxy, you can clear the header field",
-              "7": "Comma separated list of headers, for example:"
+              "6": "If PocketBase is not deployed behind a proxy, you can clear the header information fields",
+              "7": "A comma separated list of titles, e.g."
             },
             "tip": {
               "1": "Configured proxy headers do not match detected ones",
-              "2": "This is in case the proxy returns more than 1 IP as header value. The rightmost IP is generally considered more trustworthy, but this may vary from proxy to proxy"
+              "2": "In some cases, the proxy server may return multiple IP addresses in the HTTP header, usually these IP addresses are arranged in order from the most remote to the most recent. In this case, the rightmost IP address is usually the client's actual IP address and is therefore considered the most reliable or \"more trustworthy\". However, this is not a hard and fast rule as different proxy servers may have different implementations.",
+              "3": "The IP on the far left",
+              "4": "The IP on the far right"
             }
           },
           "rate": {
             "title": "Request frequency limit",
-            "table": {
-              "field": {
-                "route": "routing",
-                "maximum": "Maximum (per IP)",
-                "intervalTime": "Request interval (unit: seconds)",
-                "roleToLimit": "Restricted objects"
-              }
-            },
+            "route": "routing",
+            "maximum": "frequency",
+            "intervalTime": "Interval/second",
+            "roleToLimit": "Restricted objects",
             "action": {
               "addRule": "Add restriction rules"
             },
@@ -283,12 +400,12 @@
           },
           "batch": {
             "title": "Request concurrency limit",
-            "maxConcurrentRequest": "Number of requests allowed to be processed simultaneously",
-            "requestTimeoutSecond": "Request timeout (in seconds)",
-            "requestBodySizeLimitByte": "Request body size limit (unit: bytes)"
+            "maxConcurrentRequest": "Maximum number of simultaneous requests",
+            "requestTimeout": "Request timeout setting (unit: seconds)",
+            "requestBodySize": "Request body size limit (unit: bytes)"
           },
           "action": {
-            "hideEditControl": "Hide data creation and editing controls"
+            "hideEditControl": "Hidden data creation and editing entrance"
           }
         },
         "smtp": {
@@ -330,29 +447,29 @@
           "secret": "Security Key (Secret)"
         },
         "backup": {
+          "cronExpression": "CRON expression",
           "content": {
-            "1": "Back up and restore your data",
+            "1": "Data backup & recovery",
             "2": "No backup files yet",
             "3": "Please note that during the backup, other concurrent write requests may fail because the database will be temporarily 'locked' (usually happens during ZIP generation)",
-            "4": "If you use S3 storage to upload collection files, you must back them up separately as they are not stored locally and will not be included in the final backup",
-            "5": "The file name format must be [a-z0-9_-]zip",
-            "6": "Backup/restore operation in progress"
+            "4": "If you are using S3 storage to upload collection files, you will need to back them up separately as they are not stored locally and will not be included in the final backup!",
+            "5": "The input content needs to carry the “.zip” suffix, and the name can only contain numbers, English, underscores, and minus signs.",
+            "6": "Backup/restore operation in progress",
+            "7": "Adopt UTC time zone and support simpler CORN expression👉"
           },
           "action": {
-            "createBackup": "Create a backup file (.zip)",
-            "restoreBackup": "Restore data from backup (.zip)",
-            "moreBackupOption": "More options (automatic backup / S3 storage)",
+            "createBackup": "Create backup file (.zip)",
+            "restoreBackup": "Restore data from backup file (.zip)",
+            "moreBackupOption": "Automatic backup / automatic upload to S3 storage",
             "enableAutoBackup": "Enable scheduled automatic backup",
-            "backupToS3": "Upload backup files to S3 storage",
+            "backupToS3": "Automatically upload backup files to S3 storage",
             "usePathStyleUrl": "Using path style S3 URLs",
-            "backupName": "Backup name",
-            "cancel": "Cancel",
-            "startBackup": "Start backup"
+            "backupName": "Backup name"
           }
         },
         "sync": {
           "export": {
-            "title": "Here you can export the current configuration information for subsequent restoration to the new PocketBase environment."
+            "title": "Export the current configuration information to quickly restore to the new environment later"
           },
           "import": {
             "title": "You can paste the JSON configuration directly, or:"

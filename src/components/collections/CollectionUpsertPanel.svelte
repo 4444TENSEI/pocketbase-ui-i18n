@@ -193,7 +193,7 @@
                 }
 
                 addSuccessToast(
-                    !collection.id ? "Successfully created collection." : "Successfully updated collection.",
+                    !collection.id ? $_("common.message.createSuccess") : $_("common.message.updateSuccess"),
                 );
 
                 dispatch("save", {

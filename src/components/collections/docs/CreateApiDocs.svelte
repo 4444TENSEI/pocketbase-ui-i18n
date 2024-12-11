@@ -67,9 +67,11 @@
     }
 </script>
 
-<h3 class="m-b-sm">Create ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.createDataApi.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Create a new <strong>{collection.name}</strong> record.</p>
+    <p>{$_("common.popup.apiDocs.createDataApi.content.1", { values: { tableName: collection.name } })}</p>
     <p>
         Body parameters could be sent as <code>application/json</code> or
         <code>multipart/form-data</code>.
@@ -122,7 +124,7 @@ await pb.collection('${collection?.name}').requestVerification('test@example.com
 )}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="alert alert-success">
     <strong class="label label-primary">POST</strong>
     <div class="content">
@@ -135,13 +137,13 @@ await pb.collection('${collection?.name}').requestVerification('test@example.com
     {/if}
 </div>
 
-<div class="section-title">Body Parameters</div>
+<div class="section-title">{$_("common.placeholder.apiParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="50%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="50%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -268,13 +270,13 @@ await pb.collection('${collection?.name}').requestVerification('test@example.com
     </tbody>
 </table>
 
-<div class="section-title">Query parameters</div>
+<div class="section-title">{$_("common.placeholder.apiQueryParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="60%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="60%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -297,7 +299,7 @@ await pb.collection('${collection?.name}').requestVerification('test@example.com
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

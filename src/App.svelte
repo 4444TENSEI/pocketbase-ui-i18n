@@ -2,7 +2,7 @@
     import "./scss/main.scss";
 
     import { _, json } from "svelte-i18n";
-    import { setCookie } from './utils/Cookie';
+    // import { setCookie } from '@/utils/Cookie';
     import tooltip from "@/actions/tooltip";
     import Confirmation from "@/components/base/Confirmation.svelte";
     import TinyMCE from "@/components/base/TinyMCE.svelte";
@@ -24,7 +24,7 @@
 
     let isTinyMCEPreloaded = false;
     // 🐱
-    setCookie("appUrl", "localhost:8088");
+    // setCookie("appUrl", "localhost:8088");
     $: if ($superuser?.id) {
         loadSettings();
     }

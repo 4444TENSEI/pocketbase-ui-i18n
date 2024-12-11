@@ -68,7 +68,7 @@
 
             setErrors({});
 
-            addSuccessToast("Successfully saved application settings.");
+            addSuccessToast($json("common.message.applyNewSetting"));
         } catch (err) {
             ApiClient.error(err);
         }
@@ -224,7 +224,7 @@
                                 <i
                                     class="ri-information-line link-hint"
                                     use:tooltip={{
-                                        text: `This could prevent making accidental schema changes when in production environment.`,
+                                        text: $json("common.tip.envPrevention"),
                                         position: "right",
                                     }}
                                 />

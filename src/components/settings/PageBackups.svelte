@@ -69,7 +69,7 @@
 
             init(settings);
 
-            addSuccessToast("Successfully saved application settings.");
+            addSuccessToast($json("common.message.applyNewSetting"));
         } catch (err) {
             ApiClient.error(err);
         }
@@ -157,7 +157,7 @@
                             <div class="grid p-t-base p-b-sm">
                                 <div class="col-lg-6">
                                     <Field class="form-field required" name="backups.cron" let:uniqueId>
-                                        <label for={uniqueId}>Cron expression</label>
+                                        <label for={uniqueId}>{$_("page.setting.content.backup.cronExpression")}</label>
                                         <!-- svelte-ignore a11y-autofocus -->
                                         <input
                                             required
@@ -170,7 +170,7 @@
                                         />
                                         <div class="form-field-addon">
                                             <button type="button" class="btn btn-sm btn-outline p-r-0">
-                                                <span class="txt">Presets</span>
+                                                <span class="txt">{$_("common.placeholder.preset")}</span>
                                                 <i class="ri-arrow-drop-down-fill" />
                                                 <Toggler class="dropdown dropdown-nowrap dropdown-right">
                                                     <button
@@ -217,13 +217,11 @@
                                         <div class="help-block">
                                             <!-- prettier-ignore -->
                                             <p>
-                                                Supports numeric list, steps, ranges or
+                                                {$_("page.setting.content.backup.content.7")}
                                                 <span
                                                     class="link-primary"
                                                     use:tooltip={"@yearly\n@annually\n@monthly\n@weekly\n@daily\n@midnight\n@hourly"}
-                                                >macros</span>.
-                                                <br>
-                                                The timezone is in UTC.
+                                                >{$_("common.placeholder.hoverToSee")}</span>
                                             </p>
                                         </div>
                                     </Field>

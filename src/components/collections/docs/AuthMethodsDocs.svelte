@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import CodeBlock from "@/components/base/CodeBlock.svelte";
     import FieldsQueryParam from "@/components/collections/docs/FieldsQueryParam.svelte";
     import SdkTabs from "@/components/base/SdkTabs.svelte";
@@ -24,7 +25,7 @@
             body: `
                 {
                   "code": 404,
-                  "message": "Missing collection context.",
+                  "message": "${$_("common.message.missingContext")}",
                   "data": {}
                 }
             `,
@@ -44,9 +45,11 @@
     }
 </script>
 
-<h3 class="m-b-sm">List auth methods ({collection.name})</h3>
+<h3 class="m-b-sm">
+    {$_("common.popup.apiDocs.getAuthMethods.name")}
+</h3>
 <div class="content txt-lg m-b-sm">
-    <p>Returns a public list with all allowed <strong>{collection.name}</strong> authentication methods.</p>
+    <p>{$_("common.popup.apiDocs.getAuthMethods.content.1", { values: { tableName: collection.name } })}</p>
 </div>
 
 <SdkTabs
@@ -70,7 +73,7 @@
     `}
 />
 
-<h6 class="m-b-xs">API details</h6>
+<h6 class="m-b-xs">{$_("common.placeholder.apiUrl")}</h6>
 <div class="alert alert-info">
     <strong class="label label-primary">GET</strong>
     <div class="content">
@@ -80,13 +83,13 @@
     </div>
 </div>
 
-<div class="section-title">Query parameters</div>
+<div class="section-title">{$_("common.placeholder.apiQueryParameters")}</div>
 <table class="table-compact table-border m-b-base">
     <thead>
         <tr>
-            <th>Param</th>
-            <th>Type</th>
-            <th width="50%">Description</th>
+            <th>{$_("common.placeholder.params")}</th>
+            <th>{$_("common.placeholder.type")}</th>
+            <th width="50%">{$_("common.placeholder.description")}</th>
         </tr>
     </thead>
     <tbody>
@@ -94,7 +97,7 @@
     </tbody>
 </table>
 
-<div class="section-title">Responses</div>
+<div class="section-title">{$_("common.placeholder.apiResponses")}</div>
 <div class="tabs">
     <div class="tabs-header compact combined left">
         {#each responses as response (response.code)}

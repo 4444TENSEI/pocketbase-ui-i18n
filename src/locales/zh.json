@@ -20,20 +20,24 @@
       "newData": "新增数据",
       "new": "新增",
       "create": "创建",
+      "update": "更新",
       "delete": "删除",
       "edit": "编辑",
       "search": "查找",
       "ok": "确定",
       "cancel": "取消",
+      "start": "开始",
       "copy": "复制",
       "clone": "克隆数据",
       "clear": "清除",
       "refresh": "刷新",
       "enable": "启用",
       "save": "保存",
+      "download": "下载",
       "reset": "重置",
       "open": "打开",
       "close": "关闭",
+      "preview": "预览",
       "loadMore": "查看更多",
       "restore": "恢复",
       "createRecord": "创建数据",
@@ -51,7 +55,7 @@
       "sendVerificationEmail": "发送账户验证邮件",
       "sendLoginEmail": "通过邮件提醒用户登录情况",
       "sendResetEmail": "发送重置密码邮件",
-      "learnMore": "了解更多",
+      "learnMore": "了解具体规则",
       "review": "检验",
       "checkLocale": "切换语言",
       "checkTheme": "切换主题",
@@ -65,7 +69,10 @@
       "enabled": "启用",
       "disabled": "禁用",
       "public": "公开",
-      "private": "私密"
+      "private": "私密",
+      "serviceNotEnabled": "还未启用该服务",
+      "envPrevention": "防止在生产环境中触发意外操作导致数据损失",
+      "administratorPreference": "是否在管理员UI中的关系列表优先选择该字段（默认为auto）"
     },
     "database": {
       "baseTable": "基础",
@@ -77,20 +84,23 @@
       "field": "字段",
       "createPresetField": "添加字段 (预设)",
       "data": "表数据",
+      "index": "索引",
       "unique": "唯一约束、字段索引",
+      "setIndex": "设置索引",
+      "pageNumber": "页数",
+      "amountOfData": "数据量",
+      "sort": "排序",
+      "SortingRules": "排序规则",
       "fieldPreset": {
-        "text": "普通文本",
+        "string": "字符串",
         "editor": "富文本",
         "number": "数字",
         "bool": "布尔",
         "email": "邮件",
         "url": "网址",
         "datetime": "日期",
-        "autoDate": "自动日期",
-        "select": "选项",
-        "file": "文件",
-        "relation": "关联",
-        "json": "JSON"
+        "json": "JSON",
+        "text": "普通文本"
       }
     },
     "menu": {
@@ -105,20 +115,34 @@
     },
     "placeholder": {
       "type": "类型",
+      "description": "描述",
+      "params": "参数",
       "option": "选项",
       "preset": "预设",
       "style": "风格",
+      "requestVerification": "发出验证",
+      "confirmVerification": "接受验证",
+      "fileName": "文件名",
+      "apiUrl": "API / 接口地址",
+      "apiQueryParameters": "URL所需传递参数",
+      "apiPathParameters": "接口URL路径构成参数",
+      "apiParameters": "请求体JSON所需键值对",
+      "apiResponses": "响应内容示例",
       "apiRule": "接口请求权限",
       "authMethod": "认证方式",
-      "amountOfData": "数据量:",
+      "amountOfRequest": "请求量",
+      "hoverToSee": "鼠标悬浮查看",
       "accountPasswordLogin": "自定义字段 + 密码",
-      "amountOfRequest": "请求量:",
       "thirdPartyAuthorization": "第三方登录授权",
       "searchTerm": "搜索词或过滤器，示例 > '2022-01-01'...",
       "autoGenerate": "留空将自动生成",
+      "autoDisable": "留空则代表禁用",
       "checkPublic": "将电子邮件公开展示或设为私密",
       "displayedField": "要展示的字段",
       "searchTable": "搜索数据表",
+      "unfoldTable": "展开系统数据表",
+      "collapseTable": "聚拢系统数据表",
+      "eventDataFormat": "SSE事件数据格式",
       "searchDataPrompt": "搜索数据，支持的匹配规则如 created > “2022-01-01”",
       "searchLogPrompt": "搜索日志，支持的匹配规则如 level > 0 && data.auth = “guest”"
     },
@@ -131,13 +155,14 @@
       },
       "logSetting": {
         "name": "日志设置",
+        "logDetail": "日志详情",
         "maxDaysRetention": "日志保留天数",
         "minLogLevel": "日志级别",
-        "enableIpLog": "启用 IP访问 日志",
-        "enableAuthLog": "启用 授权ID 日志",
+        "enableIpLog": "记录访问者IP",
+        "enableAuthLog": "记录授权者ID",
         "content": {
           "1": "设置为 0 将清除目前的日志数据，并关闭日志功能",
-          "2": "将会收录大于日志级别的数据"
+          "2": "将会收录大于上方 “数字” 对应级别的日志数据"
         }
       },
       "accountSetting": {
@@ -148,9 +173,97 @@
           "3": "发送重置密码邮件给 { email }"
         }
       },
-      "oauth2Setting": {
-        "name": "第三方授权设置",
-        "content": {}
+      "apiDocs": {
+        "getListApi": {
+          "name": "分页查询 / GET",
+          "content": {
+            "1": "返回 “{ tableName }” 表中所有数据，并支持分页查询、排序和过滤"
+          }
+        },
+        "getViewApi": {
+          "name": "单条查询 / GET",
+          "content": {
+            "1": "根据ID查询一条 “{ tableName }” 表数据"
+          }
+        },
+        "createDataApi": {
+          "name": "创建数据 / POST",
+          "content": {
+            "1": "新增一条 “{ tableName }” 表数据"
+          }
+        },
+        "updateDataApi": {
+          "name": "单条更新 / PATCH",
+          "content": {
+            "1": "根据ID更新一条 “{ tableName }” 表数据"
+          }
+        },
+        "deleteDataApi": {
+          "name": "单条删除 / DELETE",
+          "content": {
+            "1": "根据ID删除一条 “{ tableName }” 表数据"
+          }
+        },
+        "sseApi": {
+          "name": "批量订阅 / SSE",
+          "content": {
+            "1": "通过服务器发送的事件（SSE）订阅 “{ tableName }” 表的实时更改"
+          }
+        },
+        "batchApi": {
+          "name": "统一增删改查 / POST",
+          "content": {
+            "1": "在单个请求中实现：创建/更新/修改/删除多条 “{ tableName }” 表记录，并支持批处理和事务"
+          }
+        },
+        "getAuthMethods": {
+          "name": "查询用户授权方式 / GET",
+          "content": {
+            "1": "查询服务端所支持的 “身份授权方式” 列表"
+          }
+        },
+        "authWithPassword": {
+          "name": "密码授权 / POST",
+          "content": {
+            "1": "使用邮箱或其他字段，组合密码最终发起验证授权请求"
+          }
+        },
+        "authWithOAuth2": {
+          "name": "OAuth2授权 / POST",
+          "content": {
+            "1": "使用OAuth2提供程序进行身份验证，并返回新的身份验证令牌和记录数据"
+          }
+        },
+        "authWithOTP": {
+          "name": "OTP授权 / POST",
+          "content": {
+            "1": "使用一次性密码（OTP）进行身份验证"
+          }
+        },
+        "authRefresh": {
+          "name": "刷新授权状态 / POST",
+          "content": {
+            "1": "为已经授权过的数据请求创建一个新的授权令牌"
+          }
+        },
+        "verification": {
+          "name": "发送身份验证请求 / POST",
+          "content": {
+            "1": "验证用户帐户是否有效，例如通过发送邮件"
+          }
+        },
+        "passwordReset": {
+          "name": "发送重置密码验证 / POST",
+          "content": {
+            "1": "发送用户密码重置请求，例如通过发送邮件"
+          }
+        },
+        "changeEmail": {
+          "name": "更改邮箱 / POST",
+          "content": {
+            "1": "用户自行更改账户邮箱地址，需通过此接口验证，例如通过发送邮件"
+          }
+        }
       }
     },
     "message": {
@@ -163,12 +276,16 @@
       "updateError": "更新失败",
       "deleteError": "删除失败",
       "notFountData": "暂无数据",
-      "applyNewSetting": "已应用新的设置",
+      "applyNewSetting": "成功更新配置信息",
+      "defaultValue": "默认为 “{ default }”",
+      "defaultPageNumber": "默认返回第 1 页的数据",
+      "defaultLimitNumber": "每页默认返回 30 条数据",
       "selectedPrompt": "选中了 { selected } 条数据",
       "deletePrompt": "确定要删除所选择的数据吗？",
       "notAnyTables": "你还没有任何数据表",
       "createFirstTable": "创建您的第一个数据表以储存数据！",
       "oauth2AuthFailed": "OAuth2身份验证失败",
+      "dataVerificationFailed": "无法验证提交数据",
       "plaseTryAgain": "您可以关闭此窗口, 并重新尝试",
       "sendEmailSussess": "已尝试发送邮件至: { email }",
       "recovery": "要恢复上次自动保存的数据吗？",
@@ -178,7 +295,9 @@
       "noAccess": "无权访问",
       "networkError": "网络出错，请稍后重试",
       "copySuccess": "成功复制到剪贴板！",
-      "followRules": "请求权限遵循规则: { url }"
+      "followRules": "请求权限遵循规则: { url }",
+      "missingContext": "数据上下文内容已丢失！",
+      "uploadReminder": "请确保上传的文件安全！\n您确定要上传文件 “{ fileName }” 吗？"
     },
     "subfield": {
       "pin": "固定",
@@ -246,31 +365,29 @@
             "curIp": "当前服务 IP",
             "curProxyHeader": "当前代理标头",
             "trustedHeaders": "可信代理标头",
-            "priorityIp": "IP 优先级",
+            "priorityIp": "IP采纳优先级",
             "content": {
-              "1": "当 PocketBase 部署在 Fly 等平台上或可通过 NGINX 等代理访问时，来自不同用户的请求将源自相同的 IP 地址 (连接到 PocketBase 应用程序的代理的 IP)",
-              "2": "在这种情况下，要检索实际用户 IP (用于速率限制、日志数据等)，您需要正确配置代理并在下方列出 PocketBase 可用于提取用户 IP 的受信任标头",
-              "3": "使用此类代理时，为避免欺骗，建议: ",
-              "4": "使用仅由代理控制且无法由用户手动设置的标头",
+              "1": "当PocketBase部署在诸如Fly之类的平台，或者通过诸如NGINX的代理访问时，不同用户的请求将来自同一个IP地址（即连接到您的PocketBase应用的代理的IP）。",
+              "2": "在这种情况下，要获取实际的用户IP（用于限速、日志记录等），您需要正确配置您的代理，并列出以下PocketBase可以用来提取用户IP的受信任的头部信息。",
+              "3": "使用此类代理时，为防止欺骗，建议",
+              "4": "使用只能由代理控制且用户无法手动设置的头部信息",
               "5": "确保PocketBase服务器只能通过代理访问",
-              "6": "如果 PocketBase 未部署在代理后面，您可以清除标头字段",
-              "7": "逗号分隔的标头列表，例如: "
+              "6": "如果PocketBase没有部署在代理后面，您可以清空头部信息字段",
+              "7": "以逗号分隔的标题列表，例如"
             },
             "tip": {
               "1": "配置的代理报头与检测到的不匹配",
-              "2": "这是在代理返回超过1个IP作为报头值的情况下。最右边的IP通常被认为是更值得信赖的，但这可能因代理而异"
+              "2": "在某些情况下，代理服务器可能会在HTTP头部中返回多个IP地址，通常这些IP地址按照从最远端到最近端的顺序排列。在这种情况下，最右边的IP地址通常是客户端的实际IP地址，因此被认为是最可靠或“更值得信任”的。然而，这并不是一个固定的规则，因为不同的代理服务器可能有不同的实现方式。",
+              "3": "最左侧的IP",
+              "4": "最右侧的IP"
             }
           },
           "rate": {
             "title": "请求频率限制",
-            "table": {
-              "field": {
-                "route": "路由",
-                "maximum": "最大值 (每个IP)",
-                "intervalTime": "请求间隔 (单位: 秒)",
-                "roleToLimit": "限制对象"
-              }
-            },
+            "route": "路由",
+            "maximum": "次数",
+            "intervalTime": "间隔 / 秒",
+            "roleToLimit": "限制对象",
             "action": {
               "addRule": "新增限制规则"
             },
@@ -283,12 +400,12 @@
           },
           "batch": {
             "title": "请求并发限制",
-            "maxConcurrentRequest": "允许同时处理的请求数",
-            "requestTimeoutSecond": "请求超时器 (以秒为单位)",
-            "requestBodySizeLimitByte": "请求体大小限制 (单位: 字节)"
+            "maxConcurrentRequest": "最大同时请求数",
+            "requestTimeout": "请求超时设置 (单位: 秒)",
+            "requestBodySize": "请求体大小限制 (单位: 字节)"
           },
           "action": {
-            "hideEditControl": "隐藏数据创建和编辑控件"
+            "hideEditControl": "隐藏数据创建、编辑入口"
           }
         },
         "smtp": {
@@ -330,29 +447,29 @@
           "secret": "安全密钥 (Secret)"
         },
         "backup": {
+          "cronExpression": "CRON表达式",
           "content": {
-            "1": "备份和恢复您的数据",
+            "1": "数据备份 & 恢复",
             "2": "暂无备份文件",
             "3": "请注意，在备份期间，其他并发写入请求可能会失败，因为数据库将被临时'锁定' (通常在 ZIP 生成期间发生)",
-            "4": "如果您使用 S3 存储来上传集合文件，则必须单独备份它们，因为它们不是本地存储的，也不会包含在最终备份中",
-            "5": "文件名格式必须为 [a-z0-9_-]zip",
-            "6": "备份 / 恢复操作正在进行中"
+            "4": "如果您正在使用S3存储来上传集合文件，您需要单独备份它们，因为它们不是本地存储的，所以不会包含在最终的备份中！",
+            "5": "输入内容需要携带 “.zip” 后缀，且名称仅能够包含数字、英文、下划线、减号",
+            "6": "备份 / 恢复操作正在进行中",
+            "7": "采用UTC时区，同时支持更简易的CORN表达👉"
           },
           "action": {
-            "createBackup": "创建备份文件 (.zip)",
-            "restoreBackup": "从备份 (.zip)还原数据",
-            "moreBackupOption": "更多选项 (自动备份 / S3存储)",
+            "createBackup": "创建备份文件(.zip)",
+            "restoreBackup": "从备份文件(.zip)还原数据",
+            "moreBackupOption": "自动备份 / 自动上传到S3存储",
             "enableAutoBackup": "启用定时自动备份",
-            "backupToS3": "将备份文件上传到 S3 存储",
+            "backupToS3": "自动上传备份文件到 S3 存储",
             "usePathStyleUrl": "使用路径风格的S3 URL",
-            "backupName": "备份名称",
-            "cancel": "取消",
-            "startBackup": "开始备份"
+            "backupName": "备份名称"
           }
         },
         "sync": {
           "export": {
-            "title": "这里可以导出当前配置信息, 以便后续恢复到新的 PocketBase 环境中"
+            "title": "导出当前的配置信息, 以便后续快速恢复到新的环境中"
           },
           "import": {
             "title": "可以直接粘贴JSON配置，或者是:"
