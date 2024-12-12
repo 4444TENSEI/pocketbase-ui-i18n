@@ -19,6 +19,6 @@ export function setUrlPopup() {
     setCookie("pbUrl", newPbUrl);
     location.reload();
   } else if (newPbUrl === "") {
-    alert("后端地址不能为空");
+    setCookie("pbUrl", import.meta.env.PB_BACKEND_URL);
   }
 }
