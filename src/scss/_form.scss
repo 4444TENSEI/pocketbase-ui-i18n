@@ -308,6 +308,20 @@ button {
         display: flex;
         width: 100%;
     }
+    // 后端连接界面的按钮、图标大小
+    &.btn-setting-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        height: 32px;
+        width: 32px;
+        bottom: 20px;
+        left: 20px;
+    }
+    #icon-setting {
+        font-size: 24px;
+    }
 
     // pill
     &.btn-pill {

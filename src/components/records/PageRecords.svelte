@@ -1,6 +1,7 @@
 <script>
     import { _, json } from "svelte-i18n";
     import { tick } from "svelte";
+    import { setUrlPopup } from "@/utils/Cookie";
     import { querystring } from "svelte-spa-router";
     import CommonHelper from "@/utils/CommonHelper";
     import tooltip from "@/actions/tooltip";
@@ -157,11 +158,7 @@
                 <h1 class="m-b-10">{$_("common.message.notAnyTables")}</h1>
             {:else}
                 <h1 class="m-b-10">{$_("common.message.checkServerConnect")}</h1>
-                <button
-                    type="button"
-                    class="btn btn-expanded-lg btn-lg"
-                    on:click={() => collectionUpsertPanel?.show()}
-                >
+                <button type="button" class="btn btn-expanded-lg btn-lg" on:click={setUrlPopup}>
                     <i class="ri-tools-fill" />
                     <span class="txt">{$_("common.action.connectionTest")}</span>
                 </button>

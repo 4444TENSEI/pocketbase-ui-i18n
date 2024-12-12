@@ -8,32 +8,23 @@
     import { confirm } from "@/stores/confirmation";
     import Field from "@/components/base/Field.svelte";
     import FullPage from "@/components/base/FullPage.svelte";
-
     export let params;
-
     let email = "";
     let password = "";
     let passwordConfirm = "";
     let isLoading = false;
     let isUploading = false;
-
     let emailInput;
     let backupFileInput;
-
     $: isBusy = isLoading || isUploading;
-
     checkToken();
-
     async function checkToken() {
         if (!params?.token) {
             return replace("/");
         }
-
         isLoading = true;
-
         try {
             const payload = getTokenPayload(params?.token);
-
             await ApiClient.collection("_superusers").getOne(payload.id, {
                 requestKey: "installer_token_check",
                 headers: { Authorization: params?.token },
@@ -41,25 +32,18 @@
         } catch (err) {
             if (!err?.isAbort) {
                 addErrorToast("The installer token is invalid or has expired.");
-
                 replace("/");
             }
         }
-
         isLoading = false;
-
         await tick();
-
         emailInput?.focus();
     }
-
     async function submit() {
         if (isBusy) {
             return;
         }
-
         isLoading = true;
-
         try {
             await ApiClient.collection("_superusers").create(
                 {
@@ -71,28 +55,22 @@
                     headers: { Authorization: params?.token },
                 },
             );
-
             await ApiClient.collection("_superusers").authWithPassword(email, password);
-
             replace("/");
         } catch (err) {
             ApiClient.error(err);
         }
-
         isLoading = false;
     }
-
     function resetSelectedBackupFile() {
         if (backupFileInput) {
             backupFileInput.value = "";
         }
     }
-
     function uploadBackupConfirm(file) {
         if (!file) {
             return;
         }
-
         confirm(
             $_("common.message.uploadReminder", { values: { fileName: file.name } }),
             () => {
@@ -103,14 +81,11 @@
             },
         );
     }
-
     async function uploadBackup(file) {
         if (!file || isBusy) {
             return;
         }
-
         isUploading = true;
-
         try {
             await ApiClient.backups.upload(
                 { file: file },
@@ -118,23 +93,17 @@
                     headers: { Authorization: params?.token },
                 },
             );
-
             await ApiClient.backups.restore(file.name, {
                 headers: { Authorization: params?.token },
             });
-
             addInfoToast("Please wait while extracting the uploaded archive!");
-
             // optimistic restore completion
             await new Promise((r) => setTimeout(r, 2000));
-
             replace("/");
         } catch (err) {
             ApiClient.error(err);
         }
-
         resetSelectedBackupFile();
-
         isUploading = false;
     }
 </script>
@@ -144,7 +113,6 @@
         <div class="content txt-center m-b-base">
             <h4>{$_("page.init.title")}</h4>
         </div>
-
         <Field class="form-field required" name="email" let:uniqueId>
             <label for={uniqueId}>{$_("common.user.email")}</label>
             <input
@@ -157,7 +125,6 @@
                 required
             />
         </Field>
-
         <Field class="form-field required" name="password" let:uniqueId>
             <label for={uniqueId}>{$_("common.user.password")}</label>
             <input
@@ -171,7 +138,6 @@
             />
             <div class="help-block">{$_("page.init.content.2")}</div>
         </Field>
-
         <Field class="form-field required" name="passwordConfirm" let:uniqueId>
             <label for={uniqueId}>{$_("common.user.passwordConfirm")}</label>
             <input
@@ -183,7 +149,6 @@
                 required
             />
         </Field>
-
         <button
             type="submit"
             class="btn btn-lg btn-block btn-next"
@@ -194,9 +159,7 @@
             <i class="ri-arrow-right-line" />
         </button>
     </form>
-
     <hr />
-
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <label

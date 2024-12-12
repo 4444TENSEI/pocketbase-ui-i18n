@@ -2,6 +2,7 @@ import App from './App.svelte'
 import './i18n';
 import { getCookie, setCookie } from "@/utils/Cookie";
 
+
 const app = new App({
   target: document.getElementById('app')
 });

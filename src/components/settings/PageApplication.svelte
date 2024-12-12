@@ -69,6 +69,8 @@
 
             setErrors({});
 
+            setCookie("pbUrl", formSettings.meta.pbUrl);
+
             addSuccessToast($json("common.message.applyNewSetting"));
         } catch (err) {
             ApiClient.error(err);
@@ -78,12 +80,13 @@
     }
 
     function init(settings = {}) {
-        $appName = settings?.meta?.appName;
+        $appName = import.meta.env.APP_NAME;
         $hideControls = !!settings?.meta?.hideControls;
 
         formSettings = {
             meta: settings?.meta || {},
             batch: settings.batch || {},
+            pbUrl: server.ckPbUrl || "",
             trustedProxy: settings.trustedProxy || { headers: [] },
             rateLimits: settings.rateLimits || { rules: [] },
         };
@@ -201,7 +204,7 @@
                     <div class="col-lg-6">
                         <Field class="form-field required" name="meta.appURL" let:uniqueId>
                             <label for={uniqueId}>{$_("page.setting.content.application.serverUrl")}</label>
-                            <input type="text" id={uniqueId} required value={cookiePbUrl} />
+                            <input type="text" id={uniqueId} required bind:value={formSettings.server.ckPbUrl} />
                         </Field>
                     </div>
                     <div class="col-lg-12">
