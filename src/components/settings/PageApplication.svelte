@@ -1,3 +1,4 @@
+<!-- 应用 -->
 <script>
     import { _, json } from "svelte-i18n";
     import { getCookie, setCookie } from "@/utils/Cookie";
@@ -69,7 +70,7 @@
 
             setErrors({});
 
-            setCookie("pbUrl", formSettings.meta.pbUrl);
+            setCookie("pbUrl", formSettings.pbUrl);
 
             addSuccessToast($json("common.message.applyNewSetting"));
         } catch (err) {
@@ -86,7 +87,6 @@
         formSettings = {
             meta: settings?.meta || {},
             batch: settings.batch || {},
-            pbUrl: server.ckPbUrl || "",
             trustedProxy: settings.trustedProxy || { headers: [] },
             rateLimits: settings.rateLimits || { rules: [] },
         };
@@ -204,7 +204,7 @@
                     <div class="col-lg-6">
                         <Field class="form-field required" name="meta.appURL" let:uniqueId>
                             <label for={uniqueId}>{$_("page.setting.content.application.serverUrl")}</label>
-                            <input type="text" id={uniqueId} required bind:value={formSettings.server.ckPbUrl} />
+                            <input type="text" id={uniqueId} required bind:value={formSettings.ckPbUrl} />
                         </Field>
                     </div>
                     <div class="col-lg-12">
