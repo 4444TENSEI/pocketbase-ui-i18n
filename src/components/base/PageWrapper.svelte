@@ -28,7 +28,7 @@
                 rel="noopener noreferrer"
                 title="Releases"
             >
-                <span class="txt">{import.meta.env.APP_NAME} {import.meta.env.PB_VERSION}</span>
+                <span class="txt">PocketBase {import.meta.env.PB_VERSION}</span>
             </a>
         {/if}
     </footer>

@@ -1,9 +1,6 @@
 <script>
     import { _, json } from "svelte-i18n";
-    import { onMount } from "svelte";
-
     import UpdateAppUrlDialog from "@/components/base/UpdateAppUrlDialog.svelte";
-
     import { link, replace, querystring } from "svelte-spa-router";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -11,19 +8,13 @@
     import Field from "@/components/base/Field.svelte";
     import { setErrors } from "@/stores/errors";
     import { addErrorToast, removeAllToasts } from "@/stores/toasts";
+    import { getCookie } from "@/utils/Cookie";
 
-    import { getCookie, setCookie } from "@/utils/Cookie";
-    // 🐱设置后端服务地址的初始化
-    let pbUrl = getCookie("pbUrl");
-    if (!pbUrl) {
-        setCookie("pbUrl", import.meta.env.PB_BACKEND_URL);
-    }
+    // 🐱进入页面直接读取并且连接后端地址
     ApiClient.baseUrl = getCookie("pbUrl");
 
-    let editAppUrlPanel;
-    onMount(async () => {
-        editAppUrlPanel.show();
-    });
+    let showPbEditDialog = null;
+
     const queryParams = new URLSearchParams($querystring);
 
     let identity = queryParams.get("demoEmail") || "";
@@ -186,16 +177,13 @@
             type="button"
             class="btn btn-transparent btn-circle"
             on:click={() => {
-                try {
-                    editAppUrlPanel.show();
-                } catch (error) {
-                    console.error("无法打开对话框", error);
-                }
+                showPbEditDialog.show();
+                console.log(showPbEditDialog.show);
             }}
         >
             <i class="ri-settings-4-line" />
         </button>
-        <UpdateAppUrlDialog bind:this={editAppUrlPanel} />
+        <UpdateAppUrlDialog bind:this={showPbEditDialog} />
     {:else if authMethods.password.enabled && !mfaId}
         <!-- auth with password -->
         <form class="block" on:submit|preventDefault={authWithPassword}>

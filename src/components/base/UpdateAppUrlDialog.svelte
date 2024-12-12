@@ -4,40 +4,39 @@
     import { addSuccessToast } from "@/stores/toasts";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
 
-    let editAppUrlPanel;
-    let pbUrl = getCookie("pbUrl") || "";
+    let showPbEditDialog;
+    let originPbUrl = getCookie("pbUrl") || "";
 
-    // 保存输入框内容到cookie的函数
+    // 修改输入框的新后端地址到cookie
     function saveAppUrl() {
-        setCookie("pbUrl", pbUrl);
-        setCookie("pbUrl", pbUrl);
+        setCookie("pbUrl", newPbUrl);
     }
 
     export function show() {
-        return editAppUrlPanel.show();
+        return showPbEditDialog.show();
     }
 
     export function hide() {
-        return editAppUrlPanel.hide();
+        return showPbEditDialog.hide();
     }
 
-    // 保存函数，现在只是将pbUrl保存到cookie
+    // 保存函数，现在只是将newPbUrl保存到cookie
     function save() {
         saveAppUrl();
-        addSuccessToast($_("成功修改为新的后端地址"));
+        addSuccessToast($_("后端地址已更新"));
         window.location.href = "/";
     }
 </script>
 
-<OverlayPanel bind:this={editAppUrlPanel}>
+<OverlayPanel bind:this={showPbEditDialog} btnClose={false} on:show on:hide>
     <svelte:fragment slot="header">
         <h4>后端服务地址设置</h4>
     </svelte:fragment>
     <div class="block txt-center">
-        <input type="text" bind:value={pbUrl} placeholder={$_("common.popup.pbUrlSetting.placeholder")} />
+        <input type="text" value={originPbUrl} placeholder={$_("common.popup.newPbUrlSetting.placeholder")} />
     </div>
     <svelte:fragment slot="footer">
-        <button type="button" class="btn btn-transparent" on:click={() => editAppUrlPanel.hide()}>
+        <button type="button" class="btn btn-transparent" on:click={() => showPbEditDialog.hide()}>
             <span class="txt">{$_("common.action.close")}</span>
         </button>
         <button type="button" class="btn btn-expanded" on:click={save}>

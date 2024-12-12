@@ -5,8 +5,7 @@ dist/
 
 .DS_Store
 
-.env.development
-.env.production
+*.production
 
 pb_*/
 .env
