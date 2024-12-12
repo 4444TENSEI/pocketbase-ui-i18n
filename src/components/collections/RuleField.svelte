@@ -3,6 +3,7 @@
 </script>
 
 <script>
+    import { _ } from "svelte-i18n";
     import { tick } from "svelte";
     import { scale } from "svelte/transition";
     import Field from "@/components/base/Field.svelte";
@@ -89,7 +90,7 @@
                         on:click={lock}
                     >
                         <i class="ri-lock-line" aria-hidden="true" />
-                        <span class="txt">Set Superusers only</span>
+                        <span class="txt">{$_("common.popup.apiRequestPermission.action.setAdminRule")}</span>
                     </button>
                 {/if}
             </label>
@@ -114,7 +115,7 @@
                     on:click={unlock}
                 >
                     {#if !isDisabled}
-                        <small class="txt">Unlock and set custom rule</small>
+                        <small class="txt">{$_("common.popup.apiRequestPermission.action.unlockAdminRule")}</small>
                     {/if}
                     <div class="icon" aria-hidden="true">
                         <i class="ri-lock-unlock-line" />

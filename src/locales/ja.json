@@ -358,7 +358,7 @@
     "setting": {
       "content": {
         "application": {
-          "serverName": "カスタム識別名",
+          "nowAppName": "カスタム識別名",
           "serverUrl": "バックエンドアドレス",
           "proxy": {
             "title": "IPプロキシ",

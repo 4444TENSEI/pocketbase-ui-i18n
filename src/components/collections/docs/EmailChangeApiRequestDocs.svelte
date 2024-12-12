@@ -73,7 +73,7 @@
         <tr>
             <td>
                 <div class="inline-flex">
-                    <span class="label label-success">Required</span>
+                    <span class="label label-success">{$_("common.tip.required")}</span>
                     <span>newEmail</span>
                 </div>
             </td>

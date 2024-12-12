@@ -232,30 +232,25 @@
         if (!original?.id) {
             return; // nothing to truncate
         }
-
-        confirm(
-            `Do you really want to delete all "${original.name}" records, including their cascade delete references and files?`,
-            () => {
-                return ApiClient.collections
-                    .truncate(original.id)
-                    .then(() => {
-                        forceHide();
-                        addSuccessToast(`Successfully truncated collection "${original.name}".`);
-                        dispatch("truncate");
-                    })
-                    .catch((err) => {
-                        ApiClient.error(err);
-                    });
-            },
-        );
+        confirm($_("common.message.deleteDataPrompt", { values: { value: original.email } }), () => {
+            return ApiClient.collections
+                .truncate(original.id)
+                .then(() => {
+                    forceHide();
+                    addSuccessToast(`Successfully truncated collection "${original.name}".`);
+                    dispatch("truncate");
+                })
+                .catch((err) => {
+                    ApiClient.error(err);
+                });
+        });
     }
 
     function deleteConfirm() {
         if (!original?.id) {
             return; // nothing to delete
         }
-
-        confirm(`Do you really want to delete collection "${original.name}" and all its records?`, () => {
+        confirm($_("common.message.deleteDataPrompt", { values: { value: original.email } }), () => {
             return ApiClient.collections
                 .delete(original.id)
                 .then(() => {
@@ -496,7 +491,9 @@
                 class:active={activeTab === TAB_SCHEMA}
                 on:click={() => changeTab(TAB_SCHEMA)}
             >
-                <span class="txt">{isView ? $json("common.database.query") : $json("common.database.field")}</span>
+                <span class="txt"
+                    >{isView ? $json("common.database.query") : $json("common.database.field")}</span
+                >
                 {#if !CommonHelper.isEmpty(fieldsTabError)}
                     <i
                         class="ri-error-warning-fill txt-danger"
@@ -513,7 +510,7 @@
                     class:active={activeTab === TAB_RULES}
                     on:click={() => changeTab(TAB_RULES)}
                 >
-                    <span class="txt">{$_("common.placeholder.apiRule")}</span>
+                    <span class="txt">{$_("common.popup.apiRequestPermission.name")}</span>
                     {#if !CommonHelper.isEmpty($errors?.listRule) || !CommonHelper.isEmpty($errors?.viewRule) || !CommonHelper.isEmpty($errors?.createRule) || !CommonHelper.isEmpty($errors?.updateRule) || !CommonHelper.isEmpty($errors?.deleteRule) || !CommonHelper.isEmpty($errors?.authRule) || !CommonHelper.isEmpty($errors?.manageRule)}
                         <i
                             class="ri-error-warning-fill txt-danger"

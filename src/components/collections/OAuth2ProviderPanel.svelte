@@ -9,6 +9,9 @@
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
     import RedactedPasswordInput from "@/components/base/RedactedPasswordInput.svelte";
 
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
+
     const dispatch = createEventDispatcher();
 
     const formId = "provider_popup_" + CommonHelper.randomString(5);
@@ -47,9 +50,7 @@
     }
 
     async function remove() {
-        confirm(
-            `Do you really want to remove the "${uiOptions.title}" OAuth2 provider from the collection?`,
-            () => {
+        confirm($_("common.message.deleteTablePrompt", { values: { value: uiOptions.title } }), () => {
                 dispatch("remove", { uiOptions });
                 hide();
             },
@@ -61,10 +62,7 @@
     <svelte:fragment slot="header">
         <figure class="provider-logo">
             {#if uiOptions.logo}
-                <img
-                    src="{import.meta.env.BASE_URL}images/oauth2/{uiOptions.logo}"
-                    alt="{uiOptions.title} logo"
-                />
+                <img src="{pbUrl}/images/oauth2/{uiOptions.logo}" alt="{uiOptions.title} logo" />
             {:else}
                 <i class="ri-puzzle-line txt-sm txt-hint"></i>
             {/if}
@@ -108,7 +106,8 @@
             </button>
             <div class="flex-fill"></div>
         {/if}
-        <button type="button" class="btn btn-transparent" on:click={hide}>{$_("common.action.cancel")}</button>
+        <button type="button" class="btn btn-transparent" on:click={hide}>{$_("common.action.cancel")}</button
+        >
         <button type="submit" form={formId} class="btn btn-expanded" disabled={!hasChanges}>
             <span class="txt">Set provider config</span>
         </button>

@@ -71,7 +71,7 @@
     }
 
     function deleteConfirm(name) {
-        confirm(`Do you really want to delete ${name}?`, () => deleteBackup(name));
+        confirm($_("common.message.deletePrompt",{values:{value:name}}, () => deleteBackup(name)));
     }
 
     async function deleteBackup(name) {

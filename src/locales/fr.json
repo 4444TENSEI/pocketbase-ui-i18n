@@ -239,7 +239,7 @@
       "setting": {
         "content": {
           "application": {
-            "serverName": "Nom d'identification personnalisé",
+            "nowAppName": "Nom d'identification personnalisé",
             "serverUrl": "Adresse du serveur principal",
             "proxy": {
               "title": "mandataire IP",

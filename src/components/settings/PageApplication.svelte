@@ -1,5 +1,6 @@
 <script>
     import { _, json } from "svelte-i18n";
+    import { getCookie, setCookie } from "@/utils/Cookie";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
     import tooltip from "@/actions/tooltip";
@@ -13,14 +14,14 @@
     import TrustedProxyAccordion from "@/components/settings/TrustedProxyAccordion.svelte";
     import RateLimitAccordion from "@/components/settings/RateLimitAccordion.svelte";
 
-    $pageTitle = $json("common.menu.appConfig");
-
+    let cookiePbUrl = getCookie("pbUrl");
     let originalFormSettings = {};
     let formSettings = {};
     let isLoading = false;
     let isSaving = false;
     let initialHash = "";
     let healthData = {};
+    $pageTitle = $json("common.menu.appConfig");
 
     $: initialHash = JSON.stringify(originalFormSettings);
 
@@ -187,7 +188,7 @@
                 <div class="grid">
                     <div class="col-lg-6">
                         <Field class="form-field required" name="meta.appName" let:uniqueId>
-                            <label for={uniqueId}>{$_("page.setting.content.application.serverName")}</label>
+                            <label for={uniqueId}>{$_("page.setting.content.application.nowAppName")}</label>
                             <input
                                 type="text"
                                 id={uniqueId}
@@ -200,7 +201,7 @@
                     <div class="col-lg-6">
                         <Field class="form-field required" name="meta.appURL" let:uniqueId>
                             <label for={uniqueId}>{$_("page.setting.content.application.serverUrl")}</label>
-                            <input type="text" id={uniqueId} required bind:value={formSettings.meta.appURL} />
+                            <input type="text" id={uniqueId} required value={cookiePbUrl} />
                         </Field>
                     </div>
                     <div class="col-lg-12">

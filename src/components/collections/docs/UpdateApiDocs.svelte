@@ -179,12 +179,12 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
     <tbody>
         {#if isAuth}
             <tr>
-                <td colspan="3" class="txt-hint txt-bold">Auth specific fields</td>
+                <td colspan="3" class="txt-hint txt-bold">{$_("common.placeholder.forAuth")}</td>
             </tr>
             <tr>
                 <td>
                     <div class="inline-flex">
-                        <span class="label label-warning">Optional</span>
+                        <span class="label label-warning">{$_("common.tip.optional")}</span>
                         <span>email</span>
                     </div>
                 </td>
@@ -203,9 +203,9 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
                 <td>
                     <div class="inline-flex">
                         {#if collection?.fields?.find((f) => f.name == "emailVisibility")?.required}
-                            <span class="label label-success">Required</span>
+                            <span class="label label-success">{$_("common.tip.required")}</span>
                         {:else}
-                            <span class="label label-warning">Optional</span>
+                            <span class="label label-warning">{$_("common.tip.optional")}</span>
                         {/if}
                         <span>emailVisibility</span>
                     </div>
@@ -218,7 +218,7 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
             <tr>
                 <td>
                     <div class="inline-flex">
-                        <span class="label label-warning">Optional</span>
+                        <span class="label label-warning">{$_("common.tip.optional")}</span>
                         <span>oldPassword</span>
                     </div>
                 </td>
@@ -235,7 +235,7 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
             <tr>
                 <td>
                     <div class="inline-flex">
-                        <span class="label label-warning">Optional</span>
+                        <span class="label label-warning">{$_("common.tip.optional")}</span>
                         <span>password</span>
                     </div>
                 </td>
@@ -247,7 +247,7 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
             <tr>
                 <td>
                     <div class="inline-flex">
-                        <span class="label label-warning">Optional</span>
+                        <span class="label label-warning">{$_("common.tip.optional")}</span>
                         <span>passwordConfirm</span>
                     </div>
                 </td>
@@ -259,7 +259,7 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
             <tr>
                 <td>
                     <div class="inline-flex">
-                        <span class="label label-warning">Optional</span>
+                        <span class="label label-warning">{$_("common.tip.optional")}</span>
                         <span>verified</span>
                     </div>
                 </td>
@@ -273,7 +273,7 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="txt-hint txt-bold">Other fields</td>
+                <td colspan="3" class="txt-hint txt-bold">{$_("common.placeholder.forOther")}</td>
             </tr>
         {/if}
 
@@ -282,9 +282,9 @@ final record = await pb.collection('${collection?.name}').update('RECORD_ID', bo
                 <td>
                     <div class="inline-flex">
                         {#if field.required}
-                            <span class="label label-success">Required</span>
+                            <span class="label label-success">{$_("common.tip.required")}</span>
                         {:else}
-                            <span class="label label-warning">Optional</span>
+                            <span class="label label-warning">{$_("common.tip.optional")}</span>
                         {/if}
                         <span>{field.name}</span>
                     </div>

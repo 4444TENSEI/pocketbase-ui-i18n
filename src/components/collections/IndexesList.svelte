@@ -59,7 +59,7 @@
         on:click={() => upsertPanel?.show()}
     >
         <span class="txt">+</span>
-        <span class="txt">New index</span>
+        <span class="txt">{$_("common.popup.editTableInfo.content.3")}</span>
     </button>
 </div>
 

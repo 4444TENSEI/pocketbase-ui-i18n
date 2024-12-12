@@ -259,7 +259,7 @@
     }
 
     function deleteSelectedConfirm() {
-        const msg = $json("common.message.deletePrompt");
+        const msg = $json("common.message.deleteDataPrompt");
 
         confirm(msg, deleteSelected);
     }

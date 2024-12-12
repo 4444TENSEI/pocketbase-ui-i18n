@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import { superuser } from "@/stores/superuser";
 
     export let center = false;
@@ -18,11 +19,16 @@
         {#if $superuser?.id}
             <a href="https://pocketbase.io/docs/" target="_blank" rel="noopener noreferrer">
                 <i class="ri-book-open-line txt-sm" />
-                <span class="txt">Docs</span>
+                <span class="txt">{$_("common.placeholder.docs")}</span>
             </a>
             <span class="delimiter">|</span>
-            <a href="https://github.com/pocketbase/pocketbase/releases" target="_blank" rel="noopener noreferrer" title="Releases">
-                <span class="txt">PocketBase {import.meta.env.PB_VERSION}</span>
+            <a
+                href="https://github.com/pocketbase/pocketbase/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Releases"
+            >
+                <span class="txt">{import.meta.env.APP_NAME} {import.meta.env.PB_VERSION}</span>
             </a>
         {/if}
     </footer>

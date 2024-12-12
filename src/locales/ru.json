@@ -239,7 +239,7 @@
       "setting": {
         "content": {
           "application": {
-            "serverName": "Пользовательское идентификационное имя",
+            "nowAppName": "Пользовательское идентификационное имя",
             "serverUrl": "Внутренний адрес",
             "proxy": {
               "title": "IP-прокси",

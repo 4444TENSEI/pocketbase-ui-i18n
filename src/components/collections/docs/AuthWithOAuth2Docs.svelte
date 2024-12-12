@@ -135,7 +135,7 @@
         <tr>
             <td>
                 <div class="inline-flex">
-                    <span class="label label-success">Required</span>
+                    <span class="label label-success">{$_("common.tip.required")}</span>
                     <span>provider</span>
                 </div>
             </td>
@@ -147,7 +147,7 @@
         <tr>
             <td>
                 <div class="inline-flex">
-                    <span class="label label-success">Required</span>
+                    <span class="label label-success">{$_("common.tip.required")}</span>
                     <span>code</span>
                 </div>
             </td>
@@ -159,7 +159,7 @@
         <tr>
             <td>
                 <div class="inline-flex">
-                    <span class="label label-success">Required</span>
+                    <span class="label label-success">{$_("common.tip.required")}</span>
                     <span>codeVerifier</span>
                 </div>
             </td>
@@ -171,7 +171,7 @@
         <tr>
             <td>
                 <div class="inline-flex">
-                    <span class="label label-success">Required</span>
+                    <span class="label label-success">{$_("common.tip.required")}</span>
                     <span>redirectURL</span>
                 </div>
             </td>
@@ -183,7 +183,7 @@
         <tr>
             <td>
                 <div class="inline-flex">
-                    <span class="label label-warning">Optional</span>
+                    <span class="label label-warning">{$_("common.tip.optional")}</span>
                     <span>create</span>
                 </div>
             </td>

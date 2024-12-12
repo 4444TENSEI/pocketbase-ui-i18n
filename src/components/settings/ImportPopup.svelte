@@ -86,7 +86,7 @@
 
         if (deletedFieldNames.length) {
             confirm(
-                `Do you really want to delete the following collection fields and their related records data:\n- ${deletedFieldNames.join(
+                `${$_("common.message.deleteSelectedPrompt")}:\n- ${deletedFieldNames.join(
                     "\n- ",
                 )}`,
                 () => {

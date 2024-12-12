@@ -3,6 +3,9 @@
     import ApiClient from "@/utils/ApiClient";
     import PocketBase, { getTokenPayload, isTokenExpired } from "pocketbase";
 
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
+
     export let params;
 
     let successConfirm = false;
@@ -21,7 +24,7 @@
         isConfirming = true;
 
         // init a custom client to avoid interfering with the superuser state
-        const client = new PocketBase(import.meta.env.PB_BACKEND_URL);
+        const client = new PocketBase(pbUrl);
 
         try {
             const payload = getTokenPayload(params?.token);
@@ -46,7 +49,7 @@
         isResending = true;
 
         // init a custom client to avoid interfering with the superuser state
-        const client = new PocketBase(import.meta.env.PB_BACKEND_URL);
+        const client = new PocketBase(pbUrl);
 
         try {
             const payload = getTokenPayload(params?.token);

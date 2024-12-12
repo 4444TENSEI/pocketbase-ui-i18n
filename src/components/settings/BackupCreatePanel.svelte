@@ -130,7 +130,7 @@
             class:btn-loading={isSubmitting}
             disabled={isSubmitting}
         >
-            <span class="txt">{$_("common.action.start")}</span>
+            <span class="txt">{$_("common.action.start")}{$_("common.action.create")}</span>
         </button>
     </svelte:fragment>
 </OverlayPanel>

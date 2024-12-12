@@ -1,11 +1,14 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import providersList from "@/providers.js";
     import { confirm } from "@/stores/confirmation";
     import { addSuccessToast } from "@/stores/toasts";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
     import { createEventDispatcher } from "svelte";
+
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
 
     const dispatch = createEventDispatcher();
 
@@ -51,7 +54,9 @@
         }
 
         confirm(
-            `Do you really want to unlink the ${getProviderTitle(externalAuth.provider)} provider?`,
+            $_("common.message.unlinkProviderPrompt", {
+                values: { provider: getProviderTitle(externalAuth.provider) },
+            }),
             () => {
                 return ApiClient.collection("_externalAuths")
                     .delete(externalAuth.id)
@@ -82,7 +87,7 @@
             <div class="list-item">
                 <figure class="provider-logo">
                     <img
-                        src="{import.meta.env.BASE_URL}images/oauth2/{getProviderConfig(auth.provider)?.logo}"
+                        src="{pbUrl}/images/oauth2/{getProviderConfig(auth.provider)?.logo}"
                         alt="Provider logo"
                     />
                 </figure>
@@ -97,7 +102,7 @@
                 </button>
             </div>
         {/each}
-    </div>  
+    </div>
 {:else}
     <h6 class="txt-hint txt-center m-t-sm m-b-sm">{$_("common.message.noOa2Provider")}</h6>
 {/if}

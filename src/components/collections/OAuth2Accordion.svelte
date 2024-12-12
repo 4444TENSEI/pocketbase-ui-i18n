@@ -11,6 +11,9 @@
     import CommonHelper from "@/utils/CommonHelper";
     import { scale, slide } from "svelte/transition";
 
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
+
     export let collection;
 
     const excludedFieldNames = ["id", "email", "emailVisibility", "verified", "tokenKey", "password"];
@@ -108,7 +111,7 @@
                     <figure class="provider-logo">
                         {#if uiOptions?.logo}
                             <img
-                                src="{import.meta.env.BASE_URL}images/oauth2/{uiOptions.logo}"
+                                src="{pbUrl}images/oauth2/{uiOptions.logo}"
                                 alt="{uiOptions.title} logo"
                             />
                         {:else}

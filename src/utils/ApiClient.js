@@ -8,6 +8,9 @@ import CommonHelper from "@/utils/CommonHelper";
 import { replace } from "svelte-spa-router";
 import { get } from "svelte/store";
 
+import { getCookie } from "@/utils/Cookie";
+let pbUrl = getCookie("pbUrl");
+
 const superuserFileTokenKey = "pb_superuser_file_token";
 
 /**
@@ -131,7 +134,7 @@ class AppAuthStore extends LocalAuthStore {
     }
 }
 
-const pb = new PocketBase(import.meta.env.PB_BACKEND_URL, new AppAuthStore());
+const pb = new PocketBase(pbUrl, new AppAuthStore());
 
 if (pb.authStore.isValid) {
     pb.collection(pb.authStore.record.collectionName)

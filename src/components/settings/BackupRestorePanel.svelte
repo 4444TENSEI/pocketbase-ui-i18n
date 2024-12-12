@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
     import { setErrors } from "@/stores/errors";
@@ -73,7 +73,9 @@
     on:hide
 >
     <svelte:fragment slot="header">
-        <h4 class="popup-title txt-ellipsis">{$_("common.action.restore")} <strong>{name}</strong></h4>
+        <h4 class="popup-title txt-ellipsis">
+            {$_("page.setting.content.backup.action.restoreBackup")}: “<strong>{name}</strong>”
+        </h4>
     </svelte:fragment>
 
     <div class="alert alert-danger">
@@ -81,36 +83,30 @@
             <i class="ri-alert-line" />
         </div>
         <div class="content">
-            <p class="txt-bold">Please proceed with caution and use it only with trusted backups!</p>
+            <p class="txt-bold">{$_("page.setting.content.backup.content.8")}</p>
 
-            <p>Backup restore is experimental and works only on UNIX based systems.</p>
+            <p>{$_("page.setting.content.backup.content.9")}</p>
             <p>
-                The restore operation will attempt to replace your existing <code>pb_data</code> with the one from
-                the backup and will restart the application process.
+                {$_("page.setting.content.backup.content.10")}
             </p>
+            <p>{$_("page.setting.content.backup.content.11")}</p>
             <p>
-                This means that on success all of your data (including app settings, users, superusers, etc.) will
-                be replaced with the ones from the backup.
-            </p>
-            <p>
-                Nothing will happen if the backup is invalid or incompatible (ex. missing
-                <code>data.db</code> file).
+                {$_("page.setting.content.backup.content.12")}
             </p>
         </div>
     </div>
 
     <div class="content m-b-xs">
-        Type the backup name
+        {$_("page.setting.content.backup.content.13")}:
         <div class="label">
             <span class="txt">{name}</span>
             <CopyIcon value={name} />
         </div>
-        to confirm:
     </div>
 
     <form id={formId} autocomplete="off" on:submit|preventDefault={submit}>
         <Field class="form-field required m-0" name="name" let:uniqueId>
-            <label for={uniqueId}>Backup name</label>
+            <label for={uniqueId}>{$_("page.setting.content.backup.content.14")}</label>
             <input type="text" id={uniqueId} required bind:value={nameConfirm} />
         </Field>
     </form>
@@ -126,7 +122,7 @@
             class:btn-loading={isSubmitting}
             disabled={!canSubmit || isSubmitting}
         >
-            <span class="txt">{$_("page.setting.content.backup.action.restoreBackup")}</span>
+            <span class="txt">{$_("common.action.start")}{$_("common.action.restore")}</span>
         </button>
     </svelte:fragment>
 </OverlayPanel>

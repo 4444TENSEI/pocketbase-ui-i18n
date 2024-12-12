@@ -239,7 +239,7 @@
       "setting": {
         "content": {
           "application": {
-            "serverName": "Nome identificativo personalizzato",
+            "nowAppName": "Nome identificativo personalizzato",
             "serverUrl": "Indirizzo di back-end",
             "proxy": {
               "title": "proxy IP",

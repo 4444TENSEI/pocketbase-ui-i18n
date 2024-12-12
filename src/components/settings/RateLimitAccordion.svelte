@@ -14,9 +14,9 @@
     export let formSettings;
 
     const audienceOptions = [
-        { value: "", label: "All" },
-        { value: "@guest", label: "Guest only" },
-        { value: "@auth", label: "Auth only" },
+        { value: "", label: $_("common.role.guest") },
+        { value: "@guest", label: $_("common.role.user") },
+        { value: "@auth", label: $_("common.role.authUser") },
     ];
 
     const basePredefinedTags = [
@@ -151,7 +151,9 @@
 
     <Field class="form-field form-field-toggle m-b-xs" name="rateLimits.enabled" let:uniqueId>
         <input type="checkbox" id={uniqueId} bind:checked={formSettings.rateLimits.enabled} />
-        <label for={uniqueId}>{$_("common.action.enable")} <small class="txt-hint">(experimental)</small></label>
+        <label for={uniqueId}
+            >{$_("common.action.enable")} <small class="txt-hint">(experimental)</small></label
+        >
     </Field>
 
     {#if !CommonHelper.isEmpty(formSettings.rateLimits.rules)}

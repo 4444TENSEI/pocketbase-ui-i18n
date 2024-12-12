@@ -104,7 +104,7 @@
                 index = CommonHelper.buildIndex(indexParts);
             }}
         />
-        <label for={uniqueId}>Unique</label>
+        <label for={uniqueId}>{$_("common.database.unique")}</label>
     </Field>
 
     <Field class="form-field required m-b-sm" name={`indexes.${key || ""}`} let:uniqueId>
@@ -124,7 +124,7 @@
 
     {#if presetColumns.length > 0}
         <div class="inline-flex gap-10">
-            <span class="txt txt-hint">{$_("common.placeholder.preset")}</span>
+            <span class="txt txt-hint">{$_("common.database.field")}:</span>
             {#each presetColumns as column}
                 <button
                     type="button"

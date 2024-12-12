@@ -149,7 +149,7 @@
         <tr>
             <td valign="top">
                 <div class="flex txt-nowrap">
-                    <span class="label label-success">Required</span>
+                    <span class="label label-success">{$_("common.tip.required")}</span>
                     <span>requests</span>
                 </div>
             </td>

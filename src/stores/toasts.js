@@ -42,7 +42,6 @@ export function addToast(message, type, duration) {
 export function removeToast(messageOrToast) {
     toasts.update((t) => {
         removeToastFromArray(t, messageOrToast);
-
         return t;
     });
 }

@@ -239,7 +239,7 @@
       "setting": {
         "content": {
           "application": {
-            "serverName": "맞춤 식별 이름",
+            "nowAppName": "맞춤 식별 이름",
             "serverUrl": "백엔드 주소",
             "proxy": {
               "title": "IP 프록시",

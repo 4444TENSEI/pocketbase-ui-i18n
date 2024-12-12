@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import RuleField from "@/components/collections/RuleField.svelte";
     import CommonHelper from "@/utils/CommonHelper";
@@ -18,17 +19,22 @@
 <div class="block m-b-sm handle">
     <div class="flex txt-sm txt-hint m-b-5">
         <p>
-            All rules follow the
-            <a href="https://pocketbase.io/docs/api-rules-and-filters/" target="_blank" rel="noopener noreferrer">
-                PocketBase filter syntax and operators
-            </a>.
+            <a
+                href="https://pocketbase.io/docs/api-rules-and-filters/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                {$_("common.action.learnMore")}
+            </a>
         </p>
         <button
             type="button"
             class="expand-handle txt-sm txt-bold txt-nowrap link-hint"
             on:click={() => (showFiltersInfo = !showFiltersInfo)}
         >
-            {showFiltersInfo ? "Hide available fields" : "Show available fields"}
+            {showFiltersInfo
+                ? $_("common.popup.apiRequestPermission.action.hideList")
+                : $_("common.popup.apiRequestPermission.action.showList")}
         </button>
     </div>
 
@@ -80,9 +86,19 @@
     {/if}
 </div>
 
-<RuleField label="List/Search rule" formKey="listRule" {collection} bind:rule={collection.listRule} />
+<RuleField
+    label={$_("common.popup.apiRequestPermission.content.4")}
+    formKey="listRule"
+    {collection}
+    bind:rule={collection.listRule}
+/>
 
-<RuleField label="View rule" formKey="viewRule" {collection} bind:rule={collection.viewRule} />
+<RuleField
+    label={$_("common.popup.apiRequestPermission.content.5")}
+    formKey="viewRule"
+    {collection}
+    bind:rule={collection.viewRule}
+/>
 
 {#if collection?.type !== "view"}
     <RuleField label="Create rule" formKey="createRule" {collection} bind:rule={collection.createRule}>
@@ -99,9 +115,19 @@
         </svelte:fragment>
     </RuleField>
 
-    <RuleField label="Update rule" formKey="updateRule" {collection} bind:rule={collection.updateRule} />
+    <RuleField
+        label={$_("common.popup.apiRequestPermission.content.3")}
+        formKey="updateRule"
+        {collection}
+        bind:rule={collection.updateRule}
+    />
 
-    <RuleField label="Delete rule" formKey="deleteRule" {collection} bind:rule={collection.deleteRule} />
+    <RuleField
+        label={$_("common.popup.apiRequestPermission.content.2")}
+        formKey="deleteRule"
+        {collection}
+        bind:rule={collection.deleteRule}
+    />
 {/if}
 
 {#if collection?.type === "auth"}
@@ -125,7 +151,7 @@
     {#if showExtraRules}
         <div class="block" transition:slide={{ duration: 150 }}>
             <RuleField
-                label="Authentication rule"
+                label={$_("common.popup.apiRequestPermission.content.6")}
                 formKey="authRule"
                 placeholder=""
                 {collection}

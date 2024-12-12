@@ -50,7 +50,7 @@
 
             <button
                 type="submit"
-                class="btn btn-lg btn-block"
+                class="btn btn-lg btn-block full-width"
                 class:btn-loading={isLoading}
                 disabled={isLoading}
             >

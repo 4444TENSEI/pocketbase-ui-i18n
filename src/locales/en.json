@@ -358,7 +358,7 @@
     "setting": {
       "content": {
         "application": {
-          "serverName": "Custom identification name",
+          "nowAppName": "Custom identification name",
           "serverUrl": "Backend address",
           "proxy": {
             "title": "IP proxy",

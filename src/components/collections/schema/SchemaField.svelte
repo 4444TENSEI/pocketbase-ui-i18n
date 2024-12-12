@@ -310,7 +310,7 @@
                                         role="menuitem"
                                         on:click|preventDefault={duplicate}
                                     >
-                                        <span class="txt">{$_("common.action.copy")}</span>
+                                        <span class="txt">{$_("common.action.clone")}</span>
                                     </button>
                                     {#if !field.system}
                                         <button
@@ -319,7 +319,7 @@
                                             role="menuitem"
                                             on:click|preventDefault={remove}
                                         >
-                                            <span class="txt">Remove</span>
+                                            <span class="txt">{$_("common.action.delete")}</span>
                                         </button>
                                     {/if}
                                 </Toggler>

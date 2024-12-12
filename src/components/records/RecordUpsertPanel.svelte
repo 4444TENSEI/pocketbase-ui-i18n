@@ -318,7 +318,7 @@
             return; // nothing to delete
         }
 
-        confirm(`Do you really want to delete the selected record?`, () => {
+        confirm($_("common.message.deleteSelectedPrompt"), () => {
             return ApiClient.collection(original.collectionId)
                 .delete(original.id)
                 .then(() => {

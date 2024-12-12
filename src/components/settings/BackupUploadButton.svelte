@@ -77,7 +77,7 @@
     class:btn-loading={isUploading}
     class:btn-disabled={isUploading}
     aria-label="Upload backup"
-    use:tooltip={$json("page.setting.content.backup.action.restoreBackup")}
+    use:tooltip={$json("page.setting.content.backup.action.uploadBackup")}
     on:click={() => fileInput?.click()}
 >
     <i class="ri-upload-cloud-line" />

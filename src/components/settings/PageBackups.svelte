@@ -157,7 +157,9 @@
                             <div class="grid p-t-base p-b-sm">
                                 <div class="col-lg-6">
                                     <Field class="form-field required" name="backups.cron" let:uniqueId>
-                                        <label for={uniqueId}>{$_("page.setting.content.backup.cronExpression")}</label>
+                                        <label for={uniqueId}
+                                            >{$_("page.setting.content.backup.cronExpression")}</label
+                                        >
                                         <!-- svelte-ignore a11y-autofocus -->
                                         <input
                                             required
@@ -180,7 +182,11 @@
                                                             formSettings.backups.cron = "0 0 * * *";
                                                         }}
                                                     >
-                                                        <span class="txt">Every day at 00:00h</span>
+                                                        <span class="txt"
+                                                            >{$_(
+                                                                "page.setting.content.backup.content.14",
+                                                            )}</span
+                                                        >
                                                     </button>
                                                     <button
                                                         type="button"
@@ -189,7 +195,11 @@
                                                             formSettings.backups.cron = "0 0 * * 0";
                                                         }}
                                                     >
-                                                        <span class="txt">Every sunday at 00:00h</span>
+                                                        <span class="txt"
+                                                            >{$_(
+                                                                "page.setting.content.backup.content.15",
+                                                            )}</span
+                                                        >
                                                     </button>
                                                     <button
                                                         type="button"
@@ -198,7 +208,11 @@
                                                             formSettings.backups.cron = "0 0 * * 1,3";
                                                         }}
                                                     >
-                                                        <span class="txt">Every Mon and Wed at 00:00h</span>
+                                                        <span class="txt"
+                                                            >{$_(
+                                                                "page.setting.content.backup.content.16",
+                                                            )}</span
+                                                        >
                                                     </button>
                                                     <button
                                                         type="button"
@@ -207,8 +221,8 @@
                                                             formSettings.backups.cron = "0 0 1 * *";
                                                         }}
                                                     >
-                                                        <span class="txt">
-                                                            Every first day of the month at 00:00h
+                                                        <span class="txt"
+                                                            >{$_("page.setting.content.backup.content.17")}
                                                         </span>
                                                     </button>
                                                 </Toggler>
@@ -232,7 +246,9 @@
                                         name="backups.cronMaxKeep"
                                         let:uniqueId
                                     >
-                                        <label for={uniqueId}>Max @auto backups to keep</label>
+                                        <label for={uniqueId}
+                                            >{$_("page.setting.content.backup.maxBackupFilesNum")}</label
+                                        >
                                         <input
                                             type="number"
                                             id={uniqueId}

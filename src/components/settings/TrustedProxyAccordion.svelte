@@ -52,7 +52,7 @@
             {#if !isEnabled && healthData.possibleProxyHeader}
                 <i
                     class="ri-alert-line txt-sm txt-warning"
-                    use:tooltip={"Detected proxy header.\nIt is recommend to list it as trusted."}
+                    use:tooltip={"page.setting.content.application.proxy.tip.1"}
                 />
             {:else if isEnabled && !hasChanges && !formSettings.trustedProxy.headers.includes(healthData.possibleProxyHeader)}
                 <i
@@ -86,13 +86,13 @@
                 <strong>{healthData.realIP || "N/A"}</strong>
                 <i
                     class="ri-information-line txt-sm link-hint"
-                    use:tooltip={"Must show your actual IP.\nIf not, set the correct proxy header."}
+                    use:tooltip={$_("page.setting.content.application.proxy.tip.5")}
                 />
             </div>
             <br />
             <div class="inline-flex flex-gap-5">
                 <span>{$_("page.setting.content.application.proxy.curProxyHeader")}:</span>
-                <strong>{healthData.possibleProxyHeader || "N/A"}</strong>
+                <strong>{healthData.possibleProxyHeader || $_("page.setting.content.application.proxy.content.8")}</strong>
             </div>
         </div>
     </div>

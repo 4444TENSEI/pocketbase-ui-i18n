@@ -206,7 +206,7 @@
         class:btn-loading={isUploading}
     >
         <i class="ri-upload-cloud-line" />
-        <span class="txt">{$_("page.setting.content.backup.action.restoreBackup")}</span>
+        <span class="txt">{$_("page.setting.content.backup.action.uploadBackup")}</span>
     </label>
     <input
         bind:this={backupFileInput}

@@ -70,7 +70,7 @@
 
 <h4 class="section-title">
     <div class="flex">
-        <span class="txt">{$_("common.placeholder.authMethod")}</span>
+        <span class="txt">{$_("common.placeholder.forAuthMethod")}</span>
         <div class="m-l-auto handle">
             <Field
                 class="form-field form-field-sm form-field-toggle m-0"

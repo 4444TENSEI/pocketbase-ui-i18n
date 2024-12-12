@@ -151,19 +151,19 @@
     <PageWrapper center>
         <div class="placeholder-section m-b-base">
             <div class="icon">
-                <i class="ri-database-2-line" />
+                <i class="ri-signal-wifi-error-fill" />
             </div>
             {#if $hideControls}
                 <h1 class="m-b-10">{$_("common.message.notAnyTables")}</h1>
             {:else}
-                <h1 class="m-b-10">{$_("common.message.createFirstTable")}</h1>
+                <h1 class="m-b-10">{$_("common.message.checkServerConnect")}</h1>
                 <button
                     type="button"
                     class="btn btn-expanded-lg btn-lg"
                     on:click={() => collectionUpsertPanel?.show()}
                 >
-                    <i class="ri-add-line" />
-                    <span class="txt">{$_("common.action.createTable")}</span>
+                    <i class="ri-tools-fill" />
+                    <span class="txt">{$_("common.action.connectionTest")}</span>
                 </button>
             {/if}
         </div>
@@ -182,9 +182,9 @@
                 {#if !$hideControls}
                     <button
                         type="button"
-                        aria-label="Edit collection"
+                        aria-label={$_("common.action.editTable")}
                         class="btn btn-transparent btn-circle"
-                        use:tooltip={{ text: "Edit collection", position: "right" }}
+                        use:tooltip={{ text: $_("common.action.editTable"), position: "right" }}
                         on:click={() => collectionUpsertPanel?.show($activeCollection)}
                     >
                         <i class="ri-settings-4-line" />

@@ -151,7 +151,7 @@
 
 <OverlayPanel bind:this={panel} class="confirm-changes-panel" popup on:hide on:show>
     <svelte:fragment slot="header">
-        <h4>Confirm collection changes</h4>
+        <h4>{$_("common.popup.editTableInfo.name",{values:{tableName:oldCollection.name}})}</h4>
     </svelte:fragment>
 
     {#if isCollectionRenamed || deletedFields.length || renamedFields.length}
@@ -160,12 +160,10 @@
                 <i class="ri-error-warning-line" />
             </div>
             <div class="content txt-bold">
-                <p>
-                    If any of the collection changes is part of another collection rule, filter or view query,
-                    you'll have to update it manually!
+                <p>{$_("common.popup.editTableInfo.content.1")}
                 </p>
                 {#if deletedFields.length}
-                    <p>All data associated with the removed fields will be permanently deleted!</p>
+                    <p>{$_("common.popup.editTableInfo.content.2")}</p>
                 {/if}
             </div>
         </div>

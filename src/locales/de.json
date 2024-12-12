@@ -239,7 +239,7 @@
       "setting": {
         "content": {
           "application": {
-            "serverName": "Benutzerdefinierter Identifikationsname",
+            "nowAppName": "Benutzerdefinierter Identifikationsname",
             "serverUrl": "Backend-Adresse",
             "proxy": {
               "title": "IP-Proxy",

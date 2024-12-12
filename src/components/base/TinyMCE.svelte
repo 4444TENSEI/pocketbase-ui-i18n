@@ -54,10 +54,13 @@
     import { onMount, createEventDispatcher } from "svelte";
     import CommonHelper from "@/utils/CommonHelper";
 
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
+
     export let id = "tinymce_svelte" + CommonHelper.randomString(7);
     export let inline = undefined;
     export let disabled = false;
-    export let scriptSrc = `${import.meta.env.BASE_URL}libs/tinymce/tinymce.min.js`;
+    export let scriptSrc = `${pbUrl}/libs/tinymce/tinymce.min.js`;
     export let conf = {};
     export let modelEvents = "change input undo redo";
     export let value = "";

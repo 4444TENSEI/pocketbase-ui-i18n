@@ -1,11 +1,14 @@
 <script>
     import { _ } from "svelte-i18n";
-    
+
     import { fly } from "svelte/transition";
     import Field from "@/components/base/Field.svelte";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
     import providersList from "@/providers.js";
     import { createEventDispatcher } from "svelte";
+
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
 
     const dispatch = createEventDispatcher();
 
@@ -79,7 +82,7 @@
                     <figure class="provider-logo">
                         {#if provider.logo}
                             <img
-                                src="{import.meta.env.BASE_URL}images/oauth2/{provider.logo}"
+                                src="{pbUrl}/images/oauth2/{provider.logo}"
                                 alt="{provider.title} logo"
                             />
                         {/if}
@@ -103,6 +106,7 @@
     </div>
 
     <svelte:fragment slot="footer">
-        <button type="button" class="btn btn-transparent" on:click={hide}>{$_("common.action.cancel")}</button>
+        <button type="button" class="btn btn-transparent" on:click={hide}>{$_("common.action.cancel")}</button
+        >
     </svelte:fragment>
 </OverlayPanel>

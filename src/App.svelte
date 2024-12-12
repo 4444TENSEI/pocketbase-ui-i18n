@@ -2,7 +2,6 @@
     import "./scss/main.scss";
 
     import { _, json } from "svelte-i18n";
-    // import { setCookie } from '@/utils/Cookie';
     import tooltip from "@/actions/tooltip";
     import Confirmation from "@/components/base/Confirmation.svelte";
     import TinyMCE from "@/components/base/TinyMCE.svelte";
@@ -23,8 +22,6 @@
     let showAppSidebar = false;
 
     let isTinyMCEPreloaded = false;
-    // 🐱
-    // setCookie("appUrl", "localhost:8088");
     $: if ($superuser?.id) {
         loadSettings();
     }
@@ -76,11 +73,7 @@
     <title>{CommonHelper.joinNonEmpty([$pageTitle, $appName], " - ")}</title>
 
     {#if window.location.protocol == "https:"}
-        <link
-            rel="shortcut icon"
-            type="image/png"
-            href="{import.meta.env.BASE_URL}images/favicon/favicon_prod.png"
-        />
+        <link rel="shortcut icon" type="image/png" href="/images/favicon/favicon_prod.png" />
     {/if}
 </svelte:head>
 
@@ -88,12 +81,7 @@
     {#if $superuser?.id && showAppSidebar}
         <aside class="app-sidebar">
             <a href="/" class="logo logo-sm" use:link>
-                <img
-                    src="{import.meta.env.BASE_URL}images/logo.svg"
-                    alt="PocketBase logo"
-                    width="40"
-                    height="40"
-                />
+                <img src="/images/logo.svg" alt="PocketBase logo" width="40" height="40" />
             </a>
 
             <nav class="main-menu">

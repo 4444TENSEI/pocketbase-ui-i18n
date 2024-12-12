@@ -1,5 +1,9 @@
 <script>
     import { _, json } from "svelte-i18n";
+    import { onMount } from "svelte";
+
+    import UpdateAppUrlDialog from "@/components/base/UpdateAppUrlDialog.svelte";
+
     import { link, replace, querystring } from "svelte-spa-router";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -8,6 +12,18 @@
     import { setErrors } from "@/stores/errors";
     import { addErrorToast, removeAllToasts } from "@/stores/toasts";
 
+    import { getCookie, setCookie } from "@/utils/Cookie";
+    // 🐱设置后端服务地址的初始化
+    let pbUrl = getCookie("pbUrl");
+    if (!pbUrl) {
+        setCookie("pbUrl", import.meta.env.PB_BACKEND_URL);
+    }
+    ApiClient.baseUrl = getCookie("pbUrl");
+
+    let editAppUrlPanel;
+    onMount(async () => {
+        editAppUrlPanel.show();
+    });
     const queryParams = new URLSearchParams($querystring);
 
     let identity = queryParams.get("demoEmail") || "";
@@ -161,10 +177,25 @@
         </h4>
     </div>
 
+    <!-- 🐱服务连接失败时弹出 -->
     {#if isLoading}
         <div class="block txt-center">
             <span class="loader" />
         </div>
+        <button
+            type="button"
+            class="btn btn-transparent btn-circle"
+            on:click={() => {
+                try {
+                    editAppUrlPanel.show();
+                } catch (error) {
+                    console.error("无法打开对话框", error);
+                }
+            }}
+        >
+            <i class="ri-settings-4-line" />
+        </button>
+        <UpdateAppUrlDialog bind:this={editAppUrlPanel} />
     {:else if authMethods.password.enabled && !mfaId}
         <!-- auth with password -->
         <form class="block" on:submit|preventDefault={authWithPassword}>
@@ -204,18 +235,23 @@
                     >
                 </div>
             </Field>
-
-            <button
-                type="submit"
-                class="btn btn-lg btn-block btn-next"
-                class:btn-disabled={passwordAuthSubmitting}
-                class:btn-loading={passwordAuthSubmitting}
-            >
-                <span class="txt"
-                    >{totalSteps > 1 ? $json("common.action.next") : $json("common.action.login")}</span
+            <div class="flex">
+                <button type="button" class="btn btn-lg btn-login-setting">
+                    <i class="ri-settings-line" />
+                </button>
+                <!-- 🐱登录按钮 -->
+                <button
+                    type="submit"
+                    class="btn btn-lg btn-login btn-next"
+                    class:btn-disabled={passwordAuthSubmitting}
+                    class:btn-loading={passwordAuthSubmitting}
                 >
-                <i class="ri-arrow-right-line" />
-            </button>
+                    <span class="txt"
+                        >{totalSteps > 1 ? $json("common.action.next") : $json("common.action.login")}</span
+                    >
+                    <i class="ri-arrow-right-line" />
+                </button>
+            </div>
         </form>
     {:else if authMethods.otp.enabled}
         {#if !otpId}
@@ -233,15 +269,14 @@
                     class:btn-loading={otpRequestSubmitting}
                 >
                     <i class="ri-mail-send-line" />
-                    <span class="txt">Send OTP</span>
+                    <span class="txt">{$_("common.placeholder.sendOtpEmail")}</span>
                 </button>
             </form>
         {:else}
             {#if otpEmail}
                 <div class="content txt-center m-b-sm">
                     <p>
-                        Check your <strong>{otpEmail}</strong> inbox and enter in the input below the received
-                        One-time password (OTP).
+                        {$_("common.message.sendOtpEmailPrompt", { values: { otpEmail: otpEmail } })}
                     </p>
                 </div>
             {/if}
@@ -271,11 +306,11 @@
 
                 <button
                     type="submit"
-                    class="btn btn-lg btn-block btn-next"
+                    class="btn btn-lg btn-next"
                     class:btn-disabled={otpAuthSubmitting}
                     class:btn-loading={otpAuthSubmitting}
                 >
-                    <span class="txt">{$_("common.page.login")}</span>
+                    <span class="txt">{$_("common.action.login")}</span>
                     <i class="ri-arrow-right-line" />
                 </button>
             </form>
