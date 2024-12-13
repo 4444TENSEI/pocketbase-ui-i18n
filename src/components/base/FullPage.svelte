@@ -7,7 +7,7 @@
 <PageWrapper class="full-page" center>
     <div class="wrapper wrapper-sm m-b-xl panel-wrapper">
         {#if !nobranding}
-            <div class="block txt-center m-b-lg">
+            <div class="block txt-center m-b-xs">
                 <figure class="logo">
                     <img src="/images/logo.svg" alt="PocketBase logo" width="40" height="40" />
                     <!-- 🐱首页Logo名称 -->

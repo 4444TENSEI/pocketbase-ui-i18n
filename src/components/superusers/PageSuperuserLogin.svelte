@@ -135,11 +135,12 @@
     </div>
     <!-- 🐱服务连接失败时弹出 -->
     {#if isLoading}
+        {$_("common.message.loadTimeout")}
         <div class="block txt-center">
             <span class="loader" />
         </div>
         <button type="button" class="btn btn-setting-loading" on:click={setUrlPopup}>
-            <i class="ri-earth-line" id="icon-setting" />
+            <i class="ri-settings-4-line" id="icon-setting" />
         </button>
     {:else if authMethods.password.enabled && !mfaId}
         <!-- auth with password -->
@@ -251,7 +252,7 @@
                     class:btn-loading={otpAuthSubmitting}
                 >
                     <span class="txt">{$_("common.page.login")}</span>
-                    <i class="ri-arrow-right-line" />
+                    <i class="ri-settings-4-line" />
                 </button>
             </form>
             <div class="content txt-center m-t-sm">

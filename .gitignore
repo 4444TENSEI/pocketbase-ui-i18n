@@ -4,11 +4,10 @@ script/
 dist/
 
 .DS_Store
-
+.env.development
 .env.production
 
 pb_*/
-.env
 *.exe
 *.go
 *.zip

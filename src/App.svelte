@@ -80,7 +80,7 @@
 <div class="app-layout">
     {#if $superuser?.id && showAppSidebar}
         <aside class="app-sidebar">
-            <a href="/" class="logo logo-sm" use:link>
+            <a href="/" class="logo logo-xl" use:link>
                 <img src="/images/logo.svg" alt="PocketBase logo" width="40" height="40" />
             </a>
 

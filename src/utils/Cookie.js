@@ -14,11 +14,11 @@ export function setCookie(name, value, days) {
 
 // 🐱设置后端服务地址的初始化
 export function setUrlPopup() {
-  let newPbUrl = prompt("设置后端服务地址：", getCookie("pbUrl"));
-  if (newPbUrl !== null && newPbUrl.trim() !== "") {
-    setCookie("pbUrl", newPbUrl);
+  let defaultPbUrl = prompt("后端服务地址", getCookie("pbUrl"));
+  if (defaultPbUrl !== null && defaultPbUrl.trim() !== "") {
+    setCookie("pbUrl", defaultPbUrl);
     location.reload();
-  } else if (newPbUrl === "") {
+  } else if (defaultPbUrl === "") {
     setCookie("pbUrl", import.meta.env.PB_BACKEND_URL);
   }
 }
