@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import tooltip from "@/actions/tooltip";
     import CommonHelper from "@/utils/CommonHelper";
 
@@ -23,7 +24,7 @@
         <div class="time">{timeOnly} UTC</div>
     </div>
 {:else}
-    <span class="txt txt-hint">N/A</span>
+    <span class="txt txt-hint">{$_("common.placeholder.cannotEdit")}</span>
 {/if}
 
 <style>

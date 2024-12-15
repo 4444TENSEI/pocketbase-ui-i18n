@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import SchemaField from "@/components/collections/schema/SchemaField.svelte";
@@ -30,11 +31,11 @@
         <Field class="form-field form-field-toggle" name="fields.{key}.onlyInt" let:uniqueId>
             <input type="checkbox" id={uniqueId} bind:checked={field.onlyInt} />
             <label for={uniqueId}>
-                <span class="txt">No decimals</span>
+                <span class="txt">{$_("common.switch.noDecimals.name")}</span>
                 <i
                     class="ri-information-line link-hint"
                     use:tooltip={{
-                        text: `Existing decimal numbers will not be affected.`,
+                        text: $_("common.switch.noDecimals.tip"),
                     }}
                 />
             </label>

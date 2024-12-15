@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import Field from "@/components/base/Field.svelte";
     import CommonHelper from "@/utils/CommonHelper";
 
@@ -25,8 +26,7 @@
                     secret = CommonHelper.randomSecret(50);
                 }
             }}
-        >
-            Invalidate all previously issued tokens
+        >{$_("common.popup.authSetting.token.action.destroyToken")}
         </span>
     </div>
 </Field>

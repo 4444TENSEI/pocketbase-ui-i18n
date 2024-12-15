@@ -106,7 +106,7 @@
 
     <form id={formId} autocomplete="off" on:submit|preventDefault={submit}>
         <Field class="form-field required m-0" name="name" let:uniqueId>
-            <label for={uniqueId}>{$_("page.setting.content.backup.content.14")}</label>
+            <label for={uniqueId}>{$_("common.placeholder.secondaryValidationInput")}</label>
             <input type="text" id={uniqueId} required bind:value={nameConfirm} />
         </Field>
     </form>

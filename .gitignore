@@ -2,13 +2,13 @@ node_modules/
 .vscode/
 script/
 dist/
+old/
 
 .DS_Store
 
-.env.production
-
 pb_*/
-.env
+*.local
+*.production
 *.exe
 *.go
 *.zip

@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { slide } from "svelte/transition";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -16,7 +16,7 @@
     import S3Fields from "@/components/settings/S3Fields.svelte";
     import BackupUploadButton from "@/components/settings/BackupUploadButton.svelte";
 
-    $pageTitle = $json("common.menu.backupConfig");
+    $pageTitle = $_("common.menu.backupConfig");
 
     let backupsListComponent;
     let originalFormSettings = {};
@@ -69,7 +69,7 @@
 
             init(settings);
 
-            addSuccessToast($json("common.message.applyNewSetting"));
+            addSuccessToast($_("common.message.applyNewSetting"));
         } catch (err) {
             ApiClient.error(err);
         }
@@ -113,7 +113,7 @@
                 <span class="txt-xl">{$_("page.setting.content.backup.content.1")}</span>
                 <RefreshButton
                     class="btn-sm"
-                    tooltip={$json("common.action.refresh")}
+                    tooltip={$_("common.action.refresh")}
                     on:refresh={refreshList}
                 />
                 <BackupUploadButton class="btn-sm" on:success={refreshList} />
@@ -264,7 +264,7 @@
                     <div class="clearfix m-b-base" />
 
                     <S3Fields
-                        toggleLabel={$json("page.setting.content.backup.action.backupToS3")}
+                        toggleLabel={$_("page.setting.content.backup.action.backupToS3")}
                         testFilesystem="backups"
                         configKey="backups.s3"
                         originalConfig={originalFormSettings.backups?.s3}

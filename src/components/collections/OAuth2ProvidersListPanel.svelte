@@ -9,7 +9,12 @@
 
     import { getCookie } from "@/utils/Cookie";
     let pbUrl = getCookie("pbUrl");
-
+    // 🐱这里纯前端请求的话图片接口需要修正
+    if (pbUrl.endsWith('/')) {
+        pbUrl += "_";
+    } else {
+        pbUrl += "/_";
+    }
     const dispatch = createEventDispatcher();
 
     export let disabled = [];

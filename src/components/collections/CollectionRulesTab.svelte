@@ -42,7 +42,7 @@
         <div transition:slide={{ duration: 150 }}>
             <div class="alert alert-warning m-0">
                 <div class="content">
-                    <p class="m-b-0">The following record fields are available:</p>
+                    <p class="m-b-0">{$_("common.popup.apiDocs.content.1")}</p>
                     <div class="inline-flex flex-gap-5">
                         {#each fieldNames as name}
                             {#if !hiddenFieldNames.includes(name)}
@@ -53,9 +53,7 @@
 
                     <hr class="m-t-10 m-b-5" />
 
-                    <p class="m-b-0">
-                        The request fields could be accessed with the special <em>@request</em> filter:
-                    </p>
+                    <p class="m-b-0">{$_("common.popup.apiDocs.content.2")}</p>
                     <div class="inline-flex flex-gap-5">
                         <code>@request.headers.*</code>
                         <code>@request.query.*</code>
@@ -65,9 +63,7 @@
 
                     <hr class="m-t-10 m-b-5" />
 
-                    <p class="m-b-0">
-                        You could also add constraints and query other collections using the
-                        <em>@collection</em> filter:
+                    <p class="m-b-0">{$_("common.popup.apiDocs.content.3")}
                     </p>
                     <div class="inline-flex flex-gap-5">
                         <code>@collection.ANY_COLLECTION_NAME.*</code>
@@ -75,8 +71,7 @@
 
                     <hr class="m-t-10 m-b-5" />
 
-                    <p>
-                        Example rule:
+                    <p>{$_("common.popup.apiDocs.content.4")}
                         <br />
                         <code>@request.auth.id != "" && created > "2022-01-01 00:00:00"</code>
                     </p>
@@ -87,21 +82,26 @@
 </div>
 
 <RuleField
-    label={$_("common.popup.apiRequestPermission.content.4")}
+    label={$_("common.popup.apiRequestPermission.placeholder.4")}
     formKey="listRule"
     {collection}
     bind:rule={collection.listRule}
 />
 
 <RuleField
-    label={$_("common.popup.apiRequestPermission.content.5")}
+    label={$_("common.popup.apiRequestPermission.placeholder.5")}
     formKey="viewRule"
     {collection}
     bind:rule={collection.viewRule}
 />
 
 {#if collection?.type !== "view"}
-    <RuleField label="Create rule" formKey="createRule" {collection} bind:rule={collection.createRule}>
+    <RuleField
+        label={$_("common.popup.apiRequestPermission.placeholder.1")}
+        formKey="createRule"
+        {collection}
+        bind:rule={collection.createRule}
+    >
         <svelte:fragment slot="afterLabel" let:isSuperuserOnly>
             {#if !isSuperuserOnly}
                 <i
@@ -116,14 +116,14 @@
     </RuleField>
 
     <RuleField
-        label={$_("common.popup.apiRequestPermission.content.3")}
+        label={$_("common.popup.apiRequestPermission.placeholder.3")}
         formKey="updateRule"
         {collection}
         bind:rule={collection.updateRule}
     />
 
     <RuleField
-        label={$_("common.popup.apiRequestPermission.content.2")}
+        label={$_("common.popup.apiRequestPermission.placeholder.2")}
         formKey="deleteRule"
         {collection}
         bind:rule={collection.deleteRule}
@@ -140,7 +140,7 @@
             showExtraRules = !showExtraRules;
         }}
     >
-        <strong class="txt">Additional auth collection rules</strong>
+        <strong class="txt">{$_("common.popup.apiRequestPermission.placeholder.8")}</strong>
         {#if showExtraRules}
             <i class="ri-arrow-up-s-line txt-sm" />
         {:else}
@@ -151,28 +151,22 @@
     {#if showExtraRules}
         <div class="block" transition:slide={{ duration: 150 }}>
             <RuleField
-                label={$_("common.popup.apiRequestPermission.content.6")}
+                label={$_("common.popup.apiRequestPermission.placeholder.6")}
                 formKey="authRule"
                 placeholder=""
                 {collection}
                 bind:rule={collection.authRule}
             >
                 <svelte:fragment>
-                    <p>
-                        This rule is executed every time before authentication allowing you to restrict who
-                        can authenticate.
-                    </p>
-                    <p>
-                        For example, to allow only verified users you can set it to
-                        <code>verified = true</code>.
-                    </p>
-                    <p>Leave it empty to allow anyone with an account to authenticate.</p>
-                    <p>To disable authentication entirely you can change it to "Set superusers only".</p>
+                    <p>{$_("common.popup.apiRequestPermission.content.1")}</p>
+                    <p>{$_("common.popup.apiRequestPermission.content.2")}</p>
+                    <p>{$_("common.popup.apiRequestPermission.content.3")}</p>
+                    <p>{$_("common.popup.apiRequestPermission.content.4")}</p>
                 </svelte:fragment>
             </RuleField>
 
             <RuleField
-                label="Manage rule"
+                label={$_("common.popup.apiRequestPermission.placeholder.7")}
                 formKey="manageRule"
                 placeholder=""
                 required={collection.manageRule !== null}

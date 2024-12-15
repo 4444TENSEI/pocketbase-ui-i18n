@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import CommonHelper from "@/utils/CommonHelper";
     import { createEventDispatcher, onMount } from "svelte";
     import { fly } from "svelte/transition";
@@ -8,7 +8,7 @@
     const uniqueId = "search_" + CommonHelper.randomString(7);
 
     export let value = "";
-    export let placeholder = $json("common.placeholder.searchTeam");
+    export let placeholder = $_("common.placeholder.searchTeam");
 
     // autocomplete filter component fields
     export let autocompleteCollection = null;

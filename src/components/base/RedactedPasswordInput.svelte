@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import { tick } from "svelte";
     import tooltip from "@/actions/tooltip";
 
@@ -20,7 +21,7 @@
         <button
             type="button"
             class="btn btn-transparent btn-circle"
-            use:tooltip={{ position: "left", text: "Set new value" }}
+            use:tooltip={{ position: "left", text: $_("common.action.setNewValue") }}
             on:click|preventDefault={unlock}
         >
             <i class="ri-key-line" />

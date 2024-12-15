@@ -1,5 +1,6 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
+    import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import SchemaField from "@/components/collections/schema/SchemaField.svelte";
     import CommonHelper from "@/utils/CommonHelper";
@@ -21,13 +22,13 @@
         <div class="grid grid-sm">
             <div class="col-sm-6">
                 <Field class="form-field" name="fields.{key}.min" let:uniqueId>
-                    <label for={uniqueId}>Min length</label>
+                    <label for={uniqueId}>{$_("common.input.minLength.name")}</label>
                     <input
                         type="number"
                         id={uniqueId}
                         step="1"
                         min="0"
-                        placeholder="No min limit"
+                        placeholder={$_("common.input.minLength.tip")}
                         value={field.min || ""}
                         on:input={(e) => (field.min = e.target.value << 0)}
                     />
@@ -56,7 +57,7 @@
                     <input
                         type="number"
                         id={uniqueId}
-                        placeholder={$_("common.message.defaultValue",{values:{default:"10"}})}
+                        placeholder={$_("common.message.defaultValue", { values: { value: "10" } })}
                         step="1"
                         min="6"
                         max="31"
@@ -68,8 +69,16 @@
 
             <div class="col-sm-6">
                 <Field class="form-field" name="fields.{key}.pattern" let:uniqueId>
-                    <label for={uniqueId}>Validation pattern</label>
-                    <input type="text" id={uniqueId} placeholder="ex. ^\w+$" bind:value={field.pattern} />
+                    <label for={uniqueId}>
+                        <span class="txt">{$_("common.input.validationPattern.name")}</span>
+                        <i
+                            class="ri-information-line link-hint"
+                            use:tooltip={{
+                                text: $_("common.input.validationPattern.tip"),
+                            }}
+                        /></label
+                    >
+                    <input type="text" id={uniqueId} bind:value={field.pattern} />
                 </Field>
             </div>
         </div>

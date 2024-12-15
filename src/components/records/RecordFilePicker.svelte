@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import ObjectSelect from "@/components/base/ObjectSelect.svelte";

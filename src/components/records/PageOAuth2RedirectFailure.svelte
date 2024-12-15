@@ -1,9 +1,10 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import { json } from "svelte-i18n";
     import { onMount } from "svelte";
     import { pageTitle } from "@/stores/app";
 
-    $pageTitle = $json("common.menu.oauth2");
+    $pageTitle = $_("common.menu.oauth2");
 
     onMount(() => {
         window.close();

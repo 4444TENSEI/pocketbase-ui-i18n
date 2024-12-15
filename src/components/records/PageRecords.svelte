@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { tick } from "svelte";
     import { setUrlPopup } from "@/utils/Cookie";
     import { querystring } from "svelte-spa-router";
@@ -217,7 +217,7 @@
 
         <Searchbar
             value={filter}
-            placeholder={$json("common.placeholder.searchDataPrompt")}
+            placeholder={$_("common.placeholder.searchDataPrompt")}
             autocompleteCollection={$activeCollection}
             on:submit={(e) => (filter = e.detail)}
         />

@@ -1,5 +1,4 @@
 <script>
-    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
@@ -27,9 +26,9 @@
     const TYPE_VIEW = "view";
 
     const collectionTypes = {};
-    collectionTypes[TYPE_BASE] = $_("common.database.baseTemplate");
-    collectionTypes[TYPE_VIEW] = $_("common.database.viewTemplate");
-    collectionTypes[TYPE_AUTH] = $_("common.database.authTemplate");
+    collectionTypes[TYPE_BASE] = "Base";
+    collectionTypes[TYPE_VIEW] = "View";
+    collectionTypes[TYPE_AUTH] = "Auth";
 
     const dispatch = createEventDispatcher();
 
@@ -193,7 +192,7 @@
                 }
 
                 addSuccessToast(
-                    !collection.id ? $_("common.message.createSuccess") : $_("common.message.updateSuccess"),
+                    !collection.id ? "Successfully created collection." : "Successfully updated collection.",
                 );
 
                 dispatch("save", {
@@ -232,25 +231,30 @@
         if (!original?.id) {
             return; // nothing to truncate
         }
-        confirm($_("common.message.deleteDataPrompt", { values: { value: original.email } }), () => {
-            return ApiClient.collections
-                .truncate(original.id)
-                .then(() => {
-                    forceHide();
-                    addSuccessToast(`Successfully truncated collection "${original.name}".`);
-                    dispatch("truncate");
-                })
-                .catch((err) => {
-                    ApiClient.error(err);
-                });
-        });
+
+        confirm(
+            `Do you really want to delete all "${original.name}" records, including their cascade delete references and files?`,
+            () => {
+                return ApiClient.collections
+                    .truncate(original.id)
+                    .then(() => {
+                        forceHide();
+                        addSuccessToast(`Successfully truncated collection "${original.name}".`);
+                        dispatch("truncate");
+                    })
+                    .catch((err) => {
+                        ApiClient.error(err);
+                    });
+            },
+        );
     }
 
     function deleteConfirm() {
         if (!original?.id) {
             return; // nothing to delete
         }
-        confirm($_("common.message.deleteDataPrompt", { values: { value: original.email } }), () => {
+
+        confirm(`Do you really want to delete collection "${original.name}" and all its records?`, () => {
             return ApiClient.collections
                 .delete(original.id)
                 .then(() => {
@@ -281,7 +285,7 @@
 
     function duplicateConfirm() {
         if (hasChanges) {
-            confirm($_("common.action.close"), () => {
+            confirm("You have unsaved changes. Do you really want to discard them?", () => {
                 duplicate();
             });
         } else {
@@ -348,7 +352,7 @@
     overlayClose={!isSaving}
     beforeHide={() => {
         if (hasChanges && confirmClose) {
-            confirm($_("common.message.unsave"), () => {
+            confirm("You have unsaved changes. Do you really want to close the panel?", () => {
                 confirmClose = false;
                 hide();
             });
@@ -361,9 +365,7 @@
 >
     <svelte:fragment slot="header">
         <h4 class="upsert-panel-title">
-            {!collection.id
-                ? $_("common.action.createTable")
-                : $_("common.popup.editTable.name", { values: { tableName: collection.name } })}
+            {!collection.id ? "New collection" : "Edit collection"}
         </h4>
 
         {#if !!collection.id && (!collection.system || !isView)}
@@ -384,7 +386,7 @@
                             on:click={() => duplicateConfirm()}
                         >
                             <i class="ri-file-copy-line" aria-hidden="true" />
-                            <span class="txt">{$_("common.action.copy")}</span>
+                            <span class="txt">Duplicate</span>
                         </button>
                         <hr />
                     {/if}
@@ -396,7 +398,7 @@
                             on:click={() => truncateConfirm()}
                         >
                             <i class="ri-eraser-line" aria-hidden="true"></i>
-                            <span class="txt">{$_("common.action.truncateData")}</span>
+                            <span class="txt">Truncate</span>
                         </button>
                     {/if}
                     {#if !collection.system}
@@ -407,7 +409,7 @@
                             on:click|preventDefault|stopPropagation={() => deleteConfirm()}
                         >
                             <i class="ri-delete-bin-7-line" aria-hidden="true" />
-                            <span class="txt">{$_("common.action.deleteTable")}</span>
+                            <span class="txt">Delete</span>
                         </button>
                     {/if}
                 </Toggler>
@@ -421,7 +423,7 @@
             }}
         >
             <Field class="form-field collection-field-name required m-b-0" name="name" let:uniqueId>
-                <label for={uniqueId}>{$_("common.database.tableName")}</label>
+                <label for={uniqueId}>Name</label>
 
                 <!-- svelte-ignore a11y-autofocus -->
                 <input
@@ -450,10 +452,7 @@
                     >
                         <!-- empty span for alignment -->
                         <span aria-hidden="true" />
-                        <span class="txt"
-                            >{$_("common.placeholder.template")}: {collectionTypes[collection.type] ||
-                                "N/A"}</span
-                        >
+                        <span class="txt">Type: {collectionTypes[collection.type] || "N/A"}</span>
                         {#if !collection.id}
                             <i class="ri-arrow-down-s-fill" aria-hidden="true" />
                             <Toggler class="dropdown dropdown-right dropdown-nowrap m-t-5">
@@ -469,7 +468,7 @@
                                             class={CommonHelper.getCollectionTypeIcon(type)}
                                             aria-hidden="true"
                                         />
-                                        <span class="txt">{label}</span>
+                                        <span class="txt">{label} collection</span>
                                     </button>
                                 {/each}
                             </Toggler>
@@ -478,8 +477,7 @@
                 </div>
 
                 {#if collection.system}
-                    <!-- <div class="help-block">System collection</div> -->
-                    <div class="help-block">{$_("common.subfield.adminTableSetting")}</div>
+                    <div class="help-block">System collection</div>
                 {/if}
             </Field>
 
@@ -493,9 +491,7 @@
                 class:active={activeTab === TAB_SCHEMA}
                 on:click={() => changeTab(TAB_SCHEMA)}
             >
-                <span class="txt"
-                    >{isView ? $_("common.database.query") : $_("common.database.field")}</span
-                >
+                <span class="txt">{isView ? "Query" : "Fields"}</span>
                 {#if !CommonHelper.isEmpty(fieldsTabError)}
                     <i
                         class="ri-error-warning-fill txt-danger"
@@ -512,7 +508,7 @@
                     class:active={activeTab === TAB_RULES}
                     on:click={() => changeTab(TAB_RULES)}
                 >
-                    <span class="txt">{$_("common.popup.apiRequestPermission.name")}</span>
+                    <span class="txt">API Rules</span>
                     {#if !CommonHelper.isEmpty($errors?.listRule) || !CommonHelper.isEmpty($errors?.viewRule) || !CommonHelper.isEmpty($errors?.createRule) || !CommonHelper.isEmpty($errors?.updateRule) || !CommonHelper.isEmpty($errors?.deleteRule) || !CommonHelper.isEmpty($errors?.authRule) || !CommonHelper.isEmpty($errors?.manageRule)}
                         <i
                             class="ri-error-warning-fill txt-danger"
@@ -530,7 +526,7 @@
                     class:active={activeTab === TAB_OPTIONS}
                     on:click={() => changeTab(TAB_OPTIONS)}
                 >
-                    <span class="txt">{$_("common.popup.authSetting.name")}</span>
+                    <span class="txt">Options</span>
                     {#if $errors && hasOtherKeys($errors, baseCollectionKeys.concat( ["manageRule", "authRule"], ))}
                         <i
                             class="ri-error-warning-fill txt-danger"
@@ -568,13 +564,13 @@
 
     <svelte:fragment slot="footer">
         <button type="button" class="btn btn-transparent" disabled={isSaving} on:click={() => hide()}>
-            <span class="txt">{$_("common.action.cancel")}</span>
+            <span class="txt">Cancel</span>
         </button>
 
         <div class="btns-group no-gap">
             <button
                 type="button"
-                title={$_("common.action.save")}
+                title="Save and close"
                 class="btn"
                 class:btn-expanded={!collection.id}
                 class:btn-expanded-sm={!!collection.id}
@@ -582,9 +578,7 @@
                 disabled={!canSave || isSaving || isLoadingConfirmation}
                 on:click={() => saveConfirm()}
             >
-                <span class="txt"
-                    >{!collection.id ? $_("common.action.create") : $_("common.action.save")}</span
-                >
+                <span class="txt">{!collection.id ? "Create" : "Save changes"}</span>
             </button>
 
             {#if collection.id}
@@ -602,7 +596,7 @@
                             role="menuitem"
                             on:click={() => saveConfirm(false)}
                         >
-                            <span class="txt">{$_("common.action.saveAndContinue")}</span>
+                            <span class="txt">Save and continue</span>
                         </button>
                     </Toggler>
                 </button>

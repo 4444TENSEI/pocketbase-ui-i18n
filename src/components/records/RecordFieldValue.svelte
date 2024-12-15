@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import CopyIcon from "@/components/base/CopyIcon.svelte";
     import FormattedDate from "@/components/base/FormattedDate.svelte";
@@ -38,7 +39,8 @@
         {/if}
     {/if}
 {:else if CommonHelper.isEmpty(rawValue)}
-    <span class="txt-hint">N/A</span>
+    <!-- 列表为空时字段的展示内容 -->
+    <span class="txt-hint"></span>
 {:else if field.type === "bool"}
     <span class="label" class:label-success={!!rawValue}>{rawValue ? "True" : "False"}</span>
 {:else if field.type === "number"}

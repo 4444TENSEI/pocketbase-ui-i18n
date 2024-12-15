@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { createEventDispatcher, tick } from "svelte";
     import CommonHelper from "@/utils/CommonHelper";
     import Toggler from "@/components/base/Toggler.svelte";
@@ -36,9 +36,9 @@
 <button
     tabindex="-1"
     type="button"
-    aria-label={$json("common.action.generate")}
+    aria-label={$_("common.action.generate")}
     class="btn btn-circle {classes}"
-    use:tooltip={togglerActive ? "" : $json("common.action.generate")}
+    use:tooltip={togglerActive ? "" : $_("common.action.generate")}
 >
     <i class="ri-sparkling-line" aria-hidden="true" />
     <Toggler
@@ -53,7 +53,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <i
                 class="ri-refresh-line txt-sm link-hint"
-                use:tooltip={$json("common.data.refresh")}
+                use:tooltip={$_("common.data.refresh")}
                 aria-label="Refresh"
                 on:click={generate}
             />

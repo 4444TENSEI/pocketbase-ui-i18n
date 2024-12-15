@@ -1,6 +1,6 @@
 <!-- 代理IP相关 -->
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Accordion from "@/components/base/Accordion.svelte";
     import Field from "@/components/base/Field.svelte";
@@ -155,7 +155,7 @@
                     <i
                         class="ri-information-line link-hint"
                         use:tooltip={{
-                            text: $json("page.setting.content.application.proxy.tip.2"),
+                            text: $_("page.setting.content.application.proxy.tip.2"),
                             position: "right",
                         }}
                     />

@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
 
@@ -125,7 +125,7 @@
                     {#if tab.disabled}
                         <div
                             class="sidebar-item disabled"
-                            use:tooltip={{ position: "left", text: $json("common.tip.serviceNotEnabled")}}
+                            use:tooltip={{ position: "left", text: $_("common.tip.serviceNotEnabled")}}
                         >
                             {tab.label}
                         </div>

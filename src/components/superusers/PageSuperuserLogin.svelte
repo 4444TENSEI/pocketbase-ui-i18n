@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { onMount } from "svelte";
     import { link, replace, querystring } from "svelte-spa-router";
     import ApiClient from "@/utils/ApiClient";
@@ -190,7 +190,7 @@
                     class:btn-loading={passwordAuthSubmitting}
                 >
                     <span class="txt"
-                        >{totalSteps > 1 ? $json("common.action.next") : $json("common.action.login")}</span
+                        >{totalSteps > 1 ? $_("common.action.next") : $_("common.action.login")}</span
                     >
                     <i class="ri-arrow-right-line" id="icon-setting" />
                 </button>
@@ -240,7 +240,7 @@
                     />
                 </Field>
                 <Field class="form-field required" name="password" let:uniqueId>
-                    <label for={uniqueId}>One-time password</label>
+                    <label for={uniqueId}>{$_("common.popup.authSetting.opt.name")}</label>
                     <!-- svelte-ignore a11y-autofocus -->
                     <input type="password" id={uniqueId} bind:value={otpPassword} required autofocus />
                 </Field>

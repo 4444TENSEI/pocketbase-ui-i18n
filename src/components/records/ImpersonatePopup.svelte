@@ -119,7 +119,7 @@
                     type="number"
                     id={uniqueId}
                     placeholder={$_("common.message.defaultValue", {
-                        values: { default: collection?.authToken?.duration || 0 + "s" },
+                        values: { value: collection?.authToken?.duration || 0 + "s" },
                     })}
                     min="0"
                     step="1"

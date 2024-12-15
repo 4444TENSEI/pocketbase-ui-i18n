@@ -8,7 +8,7 @@
 
 <PageSidebar class="settings-sidebar">
     <div class="sidebar-content">
-        <div class="sidebar-title">{$_("common.subfield.basicSetting")}</div>
+        <div class="sidebar-title">{$_("common.menu.setting")}</div>
         <a href="/settings" class="sidebar-list-item" use:active={{ path: "/settings" }} use:link>
             <i class="ri-home-gear-line" aria-hidden="true" />
             <span class="txt">{$_("common.menu.appConfig")}</span>

@@ -10,6 +10,7 @@ const app = new App({
 let pbUrl = getCookie("pbUrl");
 if (!pbUrl) {
   setCookie("pbUrl", import.meta.env.PB_BACKEND_URL);
+  location.reload();
 }
 
 export default { app, pbUrl }

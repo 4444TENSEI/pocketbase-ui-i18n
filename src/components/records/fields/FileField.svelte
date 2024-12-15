@@ -194,7 +194,7 @@
                             <UploadedFilePreview {file} />
                         </figure>
                         <div class="filename m-r-auto" title={file.name}>
-                            <small class="label label-success m-r-5">New</small>
+                            <small class="label label-success m-r-5">{$_("common.tip.new")}</small>
                             <span class="txt">{file.name}</span>
                         </div>
                         <button

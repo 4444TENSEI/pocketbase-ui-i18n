@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Accordion from "@/components/base/Accordion.svelte";
     import Field from "@/components/base/Field.svelte";
@@ -69,15 +69,14 @@
     <svelte:fragment slot="header">
         <div class="inline-flex">
             <i class="ri-pass-expired-line"></i>
-            <span class="txt">OAuth2</span>
+            <span class="txt">{$_("common.popup.authSetting.oauth2.name")}</span>
         </div>
 
         <div class="flex-fill" />
 
         {#if collection.oauth2.enabled}
             <span class="label" class:label-warning={!totalProviders} class:label-info={totalProviders > 0}>
-                {totalProviders}
-                {totalProviders == 1 ? "provider" : "providers"}
+                {totalProviders}{$_("common.tip.provider")}
             </span>
 
             <span class="label label-success">{$_("common.action.enable")}</span>
@@ -110,10 +109,7 @@
                 >
                     <figure class="provider-logo">
                         {#if uiOptions?.logo}
-                            <img
-                                src="{pbUrl}images/oauth2/{uiOptions.logo}"
-                                alt="{uiOptions.title} logo"
-                            />
+                            <img src="{pbUrl}/images/oauth2/{uiOptions.logo}" alt="{uiOptions.title} logo" />
                         {:else}
                             <i class="ri-puzzle-line txt-sm txt-hint"></i>
                         {/if}

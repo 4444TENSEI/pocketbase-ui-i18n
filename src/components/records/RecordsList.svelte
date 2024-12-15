@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { createEventDispatcher } from "svelte";
     import { fly } from "svelte/transition";
     import ApiClient from "@/utils/ApiClient";
@@ -259,7 +259,7 @@
     }
 
     function deleteSelectedConfirm() {
-        const msg = $json("common.message.deleteDataPrompt");
+        const msg = $_("common.message.deleteSelectedPrompt");
 
         confirm(msg, deleteSelected);
     }

@@ -172,7 +172,7 @@
                                     <CopyIcon value={log.message} />
                                 </div>
                             {:else}
-                                <span class="txt txt-hint">N/A</span>
+                                <span class="txt txt-hint">{$_("common.placeholder.cannotEdit")}</span>
                             {/if}
                         </td>
                     </tr>
@@ -189,7 +189,7 @@
                         </td>
                         <td>
                             {#if isEmpty}
-                                <span class="txt txt-hint">N/A</span>
+                                <span class="txt txt-hint">{$_("common.placeholder.cannotEdit")}</span>
                             {:else if isJson}
                                 <CodeBlock content={JSON.stringify(value, null, 2)} />
                             {:else if key == "error"}

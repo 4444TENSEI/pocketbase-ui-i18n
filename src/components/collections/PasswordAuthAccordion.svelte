@@ -57,7 +57,7 @@
     <svelte:fragment slot="header">
         <div class="inline-flex">
             <i class="ri-lock-password-line"></i>
-            <span class="txt">{$_("common.placeholder.accountPasswordLogin")}</span>
+            <span class="txt">{$_("common.popup.authSetting.passwordLoginSetting.name")}"</span>
         </div>
 
         <div class="flex-fill" />
@@ -98,7 +98,7 @@
 
     <Field class="form-field required m-0" name="passwordAuth.identityFields" let:uniqueId>
         <label for={uniqueId}>
-            <span class="txt">Unique identity fields</span>
+            <span class="txt">{$_("common.popup.authSetting.passwordLoginSetting.input.authFields")}</span>
         </label>
         <ObjectSelect
             items={identityFieldsOptions}

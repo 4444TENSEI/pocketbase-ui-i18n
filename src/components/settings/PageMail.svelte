@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import ObjectSelect from "@/components/base/ObjectSelect.svelte";
@@ -15,8 +15,8 @@
     import { slide } from "svelte/transition";
 
     const tlsOptions = [
-        { label: "Auto (StartTLS)", value: false },
-        { label: "Always", value: true },
+        { label: $_("common.tip.enabled"), value: false },
+        { label: $_("common.tip.disabled"), value: true },
     ];
 
     const authMethods = [
@@ -24,7 +24,7 @@
         { label: "LOGIN", value: "LOGIN" },
     ];
 
-    $pageTitle = $json("common.menu.smtpConfig");
+    $pageTitle = $_("common.menu.smtpConfig");
 
     let testPopup;
     let originalFormSettings = {};
@@ -64,7 +64,7 @@
             const settings = await ApiClient.settings.update(CommonHelper.filterRedactedProps(formSettings));
             init(settings);
             setErrors({});
-            addSuccessToast("Successfully saved mail settings.");
+            addSuccessToast($_("common.message.applyNewSetting"));
         } catch (err) {
             ApiClient.error(err);
         }
@@ -146,7 +146,7 @@
                         <i
                             class="ri-information-line link-hint"
                             use:tooltip={{
-                                text: $json("page.setting.content.smtp.content.1"),
+                                text: $_("page.setting.content.smtp.content.1"),
                                 position: "top",
                             }}
                         />
@@ -255,7 +255,7 @@
                                             <i
                                                 class="ri-information-line link-hint"
                                                 use:tooltip={{
-                                                    text: $json("page.setting.content.smtp.content.2"),
+                                                    text: $_("page.setting.content.smtp.content.2"),
                                                     position: "top",
                                                 }}
                                             />
@@ -264,7 +264,7 @@
                                             type="text"
                                             id={uniqueId}
                                             placeholder={$_("common.message.defaultValue", {
-                                                values: { default: "localhost" },
+                                                values: { value: "localhost" },
                                             })}
                                             bind:value={formSettings.smtp.localName}
                                         />

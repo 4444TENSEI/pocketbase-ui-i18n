@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import PageSidebar from "@/components/base/PageSidebar.svelte";
     import CollectionSidebarItem from "@/components/collections/CollectionSidebarItem.svelte";
     import CollectionUpsertPanel from "@/components/collections/CollectionUpsertPanel.svelte";
@@ -89,7 +89,7 @@
             <!-- 🐱 -->
             <input
                 type="text"
-                placeholder={$json("common.placeholder.searchTable")}
+                placeholder={$_("common.placeholder.searchTable")}
                 name="collections-search"
                 bind:value={searchTerm}
             />
@@ -111,7 +111,7 @@
 
         {#if unpinnedRegularCollections.length}
             {#if pinnedCollections.length}
-                <div class="sidebar-title">{$_("common.subfield.otherTable")}</div>
+                <div class="sidebar-title">{$_("common.subfield.otherTableSetting")}</div>
             {/if}
             {#each unpinnedRegularCollections as collection (collection.id)}
                 <CollectionSidebarItem {collection} bind:pinnedIds />
@@ -123,7 +123,7 @@
                 type="button"
                 class="sidebar-title m-b-xs"
                 class:link-hint={!normalizedSearch.length}
-                aria-label={showSystemSection ? $json("common.placeholder.unfoldTable") : $json("common.placeholder.collapseTable")}
+                aria-label={showSystemSection ? $_("common.placeholder.unfoldTable") : $_("common.placeholder.collapseTable")}
                 aria-expanded={showSystemSection || normalizedSearch.length}
                 disabled={normalizedSearch.length}
                 on:click={() => {
@@ -132,7 +132,7 @@
                     }
                 }}
             >
-                <span class="txt">{$_("common.subfield.systemTable")}</span>
+                <span class="txt">{$_("common.subfield.systemTableSetting")}</span>
                 {#if !normalizedSearch.length}
                     <i class="ri-arrow-{showSystemSection ? 'up' : 'down'}-s-line" aria-hidden="true" />
                 {/if}

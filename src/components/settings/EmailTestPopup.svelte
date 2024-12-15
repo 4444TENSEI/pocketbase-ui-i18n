@@ -60,15 +60,15 @@
         clearTimeout(testTimeoutId);
         testTimeoutId = setTimeout(() => {
             ApiClient.cancelRequest(testRequestKey);
-            addErrorToast("Test email send timeout.");
-        }, 30000);
+            addErrorToast($_("page.setting.content.smtp.content.9"));
+        }, 10000);
 
         try {
             await ApiClient.settings.testEmail(collectionIdOrName, email, template, {
                 $cancelKey: testRequestKey,
             });
 
-            addSuccessToast("Successfully sent test email.");
+            addSuccessToast($_("page.setting.content.smtp.content.8"));
             dispatch("submit");
             isSubmitting = false;
 

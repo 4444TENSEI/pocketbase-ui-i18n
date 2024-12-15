@@ -3,7 +3,7 @@
 </script>
 
 <script>
-    import { _, json } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import Toggler from "@/components/base/Toggler.svelte";
@@ -18,8 +18,8 @@
 
     const customRequiredLabels = {
         // type => label
-        bool: "Nonfalsey",
-        number: "Nonzero",
+        bool: $_("common.tip.nonfalsey"),
+        number: $_("common.switch.nonempty.name"),
     };
 
     // @todo refactor once the UI is dynamic
@@ -60,7 +60,7 @@
 
     $: hasErrors = !CommonHelper.isEmpty(CommonHelper.getNestedVal($errors, `fields.${key}`));
 
-    $: requiredLabel = customRequiredLabels[field?.type] || "Nonempty";
+    $: requiredLabel = customRequiredLabels[field?.type] || $_("common.switch.nonempty.name");
 
     function remove() {
         if (!field.id) {
@@ -155,7 +155,7 @@
                     <span class="label label-success">{requiredLabel}</span>
                 {/if}
                 {#if field.hidden}
-                    <span class="label label-danger">Hidden</span>
+                    <span class="label label-danger">{$_("common.switch.setPrivate.name")}</span>
                 {/if}
             </div>
 
@@ -176,7 +176,7 @@
                 required
                 disabled={!interactive || field.system}
                 spellcheck="false"
-                placeholder="Field name"
+                placeholder={$_("common.placeholder.fieldName")}
                 value={field.name}
                 title="System field"
                 on:input={(e) => {
@@ -236,9 +236,7 @@
                             <i
                                 class="ri-information-line link-hint"
                                 use:tooltip={{
-                                    text: `Requires the field value NOT to be ${CommonHelper.zeroDefaultStr(
-                                        field,
-                                    )}.`,
+                                    text: $_("common.switch.nonempty.tip"),
                                 }}
                             />
                         </label>
@@ -258,11 +256,11 @@
                             }}
                         />
                         <label for={uniqueId}>
-                            <span class="txt">Hidden</span>
+                            <span class="txt">{$_("common.switch.setPrivate.name")}</span>
                             <i
                                 class="ri-information-line link-hint"
                                 use:tooltip={{
-                                    text: `Hide from the JSON API response and filters.`,
+                                    text: $_("common.switch.setPrivate.tip"),
                                 }}
                             />
                         </label>
@@ -278,11 +276,11 @@
                             disabled={field.hidden}
                         />
                         <label for={uniqueId}>
-                            <span class="txt">Presentable</span>
+                            <span class="txt">{$_("common.switch.presentable.name")}</span>
                             <i
                                 class="ri-information-line {field.hidden ? 'txt-disabled' : 'link-hint'}"
                                 use:tooltip={{
-                                    text: $json("common.tip.administratorPreference"),
+                                    text: $_("common.switch.presentable.tip"),
                                 }}
                             />
                         </label>

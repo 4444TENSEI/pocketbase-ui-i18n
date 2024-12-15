@@ -17,7 +17,7 @@
     <svelte:fragment slot="header">
         <div class="inline-flex">
             <i class="ri-shield-check-line"></i>
-            <span class="txt"> Multi-factor authentication (MFA) </span>
+            <span class="txt">{$_("common.popup.authSetting.mfa.name")}</span>
         </div>
 
         <div class="flex-fill" />
@@ -68,7 +68,7 @@
                 formKey="mfa.rule"
                 superuserToggle={false}
                 disabled={!collection.mfa.enabled}
-                placeholder="Leave empty to require MFA for everyone"
+                placeholder={$_("common.placeholder.defaultSetMfa")}
                 {collection}
                 bind:rule={collection.mfa.rule}
             >

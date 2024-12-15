@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
     import { pageTitle } from "@/stores/app";
@@ -8,7 +8,7 @@
     import Field from "@/components/base/Field.svelte";
     import SettingsSidebar from "@/components/settings/SettingsSidebar.svelte";
 
-    $pageTitle = $json("common.action.exportJson");
+    $pageTitle = $_("common.action.export");
 
     const uniqueId = "export_" + CommonHelper.randomString(5);
 
@@ -59,7 +59,7 @@
 
     function copy() {
         CommonHelper.copyToClipboard(schema);
-        addInfoToast($json("common.message.copySuccess"), 3000);
+        addInfoToast($_("common.message.copySuccess"), 3000);
     }
 
     function toggleSelectAll() {

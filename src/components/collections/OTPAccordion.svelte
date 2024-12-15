@@ -26,7 +26,7 @@
     <svelte:fragment slot="header">
         <div class="inline-flex">
             <i class="ri-time-line"></i>
-            <span class="txt">One-time password (OTP)</span>
+            <span class="txt">{$_("common.popup.authSetting.opt.name")}</span>
         </div>
 
         <div class="flex-fill" />

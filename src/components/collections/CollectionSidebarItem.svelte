@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import { activeCollection } from "@/stores/collections";
     import CommonHelper from "@/utils/CommonHelper";
@@ -44,11 +44,11 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <span
         class="btn btn-xs btn-circle btn-hint btn-transparent btn-pin-collection m-l-auto"
-        aria-label={$json("common.subfield.pin")+$json("common.database.table")}
+        aria-label={$_("common.subfield.pin")+$_("common.database.table")}
         aria-hidden="true"
         use:tooltip={{
             position: "right",
-            text: (isPinned ? $json("common.subfield.unPin") : $json("common.subfield.pin")) + $json("common.database.table"),
+            text: (isPinned ? $_("common.subfield.unPin") : $_("common.subfield.pin")) + $_("common.database.table"),
         }}
         on:click|preventDefault|stopPropagation={() => toggleCollectionPin(collection)}
     >

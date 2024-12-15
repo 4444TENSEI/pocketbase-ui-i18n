@@ -151,7 +151,7 @@
 
 <OverlayPanel bind:this={panel} class="confirm-changes-panel" popup on:hide on:show>
     <svelte:fragment slot="header">
-        <h4>{$_("common.popup.editTableInfo.name",{values:{tableName:oldCollection.name}})}</h4>
+        <h4>{$_("common.popup.editTable.placeholder.4",{values:{tableName:oldCollection.name}})}</h4>
     </svelte:fragment>
 
     {#if isCollectionRenamed || deletedFields.length || renamedFields.length}
@@ -160,10 +160,10 @@
                 <i class="ri-error-warning-line" />
             </div>
             <div class="content txt-bold">
-                <p>{$_("common.popup.editTableInfo.content.1")}
+                <p>{$_("common.popup.editTable.placeholder.5")}
                 </p>
                 {#if deletedFields.length}
-                    <p>{$_("common.popup.editTableInfo.content.2")}</p>
+                    <p>{$_("common.popup.editTable.placeholder.6")}</p>
                 {/if}
             </div>
         </div>
@@ -224,7 +224,7 @@
                     </small>
                     <br />
                     <small class="txt-mono txt-success">
-                        <strong>New</strong>:
+                        <strong>{$_("common.tip.new")}</strong>:
                         <span class="txt-preline">
                             {ruleChange.newRule === null
                                 ? "null (superusers only)"

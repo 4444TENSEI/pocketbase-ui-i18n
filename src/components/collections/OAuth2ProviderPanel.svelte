@@ -51,10 +51,9 @@
 
     async function remove() {
         confirm($_("common.message.deleteTablePrompt", { values: { value: uiOptions.title } }), () => {
-                dispatch("remove", { uiOptions });
-                hide();
-            },
-        );
+            dispatch("remove", { uiOptions });
+            hide();
+        });
     }
 </script>
 

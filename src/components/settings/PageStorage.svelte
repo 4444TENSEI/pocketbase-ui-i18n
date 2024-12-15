@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { slide } from "svelte/transition";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -11,7 +11,7 @@
     import SettingsSidebar from "@/components/settings/SettingsSidebar.svelte";
     import S3Fields from "@/components/settings/S3Fields.svelte";
 
-    $pageTitle = $json("common.menu.storageConfig");
+    $pageTitle = $_("common.menu.storageConfig");
 
     const testRequestKey = "s3_test_request";
 
@@ -96,16 +96,13 @@
         <form class="panel" autocomplete="off" on:submit|preventDefault={() => save()}>
             <div class="content txt-xl m-b-base">
                 <p>{$_("page.setting.content.fileStorage.content.1")}</p>
-                <p>
-                    {$_("page.setting.content.fileStorage.content.2")}
-                </p>
             </div>
 
             {#if isLoading}
                 <div class="loader" />
             {:else}
                 <S3Fields
-                    toggleLabel={$json("page.setting.content.fileStorage.action.s3Enable")}
+                    toggleLabel={$_("page.setting.content.fileStorage.action.s3Enable")}
                     originalConfig={originalFormSettings.s3}
                     bind:config={formSettings.s3}
                     bind:isTesting
@@ -118,9 +115,9 @@
                                     <i class="ri-error-warning-line" />
                                 </div>
                                 <div class="content">
-                                    {$_("page.setting.content.fileStorage.content.3")}
+                                    {$_("page.setting.content.fileStorage.content.2")}
                                     <br />
-                                    {$_("page.setting.content.fileStorage.content.4")}
+                                    {$_("page.setting.content.fileStorage.content.3")}
                                     <a
                                         href="https://github.com/rclone/rclone"
                                         target="_blank"

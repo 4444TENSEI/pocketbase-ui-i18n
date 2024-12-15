@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import Toggler from "@/components/base/Toggler.svelte";
     import CommonHelper from "@/utils/CommonHelper";
     import { createEventDispatcher } from "svelte";
@@ -11,62 +11,62 @@
 
     const types = [
         {
-            label: $json("common.database.fieldPreset.string"),
+            label: $_("common.database.fieldPreset.string"),
             value: "text",
             icon: CommonHelper.getFieldTypeIcon("text"),
         },
         {
-            label: $json("common.database.fieldPreset.editor"),
+            label: $_("common.database.fieldPreset.editor"),
             value: "editor",
             icon: CommonHelper.getFieldTypeIcon("editor"),
         },
         {
-            label: $json("common.database.fieldPreset.number"),
+            label: $_("common.database.fieldPreset.number"),
             value: "number",
             icon: CommonHelper.getFieldTypeIcon("number"),
         },
         {
-            label: $json("common.database.fieldPreset.bool"),
+            label: $_("common.database.fieldPreset.bool"),
             value: "bool",
             icon: CommonHelper.getFieldTypeIcon("bool"),
         },
         {
-            label: $json("common.database.fieldPreset.email"),
+            label: $_("common.database.fieldPreset.email"),
             value: "email",
             icon: CommonHelper.getFieldTypeIcon("email"),
         },
         {
-            label: $json("common.database.fieldPreset.url"),
+            label: $_("common.database.fieldPreset.url"),
             value: "url",
             icon: CommonHelper.getFieldTypeIcon("url"),
         },
         {
-            label: $json("common.database.fieldPreset.datetime"),
+            label: $_("common.database.fieldPreset.datetime"),
             value: "date",
             icon: CommonHelper.getFieldTypeIcon("date"),
         },
         {
-            label: $json("common.database.fieldPreset.autoDate"),
+            label: $_("common.database.fieldPreset.autoDate"),
             value: "autodate",
             icon: CommonHelper.getFieldTypeIcon("autoDdate"),
         },
         {
-            label: $json("common.database.fieldPreset.select"),
+            label: $_("common.database.fieldPreset.select"),
             value: "select",
             icon: CommonHelper.getFieldTypeIcon("select"),
         },
         {
-            label: $json("common.database.fieldPreset.file"),
+            label: $_("common.database.fieldPreset.file"),
             value: "file",
             icon: CommonHelper.getFieldTypeIcon("file"),
         },
         {
-            label: $json("common.database.fieldPreset.relation"),
+            label: $_("common.database.fieldPreset.relation"),
             value: "relation",
             icon: CommonHelper.getFieldTypeIcon("relation"),
         },
         {
-            label: $json("common.database.fieldPreset.json"),
+            label: $_("common.database.fieldPreset.json"),
             value: "json",
             icon: CommonHelper.getFieldTypeIcon("json"),
         },

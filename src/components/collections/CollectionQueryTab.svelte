@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import Field from "@/components/base/Field.svelte";
     import { errors, removeError } from "@/stores/errors";
     import CommonHelper from "@/utils/CommonHelper";
@@ -61,7 +62,7 @@
 
 <Field class="form-field required {fieldsErrors.length ? 'error' : ''}" name="viewQuery" let:uniqueId>
     <label for={uniqueId}>
-        <span class="txt">Select query</span>
+        <span class="txt">{$_("common.popup.writeSql.name")}</span>
     </label>
 
     {#if isCodeEditorComponentLoading}

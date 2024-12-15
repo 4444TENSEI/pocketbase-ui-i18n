@@ -61,6 +61,6 @@
     {/if}
 
     <div class="content txt-center">
-        <a href="/login" class="link-hint" use:link>{$_("page.forget.action.goToLogin")}</a>
+        <a href="/login" class="link-hint" use:link>{$_("common.action.goToLogin")}</a>
     </div>
 </FullPage>

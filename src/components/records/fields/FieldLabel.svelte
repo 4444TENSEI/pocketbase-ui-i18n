@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import CommonHelper from "@/utils/CommonHelper";
 
     export let uniqueId;
@@ -18,7 +19,7 @@
     <span class="txt">{field.name}</span>
 
     {#if field.hidden}
-        <small class="label label-sm label-danger">Hidden</small>
+        <small class="label label-sm label-danger">{$_("common.tip.private")}</small>
     {/if}
 
     <slot />

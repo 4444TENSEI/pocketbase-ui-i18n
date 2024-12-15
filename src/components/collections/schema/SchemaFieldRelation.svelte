@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import ObjectSelect from "@/components/base/ObjectSelect.svelte";
@@ -11,13 +11,13 @@
     export let key = "";
 
     const isSingleOptions = [
-        { label: "Single", value: true },
-        { label: "Multiple", value: false },
+        { label: $_("common.placeholder.single"), value: true },
+        { label: $_("common.placeholder.multiple"), value: false },
     ];
 
     const defaultOptions = [
-        { label: "False", value: false },
-        { label: "True", value: true },
+        { label: $_("common.tip.disabled"), value: false },
+        { label: $_("common.tip.enabled"), value: true },
     ];
 
     let upsertPanel = null;
@@ -65,7 +65,7 @@
             <ObjectSelect
                 id={uniqueId}
                 searchable={selectCollections.length > 5}
-                selectPlaceholder={"Select collection *"}
+                selectPlaceholder={$_("common.database.relationTable")}
                 noOptionsText="No collections found"
                 selectionKey="id"
                 items={selectCollections}
@@ -80,7 +80,7 @@
                         on:click={() => upsertPanel?.show()}
                     >
                         <i class="ri-add-line" />
-                        <span class="txt">New collection</span>
+                        <span class="txt">{$_("common.action.new")} {$_("common.database.table")}</span>
                     </button>
                 </svelte:fragment>
             </ObjectSelect>
@@ -128,7 +128,7 @@
                             type="number"
                             id={uniqueId}
                             step="1"
-                            placeholder={$_("common.message.defaultValue",{values:{default:"single"}})}
+                            placeholder={$_("common.message.defaultValue", { values: { value: "single" } })}
                             min={field.minSelect || 1}
                             bind:value={field.maxSelect}
                         />
@@ -139,15 +139,14 @@
             <div class="col-sm-12">
                 <Field class="form-field" name="fields.{key}.cascadeDelete" let:uniqueId>
                     <label for={uniqueId}>
-                        <span class="txt">Cascade delete</span>
+                        <span class="txt">{$_("common.input.cascadeDelete.name")}</span>
                         <!-- prettier-ignore -->
                         <i
                             class="ri-information-line link-hint"
                             use:tooltip={{
                                 text: [
-                                    `Whether on ${selectedColection?.name || "relation"} record deletion to delete also the current corresponding collection record(s).`,
-                                    !isSingle ? `For "Multiple" relation fields the cascade delete is triggered only when all ${selectedColection?.name || "relation"} ids are removed from the corresponding record.` : null
-                                ].filter(Boolean).join("\n\n"),
+                                    $_("common.input.cascadeDelete.tip",{values:{tableName:selectedColection?.name}}),
+                                 ].filter(Boolean).join("\n\n"),
                                 position: "top",
                             }}
                         />

@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import Field from "@/components/base/Field.svelte";
     import EmailTemplateAccordion from "@/components/collections/EmailTemplateAccordion.svelte";
     import TokenOptionsAccordion from "@/components/collections/TokenOptionsAccordion.svelte";
@@ -29,31 +29,31 @@
     // predefined email template configs
     $: resetPasswordTemplate = {
         key: "resetPasswordTemplate",
-        label: "Default Password reset email template",
+        label: $_("common.popup.authSetting.emailTemplate.input.emailAuth.name"),
         placeholders: ["APP_NAME", "APP_URL", "RECORD:*", "TOKEN"],
         config: collection.resetPasswordTemplate,
     };
     $: verificationTemplate = {
         key: "verificationTemplate",
-        label: "Default Verification email template",
+        label: $_("common.popup.authSetting.emailTemplate.input.passwordReset.name"),
         placeholders: ["APP_NAME", "APP_URL", "RECORD:*", "TOKEN"],
         config: collection.verificationTemplate,
     };
     $: confirmEmailChangeTemplate = {
         key: "confirmEmailChangeTemplate",
-        label: "Default Confirm email change email template",
+        label: $_("common.popup.authSetting.emailTemplate.input.changeEmail.name"),
         placeholders: ["APP_NAME", "APP_URL", "RECORD:*", "TOKEN"],
         config: collection.confirmEmailChangeTemplate,
     };
     $: otpTemplate = {
         key: "otp.emailTemplate",
-        label: "Default OTP email template",
+        label: $_("common.popup.authSetting.emailTemplate.input.otpEmail.name"),
         placeholders: ["APP_NAME", "APP_URL", "RECORD:*", "OTP", "OTP_ID"],
         config: collection.otp.emailTemplate,
     };
     $: authAlertTemplate = {
         key: "authAlert.emailTemplate",
-        label: "Default Login alert email template",
+        label: $_("common.popup.authSetting.emailTemplate.input.loginAlert.name"),
         placeholders: ["APP_NAME", "APP_URL", "RECORD:*"],
         config: collection.authAlert.emailTemplate,
     };
@@ -70,7 +70,7 @@
 
 <h4 class="section-title">
     <div class="flex">
-        <span class="txt">{$_("common.placeholder.forAuthMethod")}</span>
+        <span class="txt">{$_("common.placeholder.authMethod")}</span>
         <div class="m-l-auto handle">
             <Field
                 class="form-field form-field-sm form-field-toggle m-0"
@@ -97,13 +97,12 @@
 </div>
 
 <h4 class="section-title">
-    <span class="txt">Mail templates</span>
+    <span class="txt">{$_("common.popup.authSetting.emailTemplate.name")}</span>
     <button
         type="button"
         class="btn btn-xs m-l-auto btn-secondary"
         on:click={() => emailTestPopup?.show(collection.id)}
-    >
-        Send test email
+        >{$_("common.action.sendTestEmail")}
     </button>
 </h4>
 <div class="accordions m-b-35">
@@ -120,7 +119,7 @@
     </div>
 </div>
 
-<h4 class="section-title">Other</h4>
+<h4 class="section-title">{$_("common.placeholder.other")}</h4>
 <div class="accordions m-b-base">
     <TokenOptionsAccordion bind:collection />
 </div>

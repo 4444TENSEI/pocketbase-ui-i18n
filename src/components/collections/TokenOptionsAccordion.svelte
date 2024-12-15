@@ -1,4 +1,5 @@
 <script>
+    import { _ } from "svelte-i18n";
     import { scale } from "svelte/transition";
     import CommonHelper from "@/utils/CommonHelper";
     import tooltip from "@/actions/tooltip";
@@ -14,16 +15,22 @@
 
     $: tokensList = isSuperusers
         ? [
-              { key: "authToken", label: "Auth" },
-              { key: "passwordResetToken", label: "Password reset" },
-              { key: "fileToken", label: "Protected file access" },
+              { key: "authToken", label: $_("common.popup.authSetting.name") },
+              {
+                  key: "passwordResetToken",
+                  label: $_("common.popup.authSetting.token.input.passwordResetToken.name"),
+              },
+              { key: "fileToken", label: $_("common.popup.authSetting.token.input.fileToken.name") },
           ]
         : [
-              { key: "authToken", label: "Auth" },
-              { key: "verificationToken", label: "Email verification" },
-              { key: "passwordResetToken", label: "Password reset" },
-              { key: "emailChangeToken", label: "Email change" },
-              { key: "fileToken", label: "Protected file access" },
+              { key: "authToken", label: $_("common.popup.authSetting.token.input.authToken.name") },
+              { key: "verificationToken", label:  $_("common.popup.authSetting.token.input.verificationToken.name") },
+              {
+                  key: "passwordResetToken",
+                  label: $_("common.popup.authSetting.token.input.passwordResetToken.name"),
+              },
+              { key: "emailChangeToken", label: $_("common.popup.authSetting.token.input.emailChangeToken.name") },
+              { key: "fileToken", label: $_("common.popup.authSetting.token.input.fileToken.name") },
           ];
 
     $: hasErrors = hasTokenError($errors);
@@ -47,7 +54,7 @@
     <svelte:fragment slot="header">
         <div class="inline-flex">
             <i class="ri-key-2-line"></i>
-            <span class="txt">Tokens options (invalidate, duration)</span>
+            <span class="txt">{$_("common.popup.authSetting.token.name")}</span>
         </div>
 
         <div class="flex-fill" />

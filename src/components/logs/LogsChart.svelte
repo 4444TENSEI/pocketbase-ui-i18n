@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { onMount } from "svelte";
     import { scale } from "svelte/transition";
     import ApiClient from "@/utils/ApiClient";
@@ -93,7 +93,7 @@
                 datasets: [
                     {
                         // 🐱
-                        label: $json("common.placeholder.amountOfRequest"),
+                        label: $_("common.placeholder.amountOfRequest"),
                         data: chartData,
                         borderColor: "#e34562",
                         pointBackgroundColor: "#e34562",

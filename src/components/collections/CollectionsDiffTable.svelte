@@ -111,8 +111,8 @@
     <thead>
         <tr>
             <th>Props</th>
-            <th width="10%">Old</th>
-            <th width="10%">New</th>
+            <th width="10%">{$_("common.tip.old")}</th>
+            <th width="10%">{$_("common.tip.new")}</th>
         </tr>
     </thead>
 

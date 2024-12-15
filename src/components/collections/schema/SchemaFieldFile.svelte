@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import MimeTypeSelectOption from "@/components/base/MimeTypeSelectOption.svelte";
@@ -14,8 +14,8 @@
     export let key = "";
 
     const isSingleOptions = [
-        { label: "Single", value: true },
-        { label: "Multiple", value: false },
+        { label: $_("common.placeholder.single"), value: true },
+        { label: $_("common.placeholder.multiple"), value: false },
     ];
 
     let mimeTypesList = baseMimeTypesList.slice();
@@ -94,14 +94,7 @@
             <div class="col-sm-12">
                 <Field class="form-field" name="fields.{key}.mimeTypes" let:uniqueId>
                     <label for={uniqueId}>
-                        <span class="txt">Allowed mime types</span>
-                        <i
-                            class="ri-information-line link-hint"
-                            use:tooltip={{
-                                text: "Allow files ONLY with the listed mime types. \n Leave empty for no restriction.",
-                                position: "top",
-                            }}
-                        />
+                        <span class="txt">{$_("common.placeholder.allowableFileType")}</span>
                     </label>
                     <ObjectSelect
                         id={uniqueId}
@@ -109,7 +102,7 @@
                         searchable
                         closable={false}
                         selectionKey="mimeType"
-                        selectPlaceholder="No restriction"
+                        selectPlaceholder={$_("common.placeholder.defaultUploadingFile")}
                         items={mimeTypesList}
                         labelComponent={MimeTypeSelectOption}
                         optionComponent={MimeTypeSelectOption}
@@ -117,7 +110,7 @@
                     />
                     <div class="help-block">
                         <div tabindex="0" role="button" class="inline-flex flex-gap-0">
-                            <span class="txt link-primary">Choose presets</span>
+                            <span class="txt link-primary">{$_("common.placeholder.preset")}</span>
                             <i class="ri-arrow-drop-down-fill" aria-hidden="true" />
                             <Toggler class="dropdown dropdown-sm dropdown-nowrap dropdown-left">
                                 <button
@@ -134,7 +127,9 @@
                                         ];
                                     }}
                                 >
-                                    <span class="txt">Images (jpg, png, svg, gif, webp)</span>
+                                    <span class="txt"
+                                        >{$_("common.placeholder.image")} (jpg, png, svg, gif, webp)</span
+                                    >
                                 </button>
                                 <button
                                     type="button"
@@ -150,7 +145,9 @@
                                         ];
                                     }}
                                 >
-                                    <span class="txt">Documents (pdf, doc/docx, xls/xlsx)</span>
+                                    <span class="txt"
+                                        >{$_("common.placeholder.document")} (pdf, doc/docx, xls/xlsx)</span
+                                    >
                                 </button>
                                 <button
                                     type="button"
@@ -165,7 +162,9 @@
                                         ];
                                     }}
                                 >
-                                    <span class="txt">Videos (mp4, avi, mov, 3gp)</span>
+                                    <span class="txt"
+                                        >{$_("common.placeholder.video")} (mp4, avi, mov, 3gp)</span
+                                    >
                                 </button>
                                 <button
                                     type="button"
@@ -179,7 +178,7 @@
                                         ];
                                     }}
                                 >
-                                    <span class="txt">Archives (zip, 7zip, rar)</span>
+                                    <span class="txt">{$_("common.placeholder.zip")} (zip, 7zip, rar)</span>
                                 </button>
                             </Toggler>
                         </div>
@@ -190,50 +189,50 @@
             <div class={!isSingle ? "col-sm-6" : "col-sm-8"}>
                 <Field class="form-field" name="fields.{key}.thumbs" let:uniqueId>
                     <label for={uniqueId}>
-                        <span class="txt">Thumb sizes</span>
+                        <span class="txt">{$_("common.input.thumbSize.name")}</span>
                         <i
                             class="ri-information-line link-hint"
                             use:tooltip={{
-                                text: "List of additional thumb sizes for image files, along with the default thumb size of 100x100. The thumbs are generated lazily on first access.",
+                                text: $_("common.input.thumbSize.tip"),
                                 position: "top",
                             }}
                         />
                     </label>
                     <MultipleValueInput
                         id={uniqueId}
-                        placeholder="e.g. 50x50, 480x720"
+                        placeholder={$_("common.input.thumbSize.placeholder")}
                         bind:value={field.thumbs}
                     />
                     <div class="help-block">
-                        <span class="txt">Use comma as separator.</span>
+                        <span class="txt">{$_("common.placeholder.separator")}</span>
                         <button type="button" class="inline-flex flex-gap-0">
-                            <span class="txt link-primary">Supported formats</span>
+                            <span class="txt link-primary"> {$_("common.input.imageSizeEg.name")}</span>
                             <i class="ri-arrow-drop-down-fill" aria-hidden="true" />
                             <Toggler class="dropdown dropdown-sm dropdown-center dropdown-nowrap p-r-10">
                                 <ul class="m-0">
                                     <li>
                                         <strong>WxH</strong>
-                                        (e.g. 100x50) - crop to WxH viewbox (from center)
+                                        {$_("common.input.imageSizeEg.content.1")}
                                     </li>
                                     <li>
                                         <strong>WxHt</strong>
-                                        (e.g. 100x50t) - crop to WxH viewbox (from top)
+                                        {$_("common.input.imageSizeEg.content.2")}
                                     </li>
                                     <li>
                                         <strong>WxHb</strong>
-                                        (e.g. 100x50b) - crop to WxH viewbox (from bottom)
+                                        {$_("common.input.imageSizeEg.content.3")}
                                     </li>
                                     <li>
                                         <strong>WxHf</strong>
-                                        (e.g. 100x50f) - fit inside a WxH viewbox (without cropping)
+                                        {$_("common.input.imageSizeEg.content.4")}
                                     </li>
                                     <li>
                                         <strong>0xH</strong>
-                                        (e.g. 0x50) - resize to H height preserving the aspect ratio
+                                        {$_("common.input.imageSizeEg.content.5")}
                                     </li>
                                     <li>
                                         <strong>Wx0</strong>
-                                        (e.g. 100x0) - resize to W width preserving the aspect ratio
+                                        {$_("common.input.imageSizeEg.content.6")}
                                     </li>
                                 </ul>
                             </Toggler>
@@ -244,7 +243,7 @@
 
             <div class={!isSingle ? "col-sm-3" : "col-sm-4"}>
                 <Field class="form-field" name="fields.{key}.maxSize" let:uniqueId>
-                    <label for={uniqueId}>Max file size</label>
+                    <label for={uniqueId}>{$_("common.input.maxFileSize.name")}</label>
                     <input
                         type="number"
                         id={uniqueId}
@@ -252,9 +251,11 @@
                         min="0"
                         value={field.maxSize || ""}
                         on:input={(e) => (field.maxSize = e.target.value << 0)}
-                        placeholder={$_("common.message.defaultValue",{values:{default:"max ~5MB"}})}
+                        placeholder={$_("common.input.maxFileSize.placeholder", {
+                            values: { fileSize: "max ~5MB" },
+                        })}
                     />
-                    <div class="help-block">Must be in bytes.</div>
+                    <div class="help-block">{$_("common.placeholder.mustBeByte")}</div>
                 </Field>
             </div>
 
@@ -268,7 +269,7 @@
                             step="1"
                             min="2"
                             required
-                            placeholder={$_("common.message.defaultValue",{values:{default:"single"}})}
+                            placeholder={$_("common.message.defaultValue", { values: { value: "single" } })}
                             bind:value={field.maxSelect}
                         />
                     </Field>
@@ -278,17 +279,16 @@
             <Field class="form-field form-field-toggle" name="fields.{key}.protected" let:uniqueId>
                 <input type="checkbox" id={uniqueId} bind:checked={field.protected} />
                 <label for={uniqueId}>
-                    <span class="txt">Protected</span>
+                    <span class="txt">{$_("common.switch.protected.name")}</span>
                 </label>
                 <small class="txt-hint">
-                    it will require View API rule permissions and file token to be accessible
+                    {$_("common.switch.protected.placeholder")}
                     <a
                         href="https://pocketbase.io/docs/files-handling/#protected-files"
                         class="toggle-info"
                         target="_blank"
                         rel="noopener"
-                    >
-                        (Learn more)
+                        >{$_("common.action.learnMore")}
                     </a>
                 </small>
             </Field>

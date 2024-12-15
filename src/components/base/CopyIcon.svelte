@@ -1,11 +1,11 @@
 <script>
-    import { json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { onMount } from "svelte";
     import CommonHelper from "@/utils/CommonHelper";
     import tooltipAction from "@/actions/tooltip";
 
     export let value = "";
-    export let tooltip = $json("common.action.copy");
+    export let tooltip = $_("common.action.copy");
     export let idleClasses = "ri-file-copy-line txt-sm link-hint";
     export let successClasses = "ri-check-line txt-sm txt-success";
     export let successDuration = 500; // ms
@@ -40,7 +40,7 @@
     tabindex="-1"
     role="button"
     class={copyTimeout ? successClasses : idleClasses}
-    aria-label={$json("common.action.copy")}
+    aria-label={$_("common.action.copy")}
     use:tooltipAction={!copyTimeout ? tooltip : undefined}
     on:click|stopPropagation={copy}
 />

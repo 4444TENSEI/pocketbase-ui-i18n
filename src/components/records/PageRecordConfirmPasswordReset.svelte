@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
     import PocketBase, { getTokenPayload } from "pocketbase";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -82,7 +83,7 @@
                 class:btn-loading={isLoading}
                 disabled={isLoading}
             >
-                <span class="txt">Set new password</span>
+                <span class="txt">{$_("common.action.setNewValue")}</span>
             </button>
         </form>
     {/if}

@@ -1,7 +1,7 @@
 <script>
     import "./scss/main.scss";
 
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Confirmation from "@/components/base/Confirmation.svelte";
     import TinyMCE from "@/components/base/TinyMCE.svelte";
@@ -92,7 +92,7 @@
                     use:link
                     use:active={{ path: "/collections/?.*", className: "current-route" }}
                     use:tooltip={{
-                        text: $json("common.menu.collection"),
+                        text: $_("common.menu.collection"),
                         position: "right",
                     }}
                 >
@@ -105,7 +105,7 @@
                     use:link
                     use:active={{ path: "/logs/?.*", className: "current-route" }}
                     use:tooltip={{
-                        text: $json("common.menu.log"),
+                        text: $_("common.menu.log"),
                         position: "right",
                     }}
                 >
@@ -118,7 +118,7 @@
                     use:link
                     use:active={{ path: "/settings/?.*", className: "current-route" }}
                     use:tooltip={{
-                        text: $json("common.menu.setting"),
+                        text: $_("common.menu.setting"),
                         position: "right",
                     }}
                 >

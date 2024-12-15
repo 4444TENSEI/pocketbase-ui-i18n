@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { onMount } from "svelte";
     import { slide } from "svelte/transition";
     import ApiClient from "@/utils/ApiClient";
@@ -101,31 +101,31 @@
     <div class="grid" transition:slide={{ duration: 150 }}>
         <div class="col-lg-6">
             <Field class="form-field required" name="{configKey}.endpoint" let:uniqueId>
-                <label for={uniqueId}>Endpoint</label>
+                <label for={uniqueId}>{$_("page.setting.content.fileStorage.endpoint")}</label>
                 <input type="text" id={uniqueId} required bind:value={config.endpoint} />
             </Field>
         </div>
         <div class="col-lg-3">
             <Field class="form-field required" name="{configKey}.bucket" let:uniqueId>
-                <label for={uniqueId}>Bucket</label>
+                <label for={uniqueId}>{$_("page.setting.content.fileStorage.bucket")}</label>
                 <input type="text" id={uniqueId} required bind:value={config.bucket} />
             </Field>
         </div>
         <div class="col-lg-3">
             <Field class="form-field required" name="{configKey}.region" let:uniqueId>
-                <label for={uniqueId}>Region</label>
+                <label for={uniqueId}>{$_("page.setting.content.fileStorage.region")}</label>
                 <input type="text" id={uniqueId} required bind:value={config.region} />
             </Field>
         </div>
         <div class="col-lg-6">
             <Field class="form-field required" name="{configKey}.accessKey" let:uniqueId>
-                <label for={uniqueId}>Access key</label>
+                <label for={uniqueId}>{$_("page.setting.content.fileStorage.accessKey")}</label>
                 <input type="text" id={uniqueId} required bind:value={config.accessKey} />
             </Field>
         </div>
         <div class="col-lg-6">
             <Field class="form-field required" name="{configKey}.secret" let:uniqueId>
-                <label for={uniqueId}>Secret</label>
+                <label for={uniqueId}>{$_("page.setting.content.fileStorage.secret")}</label>
                 <RedactedPasswordInput
                     required
                     id={uniqueId}
@@ -142,7 +142,7 @@
                     <i
                         class="ri-information-line link-hint"
                         use:tooltip={{
-                            text: 'Forces the request to use path-style addressing, eg. "https://s3.amazonaws.com/BUCKET/KEY" instead of the default "https://BUCKET.s3.amazonaws.com/KEY".',
+                            text: $_("page.setting.content.backup.content.18"),
                             position: "top",
                         }}
                     />

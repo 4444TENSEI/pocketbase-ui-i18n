@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { createEventDispatcher, tick } from "svelte";
     import { slide } from "svelte/transition";
     import { ClientResponseError } from "pocketbase";
@@ -282,7 +282,7 @@
             }
 
             addSuccessToast(
-                isNew ? $json("common.message.createSuccess") : $json("common.message.updateSuccess"),
+                isNew ? $_("common.message.createSuccess") : $_("common.message.updateSuccess"),
             );
 
             deleteDraft();
@@ -451,7 +451,7 @@
 
     function duplicateConfirm() {
         if (hasChanges) {
-            confirm($json("common.message.unsave"), () => {
+            confirm($_("common.message.unsave"), () => {
                 duplicate();
             });
         } else {
@@ -493,7 +493,7 @@
 
     function copyJSON() {
         CommonHelper.copyToClipboard(JSON.stringify(original, null, 2));
-        addSuccessToast($json("common.message.copySuccess"), 3000);
+        addSuccessToast($_("common.message.copySuccess"), 3000);
     }
 </script>
 
@@ -509,7 +509,7 @@
     overlayClose={!isLoading}
     beforeHide={() => {
         if (hasChanges && confirmHide) {
-            confirm($json("common.message.unsave"), () => {
+            confirm($_("common.message.unsave"), () => {
                 forceHide();
             });
 
@@ -530,7 +530,7 @@
             <h4 class="panel-title txt-hint">Loading...</h4>
         {:else}
             <h4 class="panel-title">
-                {isNew ? $json("common.action.create") : $json("common.action.edit")}
+                {isNew ? $_("common.action.create") : $_("common.action.edit")}
                 <strong>{collection?.name}</strong>
                 {$_("common.database.data")}
             </h4>
@@ -688,7 +688,7 @@
                     type="text"
                     id={uniqueId}
                     placeholder={!isLoading && !CommonHelper.isEmpty(idField?.autogeneratePattern)
-                        ? $json("common.placeholder.autoGenerate")
+                        ? $_("common.placeholder.autoGenerate")
                         : ""}
                     minlength={idField?.min}
                     readonly={!isNew}
@@ -761,14 +761,14 @@
             <button
                 type="submit"
                 form={formId}
-                title={$json("common.action.close")}
+                title={$_("common.action.close")}
                 class="btn"
                 class:btn-expanded={isNew}
                 class:btn-expanded-sm={!isNew}
                 class:btn-loading={isSaving || isLoading}
                 disabled={!canSave || isSaving}
             >
-                <span class="txt">{isNew ? $json("common.action.create") : $json("common.action.save")}</span>
+                <span class="txt">{isNew ? $_("common.action.create") : $_("common.action.save")}</span>
             </button>
 
             {#if !isNew}

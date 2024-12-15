@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { createEventDispatcher, onDestroy } from "svelte";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -47,7 +47,7 @@
 
             hide();
             dispatch("submit");
-            addSuccessToast("Successfully generated new backup.");
+            addSuccessToast($_("page.setting.content.backup.content.19"));
         } catch (err) {
             if (!err.isAbort) {
                 ApiClient.error(err);
@@ -111,7 +111,7 @@
             <input
                 type="text"
                 id={uniqueId}
-                placeholder={$json("common.placeholder.autoGenerate")}
+                placeholder={$_("common.placeholder.autoGenerate")}
                 pattern="^[a-z0-9_-]+\.zip$"
                 bind:value={name}
             />

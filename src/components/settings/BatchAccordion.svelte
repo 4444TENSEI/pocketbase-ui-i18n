@@ -82,7 +82,7 @@
                     id={uniqueId}
                     min="0"
                     step="1"
-                    placeholder={$_("common.message.defaultValue",{values:{default:"128 MB"}})}
+                    placeholder={$_("common.message.defaultValue",{values:{value:"128 MB"}})}
                     value={formSettings.batch.maxBodySize || ""}
                     on:input={(e) => (formSettings.batch.maxBodySize = e.target.value << 0)}
                 />

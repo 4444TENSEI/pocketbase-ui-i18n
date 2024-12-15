@@ -1,6 +1,5 @@
-<!-- 应用 -->
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import { getCookie, setCookie } from "@/utils/Cookie";
     import ApiClient from "@/utils/ApiClient";
     import CommonHelper from "@/utils/CommonHelper";
@@ -15,14 +14,13 @@
     import TrustedProxyAccordion from "@/components/settings/TrustedProxyAccordion.svelte";
     import RateLimitAccordion from "@/components/settings/RateLimitAccordion.svelte";
 
-    let cookiePbUrl = getCookie("pbUrl");
+    $pageTitle = $_("common.menu.appConfig");;
     let originalFormSettings = {};
     let formSettings = {};
     let isLoading = false;
     let isSaving = false;
     let initialHash = "";
     let healthData = {};
-    $pageTitle = $json("common.menu.appConfig");
 
     $: initialHash = JSON.stringify(originalFormSettings);
 
@@ -68,11 +66,12 @@
 
             await loadHealthData();
 
+            // 🐱在存入后端数据库后，额外设置页面的cookie
+            setCookie("pbUrl", formSettings.meta.appURL);
+
             setErrors({});
 
-            setCookie("pbUrl", formSettings.pbUrl);
-
-            addSuccessToast($json("common.message.applyNewSetting"));
+            addSuccessToast($_("common.message.applyNewSetting"));
         } catch (err) {
             ApiClient.error(err);
         }
@@ -81,7 +80,7 @@
     }
 
     function init(settings = {}) {
-        $appName = import.meta.env.APP_NAME;
+        $appName = settings?.meta?.appName;
         $hideControls = !!settings?.meta?.hideControls;
 
         formSettings = {
@@ -204,7 +203,7 @@
                     <div class="col-lg-6">
                         <Field class="form-field required" name="meta.appURL" let:uniqueId>
                             <label for={uniqueId}>{$_("page.setting.content.application.serverUrl")}</label>
-                            <input type="text" id={uniqueId} required bind:value={formSettings.ckPbUrl} />
+                            <input type="text" id={uniqueId} required bind:value={formSettings.meta.appURL} />
                         </Field>
                     </div>
                     <div class="col-lg-12">
@@ -228,7 +227,7 @@
                                 <i
                                     class="ri-information-line link-hint"
                                     use:tooltip={{
-                                        text: $json("common.tip.envPrevention"),
+                                        text: $_("common.tip.envPrevention"),
                                         position: "right",
                                     }}
                                 />

@@ -1,5 +1,5 @@
 <script>
-    import { _ ,json} from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import { createEventDispatcher } from "svelte";
     import CommonHelper from "@/utils/CommonHelper";
     import ApiClient from "@/utils/ApiClient";
@@ -68,7 +68,7 @@
 
             hide();
 
-            addSuccessToast($json("common.message.applyNewSetting"));
+            addSuccessToast($_("common.message.applyNewSetting"));
 
             dispatch("save", settings);
         } catch (err) {

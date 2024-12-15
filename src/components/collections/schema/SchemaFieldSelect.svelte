@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import MultipleValueInput from "@/components/base/MultipleValueInput.svelte";
@@ -10,8 +10,8 @@
     export let key = "";
 
     const isSingleOptions = [
-        { label: "Single", value: true },
-        { label: "Multiple", value: false },
+        { label: $_("common.placeholder.single"), value: true },
+        { label: $_("common.placeholder.multiple"), value: false },
     ];
 
     let isSingle = field.maxSelect <= 1;
@@ -87,7 +87,7 @@
                     step="1"
                     min="2"
                     max={field.values.length}
-                    placeholder={$_("common.message.defaultValue",{values:{default:"single"}})}
+                    placeholder={$_("common.message.defaultValue", { values: { value: "single" } })}
                     bind:value={field.maxSelect}
                 />
             </Field>

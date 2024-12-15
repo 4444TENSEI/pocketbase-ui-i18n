@@ -228,7 +228,7 @@
 <OverlayPanel bind:this={pickerPanel} popup class="overlay-panel-xl" on:hide on:show {...$$restProps}>
     <svelte:fragment slot="header">
         <h4>
-            Select <strong>{collection?.name || ""}</strong> records
+            {$_("common.popup.picker.name", { values: { tableName: collection?.name || "" } })}
         </h4>
     </svelte:fragment>
 
@@ -300,10 +300,10 @@
         {:else}
             {#if !isLoading}
                 <div class="list-item">
-                    <span class="txt txt-hint">No records found.</span>
+                    <span class="txt txt-hint">{$_("common.popup.picker.content.1")}</span>
                     {#if filter?.length}
                         <button type="button" class="btn btn-hint btn-sm" on:click={() => (filter = "")}>
-                            <span class="txt">Clear filters</span>
+                            <span class="txt">{$_("common.action.clear")}</span>
                         </button>
                     {/if}
                 </div>
@@ -320,7 +320,7 @@
     </div>
 
     <h5 class="section-title">
-        Selected
+        {$_("common.placeholder.selected")}
         {#if maxSelect > 1}
             ({selected.length} of MAX {maxSelect})
         {/if}
@@ -344,7 +344,7 @@
             {/each}
         </div>
     {:else}
-        <p class="txt-hint">No selected records.</p>
+        <p class="txt-hint">{$_("common.popup.picker.content.2")}</p>
     {/if}
 
     <svelte:fragment slot="footer">
@@ -352,7 +352,7 @@
             <span class="txt">{$_("common.action.cancel")}</span>
         </button>
         <button type="button" class="btn" on:click={() => save()}>
-            <span class="txt">Set selection</span>
+            <span class="txt">{$_("common.action.save")}</span>
         </button>
     </svelte:fragment>
 </OverlayPanel>

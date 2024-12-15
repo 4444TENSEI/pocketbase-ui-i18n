@@ -1,5 +1,5 @@
 <script>
-    import { _, json } from "svelte-i18n";
+    import { _ } from "svelte-i18n";
     import tooltip from "@/actions/tooltip";
     import Field from "@/components/base/Field.svelte";
     import SecretGeneratorButton from "@/components/base/SecretGeneratorButton.svelte";
@@ -44,14 +44,15 @@
                             ? 'btn-success'
                             : 'btn-hint'}"
                         use:tooltip={{
-                            text: $json("common.placeholder.checkPublic"),
+                            text: $_("common.placeholder.checkPublic"),
                             position: "top-right",
                         }}
                         on:click|preventDefault={() => (record.emailVisibility = !record.emailVisibility)}
                     >
-                        <span class="txt"
-                            >
-                            {record.emailVisibility ? $json("common.tip.public") : $json("common.tip.private")}</span
+                        <span class="txt">
+                            {record.emailVisibility
+                                ? $_("common.tip.public")
+                                : $_("common.tip.private")}</span
                         >
                     </button>
                 </div>
@@ -130,7 +131,7 @@
                             return; // no confirmation required
                         }
                         confirm(
-                            `确定修改该用户验证状态吗?`,
+                            $_("common.message.updateVerificationPrompt"),
                             () => {},
                             () => {
                                 record.verified = !e.target.checked;
