@@ -2,10 +2,11 @@ node_modules/
 .vscode/
 script/
 dist/
+old/
 
 .DS_Store
-.env.development
 .env.production
+.env.local
 
 pb_*/
 *.exe
