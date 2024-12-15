@@ -230,6 +230,7 @@
       "multiple": "多个",
       "style": "风格",
       "docs": "文档",
+      "searchTable":"搜索数据表",
       "adminOnly": "仅管理员",
       "exempliGratia": "例如",
       "forAuth": "用于身份验证",

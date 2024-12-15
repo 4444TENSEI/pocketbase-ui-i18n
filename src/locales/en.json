@@ -230,6 +230,7 @@
       "multiple": "Multiple",
       "style": "style",
       "docs": "document",
+      "searchTable": "Search datasheet",
       "adminOnly": "Administrators only",
       "exempliGratia": "For example",
       "forAuth": "for authentication",
@@ -382,7 +383,7 @@
         "enableAuthLog": "Record the authorizer ID",
         "content": {
           "1": "Setting to 0 will clear the current log data and turn off the logging function",
-          "2": "Log data that is greater than the level corresponding to the “number” above will be included."
+          "2": "Log data that is greater than the corresponding level of the “number” above will be included."
         }
       },
       "writeSql": {
@@ -546,7 +547,7 @@
       "notFountData": "No data yet",
       "applyNewSetting": "New settings saved",
       "defaultValue": "Currently defaults to \"{ value }\"",
-      "defaultPageNumber": "By default, the data on page 1 is returned",
+      "defaultPageNumber": "By default, data on page 1 is returned",
       "defaultLimitNumber": "By default, 30 pieces of data are returned per page",
       "selectedPrompt": "{ selected } pieces of data are selected",
       "deletePrompt": "Are you sure you want to delete \"{ value }\"?",
@@ -569,6 +570,7 @@
       "networkError": "Network error, please try again later",
       "copySuccess": "Successfully copied to clipboard!",
       "followRules": "Requesting permissions follows the rules: { url }",
+      "loadTimeout": "If the service cannot be connected, please click the settings button in the upper right corner to switch to another backend address.",
       "missingContext": "Data context content has been lost!",
       "uploadReminder": "Are you sure you want to upload the file \"{ fileName }\"?\nPlease make sure the files you upload are safe!"
     },
@@ -583,7 +585,7 @@
   },
   "page": {
     "login": {
-      "title": "Backend login",
+      "title": "Log in",
       "action": {
         "forgetPsw": "forget the password"
       }
@@ -639,7 +641,7 @@
             "content": {
               "1": "When PocketBase is deployed on a platform such as Fly, or accessed through a proxy such as NGINX, requests from different users will come from the same IP address (i.e. the IP of the proxy connected to your PocketBase application)",
               "2": "In this case, to get the actual user IP (for rate limiting, logging, etc.) you need to configure your proxy correctly and list the following trusted headers that PocketBase can use to extract the user IP",
-              "3": "When using such a proxy, to prevent spoofing, it is recommended",
+              "3": "When using such proxies, to prevent spoofing, it is recommended",
               "4": "Use headers that can only be controlled by the proxy and cannot be set manually by the user",
               "5": "Make sure the PocketBase server is only accessible through a proxy",
               "6": "If PocketBase is not deployed behind a proxy, you can clear the header information fields",
@@ -693,7 +695,7 @@
           },
           "content": {
             "1": "When closed, PocketBase will use the unix \"sendmail\" command to send emails (this function is no longer available). In order to ensure that emails are sent, please also configure the SMTP mail server yourself.",
-            "2": "Some SMTP servers, such as Gmail SMTP-relay, require an appropriate domain name in the initial EHLO/HELO exchange to identify the server sending the mail. Using 'localhost' or an invalid domain name may cause the SMTP server to refuse the connection, as they usually require authentication. Server for sending emails to prevent abuse and spam",
+            "2": "Some SMTP servers, such as Gmail SMTP-relay, require an appropriate domain name in the initial EHLO/HELO exchange to identify the server sending the mail. Using 'localhost' or an invalid domain name may cause the SMTP server to refuse the connection, as they usually require authentication. Server for sending mail to prevent abuse and spam",
             "3": "Authentication",
             "4": "Password reset",
             "5": "Change email",

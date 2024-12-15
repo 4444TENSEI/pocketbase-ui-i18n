@@ -50,7 +50,7 @@
       "connectionTest": "Modifica l'indirizzo del back-end",
       "createRecord": "Creare dati",
       "createTable": "Crea tabella dati",
-      "deleteTable": "Elimina tabella dati",
+      "deleteTable": "Elimina la tabella dati",
       "editTable": "Modifica le informazioni della tabella dati",
       "truncateData": "Cancella dati",
       "uploadFile": "Carica file",
@@ -230,6 +230,7 @@
       "multiple": "Molteplici",
       "style": "stile",
       "docs": "documento",
+      "searchTable": "Cerca scheda tecnica",
       "adminOnly": "Solo amministratori",
       "exempliGratia": "Per esempio",
       "forAuth": "per l'autenticazione",
@@ -382,7 +383,7 @@
         "enableAuthLog": "Registrare l'ID dell'autorizzazione",
         "content": {
           "1": "L'impostazione su 0 cancellerà i dati di registro correnti e disattiverà la funzione di registrazione",
-          "2": "Verranno inclusi i dati di registro superiori al livello corrispondente al \"numero\" sopra."
+          "2": "Verranno inclusi i dati di registro superiori al livello corrispondente del \"numero\" sopra."
         }
       },
       "writeSql": {
@@ -546,7 +547,7 @@
       "notFountData": "Nessun dato ancora",
       "applyNewSetting": "Nuove impostazioni salvate",
       "defaultValue": "Attualmente il valore predefinito è \"{ value }\"",
-      "defaultPageNumber": "Per impostazione predefinita, vengono restituiti i dati a pagina 1",
+      "defaultPageNumber": "Per impostazione predefinita, vengono restituiti i dati della pagina 1",
       "defaultLimitNumber": "Per impostazione predefinita, vengono restituiti 30 dati per pagina",
       "selectedPrompt": "{selezionato} pezzi di dati sono selezionati",
       "deletePrompt": "Vuoi eliminare \"{ valore }\"?",
@@ -569,6 +570,7 @@
       "networkError": "Errore di rete, riprova più tardi",
       "copySuccess": "Copiato negli appunti con successo!",
       "followRules": "La richiesta delle autorizzazioni segue le regole: { url }",
+      "loadTimeout": "Se non è possibile connettere il servizio, fare clic sul pulsante delle impostazioni nell'angolo in alto a destra per passare a un altro indirizzo backend.",
       "missingContext": "Il contenuto del contesto dati è andato perso!",
       "uploadReminder": "Sei sicuro di voler caricare il file \"{ fileName }\"?\nAssicurati che i file che carichi siano sicuri!"
     },
@@ -583,7 +585,7 @@
   },
   "page": {
     "login": {
-      "title": "Accesso al back-end",
+      "title": "Login",
       "action": {
         "forgetPsw": "dimenticare la password"
       }
@@ -601,7 +603,7 @@
         "createUser": "Crea e accedi"
       },
       "content": {
-        "1": "Benvenuto in PocketBase",
+        "1": "Benvenuti in PocketBase",
         "2": "Inserisci almeno 10 caratteri"
       }
     },
@@ -637,9 +639,9 @@
             "trustedHeaders": "L'identificatore IP dell'intestazione della richiesta da considerare attendibile",
             "priorityIp": "adozione definitiva",
             "content": {
-              "1": "Quando PocketBase viene distribuito su una piattaforma come Fly o si accede tramite un proxy come NGINX, le richieste di utenti diversi arriveranno dallo stesso indirizzo IP (ovvero l'IP del proxy connesso alla tua applicazione PocketBase)",
+              "1": "Quando PocketBase viene distribuito su una piattaforma come Fly o vi si accede tramite un proxy come NGINX, le richieste di utenti diversi arriveranno dallo stesso indirizzo IP (ovvero l'IP del proxy connesso alla tua applicazione PocketBase)",
               "2": "In questo caso, per ottenere l'IP utente effettivo (per limitazione di velocità, registrazione, ecc.) è necessario configurare correttamente il proxy ed elencare le seguenti intestazioni attendibili che PocketBase può utilizzare per estrarre l'IP dell'utente",
-              "3": "Quando si utilizza un proxy di questo tipo, è consigliabile evitare lo spoofing",
+              "3": "Quando si utilizzano tali proxy, si consiglia di prevenire lo spoofing",
               "4": "Utilizza intestazioni che possono essere controllate solo dal proxy e non possono essere impostate manualmente dall'utente",
               "5": "Assicurati che il server PocketBase sia accessibile solo tramite un proxy",
               "6": "Se PocketBase non è distribuito dietro un proxy, è possibile cancellare i campi delle informazioni dell'intestazione",
@@ -693,7 +695,7 @@
           },
           "content": {
             "1": "Una volta chiuso, PocketBase utilizzerà il comando unix \"sendmail\" per inviare e-mail (questa funzione non è più disponibile) Per garantire che le e-mail vengano inviate, configurare manualmente anche il server di posta SMTP.",
-            "2": "Alcuni server SMTP, come il relè SMTP di Gmail, richiedono un nome di dominio appropriato nello scambio EHLO/HELO iniziale per identificare il server che invia la posta. L'utilizzo di \"localhost\" o un nome di dominio non valido può causare il rifiuto della connessione da parte del server SMTP. poiché di solito richiedono l'autenticazione del Server per l'invio di email per prevenire abusi e spam",
+            "2": "Alcuni server SMTP, come il relè SMTP di Gmail, richiedono un nome di dominio appropriato nello scambio EHLO/HELO iniziale per identificare il server che invia la posta. L'utilizzo di \"localhost\" o un nome di dominio non valido può causare il rifiuto della connessione da parte del server SMTP. poiché di solito richiedono l'autenticazione del Server per l'invio della posta per prevenire abusi e spam",
             "3": "Autenticazione",
             "4": "Reimpostazione della password",
             "5": "Cambia e-mail",
@@ -714,7 +716,7 @@
           "content": {
             "1": "Se non abilitate, tutte le interfacce di caricamento file utilizzeranno l'archiviazione del disco rigido locale, quindi puoi abilitare e configurare l'archiviazione S3 e archiviare i file successivi nell'archiviazione S3.",
             "2": "Se i file caricati dagli utenti esistono localmente, trasferiscili manualmente nel nuovo archivio oggetti",
-            "3": "Esistono molti strumenti da riga di comando che possono aiutarti, come ad esempio:"
+            "3": "Esistono molti strumenti da riga di comando che possono aiutarti, come:"
           },
           "action": {
             "s3Enable": "Abilita l'archiviazione di oggetti S3",
@@ -733,7 +735,7 @@
             "1": "Backup e ripristino dei dati",
             "2": "Nessun file di backup ancora",
             "3": "Tieni presente che durante il backup, altre richieste di scrittura simultanee potrebbero fallire perché il database verrà temporaneamente \"bloccato\" (di solito accade durante la generazione dello ZIP)",
-            "4": "Se utilizzi lo spazio di archiviazione S3 per caricare i file della raccolta, dovrai eseguirne il backup separatamente poiché non sono archiviati localmente e non saranno inclusi nel backup finale!",
+            "4": "Se utilizzi lo storage S3 per caricare i file della raccolta, dovrai eseguirne il backup separatamente poiché non sono archiviati localmente e non saranno inclusi nel backup finale!",
             "5": "Il contenuto di input deve contenere il suffisso \".zip\" e il nome può contenere solo numeri, inglese, trattini bassi e segni meno.",
             "6": "Operazione di backup/ripristino in corso",
             "7": null,

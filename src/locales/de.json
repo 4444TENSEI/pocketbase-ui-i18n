@@ -52,7 +52,7 @@
       "createTable": "Datentabelle erstellen",
       "deleteTable": "Datentabelle löschen",
       "editTable": "Bearbeiten Sie die Datentabelleninformationen",
-      "truncateData": "Klare Daten",
+      "truncateData": "Daten löschen",
       "uploadFile": "Dateien hochladen",
       "uploadImage": "Bilder hochladen",
       "verified": "zertifiziert",
@@ -230,6 +230,7 @@
       "multiple": "Mehrere",
       "style": "Stil",
       "docs": "dokumentieren",
+      "searchTable": "Datenblatt durchsuchen",
       "adminOnly": "Nur Administratoren",
       "exempliGratia": "Zum Beispiel",
       "forAuth": "zur Authentifizierung",
@@ -279,7 +280,7 @@
     },
     "popup": {
       "mockNewToken": {
-        "name": "Generieren Sie manuell ein Verifizierungstoken",
+        "name": "Verifizierungstoken manuell generieren",
         "content": {
           "1": "Generieren Sie ein festes Authentifizierungstoken für Benutzer {E-Mail}"
         }
@@ -382,7 +383,7 @@
         "enableAuthLog": "Notieren Sie die Autorisierungs-ID",
         "content": {
           "1": "Durch die Einstellung 0 werden die aktuellen Protokolldaten gelöscht und die Protokollierungsfunktion ausgeschaltet",
-          "2": "Protokolldaten, die größer sind als die der oben genannten „Zahl“ entsprechende Stufe, werden einbezogen."
+          "2": "Protokolldaten, die größer sind als die entsprechende Stufe der oben genannten „Zahl“, werden einbezogen."
         }
       },
       "writeSql": {
@@ -546,7 +547,7 @@
       "notFountData": "Noch keine Daten",
       "applyNewSetting": "Neue Einstellungen gespeichert",
       "defaultValue": "Derzeit ist der Standardwert „{ value }“.",
-      "defaultPageNumber": "Standardmäßig werden die Daten auf Seite 1 zurückgegeben",
+      "defaultPageNumber": "Standardmäßig werden Daten auf Seite 1 zurückgegeben",
       "defaultLimitNumber": "Standardmäßig werden 30 Daten pro Seite zurückgegeben",
       "selectedPrompt": "{ selected } Datenelemente werden ausgewählt",
       "deletePrompt": "Sind Sie sicher, dass Sie „{ value }“ löschen möchten?",
@@ -569,6 +570,7 @@
       "networkError": "Netzwerkfehler, bitte versuchen Sie es später noch einmal",
       "copySuccess": "Erfolgreich in die Zwischenablage kopiert!",
       "followRules": "Das Anfordern von Berechtigungen folgt den Regeln: { url }",
+      "loadTimeout": "Wenn der Dienst nicht verbunden werden kann, klicken Sie bitte auf die Schaltfläche „Einstellungen“ in der oberen rechten Ecke, um zu einer anderen Backend-Adresse zu wechseln.",
       "missingContext": "Der Inhalt des Datenkontexts ist verloren gegangen!",
       "uploadReminder": "Sind Sie sicher, dass Sie die Datei „{ fileName }“ hochladen möchten?\nBitte stellen Sie sicher, dass die von Ihnen hochgeladenen Dateien sicher sind!"
     },
@@ -583,7 +585,7 @@
   },
   "page": {
     "login": {
-      "title": "Backend-Login",
+      "title": "Einloggen",
       "action": {
         "forgetPsw": "vergessen Sie das Passwort"
       }
@@ -639,7 +641,7 @@
             "content": {
               "1": "Wenn PocketBase auf einer Plattform wie Fly bereitgestellt wird oder über einen Proxy wie NGINX darauf zugegriffen wird, kommen Anfragen von verschiedenen Benutzern von derselben IP-Adresse (d. h. der IP des Proxys, der mit Ihrer PocketBase-Anwendung verbunden ist).",
               "2": "In diesem Fall müssen Sie zum Abrufen der tatsächlichen Benutzer-IP (zur Ratenbegrenzung, Protokollierung usw.) Ihren Proxy korrekt konfigurieren und die folgenden vertrauenswürdigen Header auflisten, die PocketBase zum Extrahieren der Benutzer-IP verwenden kann",
-              "3": "Um Spoofing zu verhindern, wird die Verwendung eines solchen Proxys empfohlen",
+              "3": "Bei der Verwendung solcher Proxys wird empfohlen, Spoofing zu verhindern",
               "4": "Verwenden Sie Header, die nur vom Proxy gesteuert werden können und nicht manuell vom Benutzer festgelegt werden können",
               "5": "Stellen Sie sicher, dass der PocketBase-Server nur über einen Proxy erreichbar ist",
               "6": "Wenn PocketBase nicht hinter einem Proxy bereitgestellt wird, können Sie die Header-Informationsfelder löschen",
@@ -648,7 +650,7 @@
             },
             "tip": {
               "1": "Konfigurierte Proxy-Header stimmen nicht mit den erkannten überein",
-              "2": "In manchen Fällen kann ein Proxy-Server mehrere IP-Adressen im HTTP-Header zurückgeben. Normalerweise sind diese IP-Adressen in der Reihenfolge von der weitesten zur nächsten angeordnet. In diesem Fall ist die IP-Adresse ganz rechts die des Clients wird daher als die zuverlässigste oder „vertrauenswürdigere“ Regel angesehen. Dies ist jedoch keine feste Regel, da verschiedene Proxyserver unterschiedliche Implementierungen haben können.",
+              "2": "In manchen Fällen kann ein Proxy-Server mehrere IP-Adressen im HTTP-Header zurückgeben. In der Regel sind diese IP-Adressen in der Reihenfolge von der äußersten zur nächsten geordnet. In diesem Fall ist die IP-Adresse ganz rechts die des Clients wird daher als die zuverlässigste oder „vertrauenswürdigere“ Regel angesehen. Dies ist jedoch keine feste Regel, da verschiedene Proxyserver unterschiedliche Implementierungen haben können.",
               "3": "Die IP ganz links",
               "4": "Die IP ganz rechts",
               "5": "Wenn nicht die tatsächliche IP Ihres aktuellen Clients angezeigt wird, müssen Sie einen verfügbaren Proxy für den Server konfigurieren.",
@@ -685,7 +687,7 @@
           "title": "SMTP-Konfiguration",
           "senderNickname": "Spitzname des Absenders",
           "senderEmail": "E-Mail des Absenders",
-          "userEmail": "E-Mail des Empfängers",
+          "userEmail": "Empfänger-E-Mail",
           "action": {
             "smtpEnable": "E-Mail-Dienst aktivieren",
             "expandDetail": "Erweitern Sie weitere Optionen",
@@ -693,7 +695,7 @@
           },
           "content": {
             "1": "Im geschlossenen Zustand verwendet PocketBase den Unix-Befehl „sendmail“ zum Versenden von E-Mails (diese Funktion ist nicht mehr verfügbar). Um den E-Mail-Versand sicherzustellen, konfigurieren Sie bitte auch den SMTP-Mailserver.",
-            "2": "Einige SMTP-Server, wie z. B. Gmail SMTP-Relay, erfordern beim ersten EHLO/HELO-Austausch einen geeigneten Domänennamen, um den Server zu identifizieren, der die E-Mail sendet. Die Verwendung von „localhost“ kann dazu führen, dass der SMTP-Server die Verbindung ablehnt. da für den E-Mail-Versand in der Regel eine Serverauthentifizierung erforderlich ist, um Missbrauch und Spam zu verhindern",
+            "2": "Einige SMTP-Server, wie z. B. Gmail SMTP-Relay, erfordern beim ersten EHLO/HELO-Austausch einen geeigneten Domänennamen, um den Server zu identifizieren, der die E-Mail sendet. Die Verwendung von „localhost“ kann dazu führen, dass der SMTP-Server die Verbindung ablehnt. da sie normalerweise eine Authentifizierung des Servers zum Senden von E-Mails erfordern, um Missbrauch und Spam zu verhindern",
             "3": "Authentifizierung",
             "4": "Passwort zurücksetzen",
             "5": "E-Mail ändern",

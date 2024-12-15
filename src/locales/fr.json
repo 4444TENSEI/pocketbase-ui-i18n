@@ -230,6 +230,7 @@
       "multiple": "Multiple",
       "style": "style",
       "docs": "document",
+      "searchTable": "Rechercher une fiche technique",
       "adminOnly": "Administrateurs uniquement",
       "exempliGratia": "Par exemple",
       "forAuth": "pour l'authentification",
@@ -382,7 +383,7 @@
         "enableAuthLog": "Enregistrez l'ID de l'autorisateur",
         "content": {
           "1": "Le réglage sur 0 effacera les données du journal actuel et désactivera la fonction de journalisation.",
-          "2": "Les données de journal supérieures au niveau correspondant au « numéro » ci-dessus seront incluses."
+          "2": "Les données de journal supérieures au niveau correspondant du « nombre » ci-dessus seront incluses."
         }
       },
       "writeSql": {
@@ -437,7 +438,7 @@
       },
       "apiDocs": {
         "getListApi": {
-          "name": "Requête paginée / GET",
+          "name": "Requête paginée/GET",
           "content": {
             "1": "Renvoie toutes les données de la table \"{ tableName }\" et prend en charge les requêtes de pagination, le tri et le filtrage"
           }
@@ -451,7 +452,7 @@
         "createDataApi": {
           "name": "Créer des données/POST",
           "content": {
-            "1": "Ajouter de nouvelles données de table \"{ tableName }\""
+            "1": "Ajouter une nouvelle table de données \"{ tableName }\""
           }
         },
         "updateDataApi": {
@@ -475,13 +476,13 @@
         "batchApi": {
           "name": "Ajout, suppression, modification et requête/POST unifiés",
           "content": {
-            "1": "Implémenté en une seule requête : créer/mettre à jour/modifier/supprimer plusieurs enregistrements de table \"{ tableName }\" et prendre en charge le traitement par lots et les transactions"
+            "1": "Implémenté en une seule requête : créer/mettre à jour/modifier/supprimer plusieurs enregistrements de table \"{ tableName }\" et prendre en charge le traitement et les transactions par lots"
           }
         },
         "getAuthMethods": {
           "name": "Méthode d'autorisation de l'utilisateur de requête / GET",
           "content": {
-            "1": "Interroger la liste des « méthodes d'autorisation d'identité » supportées par le serveur"
+            "1": "Interroger la liste des « méthodes d'autorisation d'identité » prises en charge par le serveur"
           }
         },
         "authWithPassword": {
@@ -569,6 +570,7 @@
       "networkError": "Erreur réseau, veuillez réessayer plus tard",
       "copySuccess": "Copié avec succès dans le presse-papier !",
       "followRules": "La demande d'autorisations suit les règles : { url }",
+      "loadTimeout": "Si le service ne peut pas être connecté, veuillez cliquer sur le bouton Paramètres dans le coin supérieur droit pour passer à une autre adresse backend.",
       "missingContext": "Le contenu du contexte de données a été perdu !",
       "uploadReminder": "Êtes-vous sûr de vouloir télécharger le fichier \"{ fileName }\" ?\nVeuillez vous assurer que les fichiers que vous téléchargez sont en sécurité !"
     },
@@ -583,7 +585,7 @@
   },
   "page": {
     "login": {
-      "title": "Connexion back-end",
+      "title": "Se connecter",
       "action": {
         "forgetPsw": "oublier le mot de passe"
       }
@@ -639,7 +641,7 @@
             "content": {
               "1": "Lorsque PocketBase est déployé sur une plateforme telle que Fly, ou accessible via un proxy tel que NGINX, les requêtes des différents utilisateurs proviendront de la même adresse IP (c'est-à-dire l'IP du proxy connecté à votre application PocketBase)",
               "2": "Dans ce cas, pour obtenir l'adresse IP réelle de l'utilisateur (pour la limitation du débit, la journalisation, etc.), vous devez configurer correctement votre proxy et répertorier les en-têtes de confiance suivants que PocketBase peut utiliser pour extraire l'adresse IP de l'utilisateur.",
-              "3": "Lors de l'utilisation d'un tel proxy, pour éviter toute usurpation d'identité, il est recommandé",
+              "3": "Lors de l'utilisation de tels proxys, pour éviter toute usurpation d'identité, il est recommandé",
               "4": "Utilisez des en-têtes qui ne peuvent être contrôlés que par le proxy et ne peuvent pas être définis manuellement par l'utilisateur",
               "5": "Assurez-vous que le serveur PocketBase n'est accessible que via un proxy",
               "6": "Si PocketBase n'est pas déployé derrière un proxy, vous pouvez effacer les champs d'informations d'en-tête",
@@ -693,7 +695,7 @@
           },
           "content": {
             "1": "Une fois fermé, PocketBase utilisera la commande unix \"sendmail\" pour envoyer des emails (cette fonction n'est plus disponible). Afin de garantir que les emails sont envoyés, veuillez également configurer vous-même le serveur de messagerie SMTP.",
-            "2": "Certains serveurs SMTP, tels que le relais SMTP de Gmail, nécessitent un nom de domaine approprié lors de l'échange EHLO/HELO initial pour identifier le serveur qui envoie le courrier. L'utilisation de « localhost » ou d'un nom de domaine non valide peut entraîner le refus de la connexion par le serveur SMTP. car ils nécessitent généralement une authentification du serveur pour l'envoi d'e-mails afin d'éviter les abus et le spam.",
+            "2": "Certains serveurs SMTP, tels que le relais SMTP de Gmail, nécessitent un nom de domaine approprié lors de l'échange EHLO/HELO initial pour identifier le serveur qui envoie le courrier. L'utilisation de « localhost » ou d'un nom de domaine non valide peut entraîner le refus de la connexion par le serveur SMTP. car ils nécessitent généralement une authentification du serveur pour l'envoi de courrier afin d'éviter les abus et le spam.",
             "3": "Authentification",
             "4": "Réinitialisation du mot de passe",
             "5": "Changer d'e-mail",
