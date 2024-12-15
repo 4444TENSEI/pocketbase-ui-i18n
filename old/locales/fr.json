@@ -1,0 +1,542 @@
+{
+  "common": {
+    "user": {
+      "email": "Mail",
+      "password": "mot de passe",
+      "passwordNew": "nouveau mot de passe",
+      "passwordConfirm": "Répéter le mot de passe",
+      "name": "Nom",
+      "avatar": "Lien avatar",
+      "account": "Compte"
+    },
+    "role": {
+      "admin": "administrateur",
+      "user": "Utilisateur non autorisé",
+      "authUser": "Utilisateur autorisé",
+      "guest": "touristes"
+    },
+    "action": {
+      "login": "Se connecter",
+      "next": "Étape suivante",
+      "logout": "Se déconnecter",
+      "newData": "Ajouter de nouvelles données",
+      "new": "Nouveau",
+      "create": "créer",
+      "send": "envoyer",
+      "update": "renouveler",
+      "delete": "supprimer",
+      "edit": "modifier",
+      "search": "Trouver",
+      "ok": "Bien sûr",
+      "cancel": "Annuler",
+      "start": "commencer",
+      "copy": "copie",
+      "clone": "cloner",
+      "clear": "Clair",
+      "refresh": "rafraîchir",
+      "enable": "activer",
+      "save": "sauvegarder",
+      "download": "télécharger",
+      "reset": "réinitialiser",
+      "open": "Ouvrir",
+      "close": "fermeture",
+      "preview": "Aperçu",
+      "loadMore": "Voir plus",
+      "restore": "récupérer",
+      "change": "Réviser",
+      "connectionTest": "Modifier l'adresse du serveur",
+      "createRecord": "Créer des données",
+      "createTable": "Créer un tableau de données",
+      "editTable": "Modifier les informations de la table de données",
+      "deleteTable": "Supprimer le tableau de données",
+      "truncateData": "Effacer les données",
+      "uploadFile": "Télécharger des fichiers",
+      "uploadImage": "Télécharger des photos",
+      "verified": "Vérification réussie",
+      "changePassword": "Changer le mot de passe",
+      "deleteSelected": "Supprimer la sélection",
+      "saveAndContinue": "Enregistrer et continuer",
+      "sendTestEmail": "Envoyer un e-mail de test",
+      "sendVerificationEmail": "Envoyer un e-mail de vérification du compte",
+      "sendLoginEmail": "Rappelez aux utilisateurs l'état de connexion par e-mail",
+      "sendResetEmail": "Envoyer un e-mail de réinitialisation du mot de passe",
+      "learnMore": "Cliquez pour en savoir plus",
+      "review": "vérifier",
+      "checkLocale": "changer de langue",
+      "checkTheme": "changer de thème",
+      "export": "Exporter",
+      "import": "importer",
+      "copyJson": "Copier les données JSON",
+      "exportJson": "Exporter vers un fichier JSON",
+      "importJson": "Importer à partir d'un fichier JSON"
+    },
+    "tip": {
+      "enabled": "activer",
+      "disabled": "Désactiver",
+      "public": "publique",
+      "required": "nécessaire",
+      "optional": "Facultatif",
+      "private": "privé",
+      "style": "fournisseur",
+      "serviceNotEnabled": "Le service n'a pas encore été activé",
+      "envPrevention": "Empêcher la perte de données de déclencher des actions inattendues dans les environnements de production",
+      "administratorPreference": "S'il faut préférer ce champ dans la liste des relations dans l'interface utilisateur de l'administrateur (la valeur par défaut est automatique)"
+    },
+    "database": {
+      "baseTable": "Base",
+      "viewTable": "voir",
+      "authTable": "Attestation",
+      "table": "Fiche de données",
+      "tableName": "Nom de la table de données",
+      "query": "Requête",
+      "field": "Champ",
+      "createPresetField": "Ajouter un champ (par défaut)",
+      "data": "données du tableau",
+      "index": "indice",
+      "unique": "Contraintes d'unicité des données",
+      "setIndex": "Définir l'indice",
+      "pageNumber": "Nombre de pages",
+      "amountOfData": "Volume de données",
+      "sort": "trier",
+      "SortingRules": "Règles de tri",
+      "fieldPreset": {
+        "string": "chaîne",
+        "editor": "texte enrichi",
+        "number": "nombre",
+        "bool": "Booléen",
+        "email": "mail",
+        "url": "URL",
+        "datetime": "date",
+        "json": "JSON",
+        "text": "texte normal"
+      }
+    },
+    "menu": {
+      "collection": "Panneau de données",
+      "log": "enregistrer",
+      "setting": "installation",
+      "appConfig": "application",
+      "smtpConfig": "Service de courrier",
+      "storageConfig": "stockage d'objets",
+      "backupConfig": "Sauvegarde des données",
+      "oauth2": "Authentification OAuth2.0"
+    },
+    "placeholder": {
+      "type": "taper",
+      "description": "décrire",
+      "params": "paramètre",
+      "option": "Possibilités",
+      "preset": "Défaut",
+      "style": "style",
+      "docs": "document",
+      "forAuth": "pour l'authentification",
+      "forOther": "Autres utilisations",
+      "requestVerification": "vérification du problème",
+      "confirmVerification": "Accepter la vérification",
+      "fileName": "nom de fichier",
+      "apiUrl": "Adresse API/interface",
+      "apiQueryParameters": "Paramètres requis pour l'URL",
+      "apiPathParameters": "Paramètres de composition du chemin d'URL de l'interface",
+      "apiParameters": "Nom de la clé JSON du corps de la requête",
+      "apiResponses": "Exemple de contenu de réponse",
+      "authMethod": "Méthode d'authentification",
+      "amountOfRequest": "Volume de demande",
+      "hoverToSee": "Afficher avec le survol de la souris",
+      "accountPasswordLogin": "Champs personnalisés + mot de passe",
+      "thirdPartyAuthorization": "Autorisation de connexion par un tiers",
+      "searchTerm": "Terme de recherche ou filtre, exemple > « 01/01/2022 »...",
+      "autoGenerate": "Laisser vide pour générer automatiquement",
+      "autoDisable": "Laisser vide pour désactiver",
+      "checkPublic": "Rendre les e-mails publics ou privés",
+      "displayedField": "Champs d'affichage",
+      "searchTable": "Rechercher une fiche technique",
+      "unfoldTable": "Développer le tableau des données système",
+      "collapseTable": "Réduire le tableau des données système",
+      "sendOtpEmail": "Envoyer un mot de passe de vérification unique par e-mail",
+      "eventDataFormat": "Format de données d'événement SSE",
+      "searchDataPrompt": "Données de recherche, règles de correspondance prises en charge telles que créées > \"2022-01-01\"",
+      "searchLogPrompt": "Journaux de recherche, règles de correspondance prises en charge telles que niveau > 0 && data.auth = « invité »"
+    },
+    "popup": {
+      "mockNewToken": {
+        "name": "Générer manuellement un jeton de vérification",
+        "content": {
+          "1": "Générer un jeton d'authentification fixe pour l'utilisateur { email }"
+        }
+      },
+      "logSetting": {
+        "name": "Paramètres du journal",
+        "logDetail": "Détails du journal",
+        "maxDaysRetention": "Jours de conservation des journaux",
+        "minLogLevel": "Niveau de journalisation",
+        "enableIpLog": "Enregistrer l'adresse IP du visiteur",
+        "enableAuthLog": "Enregistrez l'ID de l'autorisateur",
+        "content": {
+          "1": "Le réglage sur 0 effacera les données du journal actuel et désactivera la fonction de journalisation.",
+          "2": "Les données de journal supérieures au niveau correspondant au « numéro » ci-dessus seront incluses."
+        }
+      },
+      "accountSetting": {
+        "name": "Paramètres du compte",
+        "content": {
+          "1": "Ici, vous pouvez afficher et exporter les informations de configuration actuelles, ou les exporter et les importer dans un autre environnement PocketBase.",
+          "2": "Envoyer un e-mail de vérification du compte à { email }",
+          "3": "Envoyer un e-mail de réinitialisation du mot de passe à { email }"
+        }
+      },
+      "editTableInfo": {
+        "name": "Êtes-vous sûr de vouloir modifier les informations de base de la table de données \"{ tableName }\" ?",
+        "content": {
+          "1": "Si le champ à supprimer ou à modifier est associé à une autre table de données, vous devez mettre à jour manuellement les autres références de table en conséquence !",
+          "2": "Toutes les données associées aux champs modifiés seront définitivement supprimées !",
+          "3": "Créer un index de champ"
+        }
+      },
+      "apiRequestPermission": {
+        "name": "Autorisation de demande d'interface",
+        "content": {
+          "1": "Ajouter de nouvelles règles d'interface de données",
+          "2": "Supprimer les règles d'interface de données",
+          "3": "Mettre à jour les règles de l'interface de données",
+          "4": "Règles d'interface de données de requête",
+          "5": "Afficher les règles d'interface de données",
+          "6": "Règles d'interface de données d'authentification"
+        },
+        "action": {
+          "showList": "Développez la liste des champs disponibles",
+          "hideList": "Réduire la liste des champs disponibles",
+          "setAdminRule": "Cliquez sur Paramètres. Seuls les administrateurs peuvent demander",
+          "unlockAdminRule": "Actuellement, seuls les administrateurs peuvent demander, cliquez pour déverrouiller"
+        }
+      },
+      "apiDocs": {
+        "getListApi": {
+          "name": "Requête paginée / GET",
+          "content": {
+            "1": "Renvoie toutes les données de la table \"{ tableName }\" et prend en charge les requêtes de pagination, le tri et le filtrage"
+          }
+        },
+        "getViewApi": {
+          "name": "Requête unique/GET",
+          "content": {
+            "1": "Interroger les données d'une table \"{ tableName }\" en fonction de l'ID"
+          }
+        },
+        "createDataApi": {
+          "name": "Créer des données/POST",
+          "content": {
+            "1": "Ajouter de nouvelles données de table \"{ tableName }\""
+          }
+        },
+        "updateDataApi": {
+          "name": "Mise à jour/PATCH unique",
+          "content": {
+            "1": "Mettre à jour les données d'une table \"{ tableName }\" en fonction de l'ID"
+          }
+        },
+        "deleteDataApi": {
+          "name": "Supprimer une seule fois / SUPPRIMER",
+          "content": {
+            "1": "Supprimer un morceau de données de la table \"{ tableName }\" en fonction de l'ID"
+          }
+        },
+        "sseApi": {
+          "name": "Abonnement groupé/SSE",
+          "content": {
+            "1": "Abonnez-vous aux modifications en temps réel de la table \"{ tableName }\" via les événements envoyés par le serveur (SSE)"
+          }
+        },
+        "batchApi": {
+          "name": "Ajout, suppression, modification et requête/POST unifiés",
+          "content": {
+            "1": "Implémenté en une seule requête : créer/mettre à jour/modifier/supprimer plusieurs enregistrements de table \"{ tableName }\" et prendre en charge le traitement par lots et les transactions"
+          }
+        },
+        "getAuthMethods": {
+          "name": "Méthode d'autorisation de l'utilisateur de requête / GET",
+          "content": {
+            "1": "Interroger la liste des « méthodes d'autorisation d'identité » supportées par le serveur"
+          }
+        },
+        "authWithPassword": {
+          "name": "Autorisation par mot de passe / POST",
+          "content": {
+            "1": "Utilisez l'e-mail ou d'autres champs pour combiner le mot de passe et enfin lancer une demande d'autorisation de vérification"
+          }
+        },
+        "authWithOAuth2": {
+          "name": "Autorisation OAuth2/POST",
+          "content": {
+            "1": "S'authentifie à l'aide d'un fournisseur OAuth2 et renvoie un nouveau jeton d'authentification et enregistre les données"
+          }
+        },
+        "authWithOTP": {
+          "name": "Autorisation OTP / POST",
+          "content": {
+            "1": "Authentifiez-vous à l'aide d'un mot de passe à usage unique (OTP)"
+          }
+        },
+        "authRefresh": {
+          "name": "Actualiser le statut d'autorisation / POST",
+          "content": {
+            "1": "Créer un nouveau jeton d'autorisation pour une demande de données déjà autorisée"
+          }
+        },
+        "verification": {
+          "name": "Envoyer une demande d'authentification/POST",
+          "content": {
+            "1": "Vérifiez que le compte utilisateur est valide, par exemple en envoyant un email"
+          }
+        },
+        "passwordReset": {
+          "name": "Envoyer la vérification du mot de passe de réinitialisation / POST",
+          "content": {
+            "1": "Envoyer une demande de réinitialisation du mot de passe utilisateur, par exemple en envoyant un e-mail"
+          }
+        },
+        "changeEmail": {
+          "name": "Changer d'e-mail/POST",
+          "content": {
+            "1": "Si l'utilisateur modifie lui-même l'adresse e-mail du compte, il doit la vérifier via cette interface, par exemple en envoyant un e-mail."
+          }
+        }
+      }
+    },
+    "message": {
+      "loading": "Chargement...",
+      "notAnyData": "aucune donnée",
+      "createSuccess": "Créé avec succès",
+      "updateSuccess": "Mise à jour réussie",
+      "deleteSuccess": "Supprimer avec succès",
+      "createError": "La création a échoué",
+      "updateError": "La mise à jour a échoué",
+      "deleteError": "Échec de la suppression",
+      "notFountData": "Aucune donnée pour l'instant",
+      "applyNewSetting": "Informations de configuration mises à jour avec succès",
+      "defaultValue": "La valeur par défaut est \"{ par défaut }\"",
+      "defaultPageNumber": "Par défaut, les données de la page 1 sont renvoyées",
+      "defaultLimitNumber": "Par défaut, 30 éléments de données sont renvoyés par page",
+      "selectedPrompt": "{ selected } éléments de données sont sélectionnés",
+      "deletePrompt": "Êtes-vous sûr de vouloir supprimer « {value } » ?",
+      "deleteSelectedPrompt": "Etes-vous sûr de vouloir supprimer toutes les données sélectionnées ?",
+      "deleteDataPrompt": "Êtes-vous sûr de vouloir supprimer « {value } », y compris les données qui lui sont associées ?",
+      "unlinkProviderPrompt": "Êtes-vous sûr de vouloir supprimer le fournisseur « { supplier } » ?",
+      "notAnyTables": "Vous n'avez pas encore de tableaux de données",
+      "checkServerConnect": "Le service actuel n'est pas disponible, veuillez vérifier la connectivité manuellement !",
+      "oauth2AuthFailed": "L'authentification OAuth2 a échoué",
+      "sendOtpEmailPrompt": "Vérifiez votre boîte de réception {otpEmail} et saisissez l'OTP ci-dessous.",
+      "dataVerificationFailed": "Impossible de vérifier les données de soumission",
+      "plaseTryAgain": "Vous pouvez fermer cette fenêtre et réessayer",
+      "sendEmailSussess": "J'ai essayé d'envoyer un e-mail à : { email }",
+      "recovery": "Voulez-vous restaurer les dernières données enregistrées automatiquement ?",
+      "unsave": "Les données n'ont pas été enregistrées. Êtes-vous sûr de vouloir quitter ?",
+      "noOa2Provider": "L'application OAuth2 n'a pas encore été configurée",
+      "insufficientAuthority": "Autorisations insuffisantes",
+      "noAccess": "Pas d'accès",
+      "networkError": "Erreur réseau, veuillez réessayer plus tard",
+      "copySuccess": "Copié avec succès dans le presse-papier !",
+      "followRules": "La demande d'autorisations suit les règles : { url }",
+      "missingContext": "Le contenu du contexte de données a été perdu !",
+      "uploadReminder": "Veuillez vous assurer que les fichiers que vous téléchargez sont en sécurité !\nÊtes-vous sûr de vouloir télécharger le fichier \"{ fileName }\" ?"
+    },
+    "subfield": {
+      "pin": "fixé",
+      "unPin": "Détacher",
+      "otherTableSetting": "autre",
+      "systemTableSetting": "système",
+      "adminTableSetting": "Paramètres de base",
+      "syncSetting": "Informations de configuration"
+    }
+  },
+  "page": {
+    "login": {
+      "title": "Connexion back-end",
+      "action": {
+        "forgetPsw": "oublier le mot de passe"
+      }
+    },
+    "forget": {
+      "title": "Récupérer le mot de passe",
+      "content": {
+        "1": "Entrez votre adresse e-mail et nous vous enverrons un « lien pour réinitialiser votre mot de passe »",
+        "2": "L'e-mail a été tenté d'être envoyé à « {email} ». S'il n'est pas reçu, cela signifie : 1. La boîte aux lettres de l'utilisateur n'existe pas. 2. Il a été collecté dans la corbeille des e-mails."
+      },
+      "action": {
+        "goToLogin": "Revenez en arrière et connectez-vous"
+      }
+    },
+    "init": {
+      "title": "Créer le premier utilisateur administrateur",
+      "action": {
+        "createUser": "Créer et se connecter"
+      },
+      "content": {
+        "1": "Bienvenue sur PocketBase",
+        "2": "Entrez au moins 10 caractères"
+      }
+    },
+    "collection": {
+      "content": {
+        "action": {
+          "apiPreviewme": "Documentation des interfaces"
+        }
+      },
+      "sideBar": {},
+      "dialog": {}
+    },
+    "log": {
+      "logLevel": "Classement des journaux :",
+      "adminLog": "afficher le journal de l'administrateur",
+      "table": {
+        "field": {
+          "level": "Résultats de la demande",
+          "message": "Demander des détails",
+          "createAt": "Créé en"
+        }
+      }
+    },
+    "setting": {
+      "content": {
+        "application": {
+          "nowAppName": "Titre actuel du site",
+          "serverUrl": "Adresse du service back-end",
+          "proxy": {
+            "title": "Obtenez la véritable adresse IP du client",
+            "curIp": "J'ai détecté que votre adresse IP actuelle est",
+            "curProxyHeader": "En-tête de proxy client détecté",
+            "trustedHeaders": "En-tête de demande de client de confiance",
+            "priorityIp": "adoption définitive",
+            "content": {
+              "1": "Lorsque PocketBase est déployé sur une plateforme telle que Fly, ou accessible via un proxy tel que NGINX, les requêtes des différents utilisateurs proviendront de la même adresse IP (c'est-à-dire l'IP du proxy connecté à votre application PocketBase)",
+              "2": "Dans ce cas, pour obtenir l'adresse IP réelle de l'utilisateur (pour la limitation du débit, la journalisation, etc.), vous devez configurer correctement votre proxy et répertorier les en-têtes de confiance suivants que PocketBase peut utiliser pour extraire l'adresse IP de l'utilisateur.",
+              "3": "Lors de l'utilisation d'un tel proxy, pour éviter toute usurpation d'identité, il est recommandé",
+              "4": "Utilisez des en-têtes qui ne peuvent être contrôlés que par le proxy et ne peuvent pas être définis manuellement par l'utilisateur",
+              "5": "Assurez-vous que le serveur PocketBase n'est accessible que via un proxy",
+              "6": "Si PocketBase n'est pas déployé derrière un proxy, vous pouvez effacer les champs d'informations d'en-tête",
+              "7": "Séparez par des virgules demi-largeur pour configurer plusieurs, simples tels que",
+              "8": "Configuration proxy du serveur non applicable/invalide"
+            },
+            "tip": {
+              "1": "Les en-têtes de proxy configurés ne correspondent pas à ceux détectés",
+              "2": "Dans certains cas, un serveur proxy peut renvoyer plusieurs adresses IP dans l'en-tête HTTP. Généralement, ces adresses IP sont classées de la plus éloignée à la plus proche. Dans ce cas, l'adresse IP la plus à droite est généralement celle du client. est donc considéré comme le plus fiable ou « le plus digne de confiance ». Cependant, il ne s'agit pas d'une règle absolue car différents serveurs proxy peuvent avoir des implémentations différentes.",
+              "3": "L'IP à l'extrême gauche",
+              "4": "L'IP à l'extrême droite",
+              "5": "Si ce qui est affiché n'est pas l'adresse IP réelle de votre client actuel, cela signifie que vous devez configurer un proxy disponible pour le serveur.",
+              "6": "En-tête de proxy détecté, il est recommandé d'être répertorié comme fiable !"
+            }
+          },
+          "rate": {
+            "title": "Limiter la fréquence des demandes",
+            "route": "routage",
+            "maximum": "fréquence",
+            "intervalTime": "Intervalle/seconde",
+            "roleToLimit": "Objets restreints",
+            "action": {
+              "addRule": "Ajouter de nouvelles restrictions"
+            },
+            "content": {
+              "1": "Format d'étiquette de limite de débit",
+              "2": "Les règles de limitation de débit sont analysées dans l'ordre suivant (en s'arrêtant au premier match)",
+              "3": "Si plusieurs règles portent le même libellé mais ciblent des audiences d'utilisateurs différentes (par exemple, « invité » et « auth »), seule la règle d'audience correspondante sera prise en compte.",
+              "4": "Les étiquettes de limite de débit peuvent être dans l'un des formats suivants :"
+            }
+          },
+          "batch": {
+            "title": "Limite de charge de l'interface",
+            "maxConcurrentRequest": "Nombre maximum de requêtes simultanées",
+            "requestTimeout": "Paramètre de délai d'expiration de la demande (unité : secondes)",
+            "requestBodySize": "Limite de taille du corps de la demande (unité : octets)"
+          },
+          "action": {
+            "hideEditControl": "Entrée de création et d'édition de données cachées"
+          }
+        },
+        "smtp": {
+          "title": "Configuration SMTP",
+          "senderNickname": "Pseudonyme de l'expéditeur",
+          "senderEmail": "Email de l'expéditeur",
+          "userEmail": "E-mail du destinataire",
+          "action": {
+            "smtpEnable": "Activer le service de messagerie",
+            "expandDetail": "Développer plus d'options",
+            "hideDetail": "Masquer plus d'options"
+          },
+          "content": {
+            "1": "Une fois fermé, PocketBase utilisera la commande unix \"sendmail\" pour envoyer des emails (cette fonction n'est plus disponible). Afin de garantir que les emails sont envoyés, veuillez également configurer vous-même le serveur de messagerie SMTP.",
+            "2": "Certains serveurs SMTP, tels que le relais SMTP de Gmail, nécessitent un nom de domaine approprié lors de l'échange EHLO/HELO initial pour identifier le serveur qui envoie le courrier. L'utilisation de « localhost » ou d'un nom de domaine non valide peut entraîner le refus de la connexion par le serveur SMTP. car ils nécessitent généralement une authentification du serveur pour l'envoi d'e-mails afin d'éviter les abus et le spam.",
+            "3": "Authentification",
+            "4": "Réinitialisation du mot de passe",
+            "5": "Changer d'e-mail",
+            "6": "Envoyer un mot de passe à usage unique",
+            "7": "Alarme d'état de connexion"
+          },
+          "smtpHost": "Adresse du service SMTP",
+          "smtpPort": "Port SMTP",
+          "smtpUsername": "Nom d'utilisateur SMTP",
+          "smtpPassword": "Clé SMTP",
+          "tlsEncryption": "Chiffrement TLS",
+          "authMethod": "Méthode d'authentification",
+          "ehloOrHeloDomain": "Nom de domaine fourni au serveur de messagerie pour vérification (EHLO/HELO)"
+        },
+        "fileStorage": {
+          "content": {
+            "1": "Utiliser le système de fichiers local par défaut pour stocker les fichiers téléchargés",
+            "2": "Si vous disposez d'un espace disque limité, vous pouvez choisir d'activer S3 Object Storage pour stocker vos fichiers dans le stockage cloud.",
+            "3": "Si les fichiers téléchargés par les utilisateurs existent localement, veuillez les transférer manuellement vers le nouveau stockage d'objets.",
+            "4": "Il existe de nombreux outils de ligne de commande qui peuvent vous aider, tels que :"
+          },
+          "action": {
+            "s3Enable": "Activer et configurer le stockage d'objets S3",
+            "usePathStyleUrl": "Utilisation d'URL S3 de style chemin"
+          },
+          "endpoint": "Point de terminaison",
+          "bucket": "Seau",
+          "region": "Région",
+          "accessKey": "Clé d'accès",
+          "secret": "Clé de sécurité (secrète)"
+        },
+        "backup": {
+          "cronExpression": "Expression CRON",
+          "maxBackupFilesNum": "Nombre maximum de fichiers de sauvegarde à conserver",
+          "content": {
+            "1": "Sauvegarde et récupération de données",
+            "2": "Aucun fichier de sauvegarde pour l'instant",
+            "3": "Veuillez noter que pendant la sauvegarde, d'autres demandes d'écriture simultanées peuvent échouer car la base de données sera temporairement « verrouillée » (ce qui se produit généralement lors de la génération ZIP)",
+            "4": "Si vous utilisez le stockage S3 pour télécharger des fichiers de collection, vous devrez les sauvegarder séparément car ils ne sont pas stockés localement et ne seront pas inclus dans la sauvegarde finale !",
+            "5": "Le contenu d'entrée doit porter le suffixe « .zip » et le nom ne peut contenir que des chiffres, de l'anglais, des traits de soulignement et des signes moins.",
+            "6": "Opération de sauvegarde/restauration en cours",
+            "7": null,
+            "8": "La récupération de sauvegarde est expérimentale et ne fonctionne que sur les systèmes d'exploitation basés sur UNIX !",
+            "9": "Veuillez procéder avec prudence et il est recommandé de sauvegarder manuellement certains fichiers de sauvegarde historiques sur votre autre stockage.",
+            "10": "L'opération en cours écrasera le contenu du répertoire \"pb_data\" côté serveur et le processus d'application sera automatiquement redémarré une fois l'opération terminée.",
+            "11": "Cela signifie qu'une fois l'opération réussie, toutes vos données actuelles (y compris le contenu des tables de données, les utilisateurs, les super-utilisateurs, etc.) seront complètement écrasées par les nouvelles données.",
+            "12": "Si le fichier de sauvegarde est invalide ou incompatible, la restauration finira par se produire sans perte de données (par exemple, les données \"data.db\").",
+            "13": "Veuillez entrer le nom du fichier de sauvegarde actuel pour confirmer l'opération",
+            "14": "Tous les jours : 00h00",
+            "15": "Tous les dimanches : 00h00",
+            "16": "Tous les lundis et mercredis : 00h00",
+            "17": "Le premier jour de chaque mois : 00h00"
+          },
+          "action": {
+            "createBackup": "Créer un fichier de sauvegarde (.zip)",
+            "uploadBackup": "Téléchargez des fichiers de sauvegarde supplémentaires (.zip)",
+            "restoreBackup": "Restaurer les données à partir des fichiers de sauvegarde",
+            "moreBackupOption": "Sauvegarde automatique/téléchargement automatique vers le stockage S3",
+            "enableAutoBackup": "Activer la sauvegarde automatique planifiée",
+            "backupToS3": "Téléchargez automatiquement les fichiers de sauvegarde sur le stockage S3",
+            "usePathStyleUrl": "Utilisation d'URL S3 de style chemin",
+            "backupName": "Nom de la sauvegarde"
+          }
+        },
+        "sync": {
+          "export": {
+            "title": "Exportez les informations de configuration actuelles pour restaurer rapidement le nouvel environnement ultérieurement"
+          },
+          "import": {
+            "title": "Vous pouvez coller la configuration JSON directement, ou :"
+          }
+        }
+      }
+    }
+  }
+}
