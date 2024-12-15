@@ -569,6 +569,7 @@
       "networkError": "网络出错，请稍后重试",
       "copySuccess": "成功复制到剪贴板！",
       "followRules": "请求权限遵循规则: { url }",
+      "loadTimeout": "若服务无法连接，请点击右上角的设置按钮，切换为其他后端地址",
       "missingContext": "数据上下文内容已丢失！",
       "uploadReminder": "您确定要上传文件 “{ fileName }” 吗？\n请确保上传的文件安全！"
     },
@@ -583,7 +584,7 @@
   },
   "page": {
     "login": {
-      "title": "后台登录",
+      "title": "登录",
       "action": {
         "forgetPsw": "忘记密码"
       }
