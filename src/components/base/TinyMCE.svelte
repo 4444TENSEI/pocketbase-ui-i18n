@@ -60,7 +60,7 @@
     export let id = "tinymce_svelte" + CommonHelper.randomString(7);
     export let inline = undefined;
     export let disabled = false;
-    export let scriptSrc = `${pbUrl}/libs/tinymce/tinymce.min.js`;
+    export let scriptSrc = `${pbUrl}/_/libs/tinymce/tinymce.min.js`;
     export let conf = {};
     export let modelEvents = "change input undo redo";
     export let value = "";

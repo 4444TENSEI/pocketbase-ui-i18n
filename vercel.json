@@ -1,8 +1,0 @@
-{
-    "github": {
-        "silent": true
-    },
-    "env": {
-        "PB_BACKEND_URL": ""
-    }
-}

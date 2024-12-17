@@ -119,7 +119,7 @@
                 <label for={uniqueId}>{$_("page.setting.content.application.proxy.trustedHeaders")}</label>
                 <MultipleValueInput
                     id={uniqueId}
-                    placeholder={$_("common.placeholder.autoDisable")}
+                    placeholder={$_("common.placeholder.defaultSetDisable")}
                     bind:value={formSettings.trustedProxy.headers}
                 />
                 <div class="form-field-addon">

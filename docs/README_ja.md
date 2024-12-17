@@ -1,48 +1,27 @@
-[English](https://github.com/4444TENSEI/pocketbase-ui-i18n/blob/main/README.md) | [中文](https://github.com/4444TENSEI/pocketbase-ui-i18n/blob/main/docs/README_zh.md) | 日本語
+中国語 | [English](https://github.com/4444TENSEI/kaze-mail-koa/blob/main/docs/README_en.md) |
 
-> ## オンライン体験
+> ## インターフェイス パラメータ
 
-アドレス：https://pb.uc1.icu
+- メソッド: `GET` / `POST`
+- ルート: `/push`
 
->  上記のサイトに入ったら、左下隅のボタンをクリックし、ポップアップ ウィンドウでバックエンド アドレスを設定します。
->
->  静的サイトではデータ漏洩などのセキュリティ上の問題が発生しないことは、[F12 ネットワーク] タブで確認できます。
+| 必要?      | パラメータ | 説明                   |
+| ---------- | :--------- | ---------------------- |
+| 必ず       | to         | 受信者のメールアドレス |
+| オプション | msg        | メール本文             |
+| オプション | title      | 件名                   |
+| オプション | name       | 差出人のニックネーム   |
 
-このウェアハウスは、元のウェアハウス [pocketbase](https://github.com/pocketbase/pocketbase) のフロントエンド インターフェースに基づいて拡張されています。
+> ## 展開
 
-1. i18n
-2.  はフロントエンド ページのバックエンド アドレスを動的に切り替えることができます
-
-> ## 自己展開 (フロントエンド ページのみ)
-
-1.  が [Vercel](https://vercel.com/signup) アカウントを申請します
-
-2. このボタンをクリック👉[![Deploy](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/4444TENSEI/pocketbase-ui-i18n)
-3. `Private Repository Name`**入力ボックス**にカスタム名を入力します
-4. `Vercel Team`** ドロップダウン ボックス**で適切な場所を選択します
-5. 「`Create`」ボタンをクリックして、デプロイが完了するまで待ちます
-
-#### *オプションの Vercel 構成*
-
-- *Vercel 設定パネルの `/settings/environment-variables` ページで、環境変数 `PB_BACKEND_URL` をバックエンド アドレスに設定します。ただし、設定しなくても、フロントエンド ページでいつでも手動で変更できます*
-- *Vercel プロジェクトの `settings/domains` ページに独自のドメイン名を追加します*
-
-> ## 開発環境
-
-####  インストールの依存関係
+プロジェクトのルート ディレクトリを入力して依存関係をインストールします
 
 ```
-pnpm install
+pnpm i
 ```
 
-#### 開始
+スタート
 
 ```
-pnpm dev
-```
-
-####  パッケージのビルド
-
-```
-pnpm build
+pnpm start
 ```

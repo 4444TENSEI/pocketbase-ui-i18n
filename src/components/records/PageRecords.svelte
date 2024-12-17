@@ -1,7 +1,6 @@
 <script>
     import { _ } from "svelte-i18n";
     import { tick } from "svelte";
-    import { setUrlPopup } from "@/utils/Cookie";
     import { querystring } from "svelte-spa-router";
     import CommonHelper from "@/utils/CommonHelper";
     import tooltip from "@/actions/tooltip";
@@ -23,6 +22,7 @@
         isCollectionsLoading,
         loadCollections,
     } from "@/stores/collections";
+    import { setUrlPopup } from "@/utils/Cookie";
 
     const initialQueryParams = new URLSearchParams($querystring);
 
@@ -162,6 +162,7 @@
                     <i class="ri-tools-fill" />
                     <span class="txt">{$_("common.action.connectionTest")}</span>
                 </button>
+                {setUrlPopup()}
             {/if}
         </div>
     </PageWrapper>

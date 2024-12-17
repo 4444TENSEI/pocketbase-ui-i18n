@@ -1,20 +1,15 @@
 <script>
     import { _ } from "svelte-i18n";
-
     import { fly } from "svelte/transition";
     import Field from "@/components/base/Field.svelte";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
     import providersList from "@/providers.js";
     import { createEventDispatcher } from "svelte";
 
-    import { getCookie } from "@/utils/Cookie";
-    let pbUrl = getCookie("pbUrl");
     // 🐱这里纯前端请求的话图片接口需要修正
-    if (pbUrl.endsWith('/')) {
-        pbUrl += "_";
-    } else {
-        pbUrl += "/_";
-    }
+    import { getCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl") + "/_";
+
     const dispatch = createEventDispatcher();
 
     export let disabled = [];
@@ -86,10 +81,7 @@
                 <button type="button" class="provider-card handle" on:click={() => select(provider)}>
                     <figure class="provider-logo">
                         {#if provider.logo}
-                            <img
-                                src="{pbUrl}/images/oauth2/{provider.logo}"
-                                alt="{provider.title} logo"
-                            />
+                            <img src="{pbUrl}/images/oauth2/{provider.logo}" alt="{provider.title} logo" />
                         {/if}
                     </figure>
                     <div class="content">
