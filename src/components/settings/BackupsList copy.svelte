@@ -71,7 +71,7 @@
     }
 
     function deleteConfirm(name) {
-        confirm($_("common.message.deletePrompt", { values: { value: name } }), () => deleteBackup(name));
+        confirm($_("common.message.deletePrompt", { values: { value: name } }, () => deleteBackup(name)));
     }
 
     async function deleteBackup(name) {
@@ -85,7 +85,7 @@
             await ApiClient.backups.delete(name);
             CommonHelper.removeByKey(backups, "name", name);
             loadBackups();
-            addSuccessToast($_("common.message.deleteDataSuccess", { values: { name: name } }));
+            addSuccessToast(`${$_("common.message.deleteSuccess")}: ${name}.`);
         } catch (err) {
             if (!err.isAbort) {
                 ApiClient.error(err);
@@ -144,7 +144,7 @@
                             class="btn btn-sm btn-circle btn-hint btn-transparent"
                             class:btn-loading={isDownloading[backup.key]}
                             disabled={isDeleting[backup.key] || isDownloading[backup.key]}
-                            aria-label="Download"
+                            aria-label={$_("common.action.download")}
                             use:tooltip={$_("common.action.download")}
                             on:click|preventDefault={() => download(backup.key)}
                         >
@@ -165,7 +165,7 @@
                             class="btn btn-sm btn-circle btn-hint btn-transparent"
                             class:btn-loading={isDeleting[backup.key]}
                             disabled={isDeleting[backup.key]}
-                            aria-label="Delete"
+                            aria-label={$_("common.action.delete")}
                             use:tooltip={$_("common.action.delete")}
                             on:click|preventDefault={() => deleteConfirm(backup.key)}
                         >

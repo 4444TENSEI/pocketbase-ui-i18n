@@ -17,6 +17,12 @@
     import active from "svelte-spa-router/active";
     import routes from "./routes";
 
+    // 初始化后端地址到Cookie以便支持用户自行切换
+    import { getCookie, setCookie } from "@/utils/Cookie";
+    let pbUrl = getCookie("pbUrl");
+    if (!pbUrl) {
+        setCookie("pbUrl", import.meta.env.PB_BACKEND_URL);
+    }
     let oldLocation = undefined;
 
     let showAppSidebar = false;
